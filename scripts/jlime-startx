@@ -1,0 +1,43 @@
+#!/bin/sh
+# Uber-generic startx script for jlime icewm-image
+# Copyright 2007/2008 Matt Oudenhoven ( wicked )
+
+if [ ! -x /usr/bin/Xfbdev ] ; then exit 0 ; fi
+
+. /etc/profile
+
+# Not the best idea running X as suid root, but it works.
+# This is a handheld. C'mon now.. whats going to happen?
+# This starts at boot (chown root.users /usr/bin/Xfbdev)
+# You can disable it if you are scared!!!!!!! Muwhahaha.
+# Disable it from /etc/init.d/bootmisc.sh
+
+export USER=$USER
+export HOME=/home/$USER
+export DISPLAY=:0
+
+	echo "Starting X..."
+
+	cd $HOME
+
+	xrdb -merge ~/.Xresources
+	Xfbdev -mouse /dev/input/event2 &
+	
+	# start wm and desktop
+	feh --bg-fill /usr/share/icewm/wallpaper/jlime.xpm &
+	ratpoison &
+	#icewm-session &
+	#ROX-Filer -S &
+	
+	# start mouse util and system monitor
+	wait && sleep 7 && xmonobut -k 63 &
+	#wait && sleep 7 && torsmo &
+	
+	# calibrate stylus on first run
+	#if [ -a /etc/pointercal ]
+	#then exit 0
+	#else sleep 12 && /usr/bin/xtscal
+	#fi
+	
+		
+
