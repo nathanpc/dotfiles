@@ -1,0 +1,1 @@
+/home/nathanpc/.bash_it/plugins/available/ruby.plugin.bash

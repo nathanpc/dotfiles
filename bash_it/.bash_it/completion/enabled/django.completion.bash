@@ -1,0 +1,1 @@
+/home/nathanpc/.bash_it/completion/available/django.completion.bash
