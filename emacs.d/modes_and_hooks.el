@@ -9,8 +9,10 @@
 ;; Javascript
 ;;
 
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;(autoload 'js2-mode "js2" nil t)
+;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;(add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode)
 
 
 ;;

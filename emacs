@@ -1,3 +1,6 @@
+; byte-compiles new extensions.
+(byte-recompile-directory (expand-file-name "~/.emacs.d/plugins") 0)
+
 ; Set the LoadPath.
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 
