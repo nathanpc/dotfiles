@@ -54,6 +54,13 @@
 
 
 ;;
+;; ESS
+;;
+
+(require 'ess-site)
+
+
+;;
 ;; GNUplot
 ;;
 
