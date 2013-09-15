@@ -1,6 +1,10 @@
 ; ui_styling.el
 ; UI Styling Stuff.
 
+; Hide the GUI tool bar.
+(if window-system
+	(tool-bar-mode -1))
+
 ; Enable human-mode.
 ;(cua-mode 1)
 (transient-mark-mode 1) ; Highlight text selection.
