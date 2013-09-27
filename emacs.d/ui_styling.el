@@ -53,3 +53,17 @@
 (setq mouse-wheel-progressive-speed nil) ; Don't accelerate scrolling.
 (setq mouse-wheel-follow-mouse 't) ; Scroll window under mouse.
 (setq scroll-step 1) ; Keyboard scroll one line at a time.
+
+; whitespace-mode enhancements.
+(setq whitespace-display-mappings
+	  '((space-mark 32 [183] [46])
+		(newline-mark 10 [8629 10])
+		(tab-mark 9 [8594 9] [92 9])))
+
+; Sublime Text-like indentation highlight.
+;(require 'highlight-indentation)  ; Sadly this shit only works with spaces.
+
+; Highlight TODOs.
+(defun highlight-todos (font-lock-add-keywords nil
+	'(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+(add-hook 'prog-mode-hook 'highlight-todos)
