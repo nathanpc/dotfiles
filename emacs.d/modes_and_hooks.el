@@ -6,6 +6,28 @@
 
 
 ;;
+;; Lisp
+;;
+
+(require 'slime)
+(add-hook 'lisp-mode-hook (lambda ()
+							(slime-mode t)))
+(add-hook 'inferior-lisp-mode-hook (lambda ()
+									 (inferior-slime-mode t)))
+(setq inferior-lisp-program "clisp")
+
+
+;;
+;; PHP
+;;
+
+(require 'php-mode)
+(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
+
+;;
 ;; Javascript
 ;;
 
@@ -52,14 +74,6 @@
       '(lambda ()
         (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
-
-;;
-;; ESS
-;;
-
-(require 'ess-site)
-
-
 ;;
 ;; GNUplot
 ;;
@@ -78,6 +92,9 @@
 
 ; Arduino mode.
 (require 'arduino-mode)
+
+; ESS
+(require 'ess-site)
 
 ; Enable rainbow-delimiters.
 (require 'rainbow-delimiters)

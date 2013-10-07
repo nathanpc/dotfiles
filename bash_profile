@@ -3,6 +3,9 @@
 # TODO: Organize the PATH.
 export PATH=/opt/microchip/xc8/v1.12/bin:/opt/microchip/xc8/v1.12/bin:/home/nathanpc/.rbenv/bin:./node_modules/.bin:"/opt/Sublime Text 2/":/opt/AndroidSDK/sdk/platform-tools:/opt/AndroidSDK/sdk/tools:/opt/microchip/xc8/v1.12/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/nathanpc/.gem/ruby/1.8/bin:/opt/nginx/sbin:/home/nathanpc/.bash_it/plugins/available/todo:$PATH
 
+# CCL
+export CCL_DEFAULT_DIRECTORY=/opt/ccl
+
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
