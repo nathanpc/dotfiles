@@ -6,6 +6,9 @@ export PATH=/opt/microchip/xc8/v1.12/bin:/opt/microchip/xc8/v1.12/bin:/home/nath
 # CCL
 export CCL_DEFAULT_DIRECTORY=/opt/ccl
 
+# Pretty startup logo.
+/opt/screenfetch/screenfetch-dev
+
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
