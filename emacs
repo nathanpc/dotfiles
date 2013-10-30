@@ -46,6 +46,10 @@
 (global-set-key (kbd "C-S-z") 'undo)
 (global-set-key (kbd "C-y") 'redo)
 
+; Switch between tabs using the special mouse buttons.
+(global-set-key [mouse-8] 'elscreen-previous)
+(global-set-key [mouse-9] 'elscreen-next)
+
 ; Prevent backup file creation.
 (setq make-backup-files nil)
 
