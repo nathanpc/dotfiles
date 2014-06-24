@@ -9,6 +9,14 @@ export CCL_DEFAULT_DIRECTORY=/opt/ccl
 # Pretty startup logo.
 /opt/screenfetch/screenfetch-dev
 
+# Set the terminal title.
+PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+
+
+###########
+# bash_it #
+###########
+
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 

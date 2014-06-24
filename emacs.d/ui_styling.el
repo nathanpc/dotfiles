@@ -64,6 +64,6 @@
 ;(require 'highlight-indentation)  ; Sadly this shit only works with spaces.
 
 ; Highlight TODOs.
-(defun highlight-todos (font-lock-add-keywords nil
-	'(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
-(add-hook 'prog-mode-hook 'highlight-todos)
+;(defun highlight-todos (font-lock-add-keywords nil
+;	'(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+;(add-hook 'prog-mode-hook 'highlight-todos)
