@@ -1,6 +1,7 @@
 "" My .vimrc
 "" Author: Nathan Campos <nathanpc@dreamintech.net>
 
+set nocompatible
 
 ""
 ""  UI
@@ -54,7 +55,6 @@ au BufNewFile,BufRead *.cir set filetype=spice
 ""
 ""  Must-have options.
 ""
-set nocompatible
 filetype indent plugin on
 syntax on
 set hidden
@@ -63,6 +63,13 @@ set wildmenu
 set showcmd
 set hlsearch
 set incsearch
+
+""
+""  Backup
+""
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
 
 ""
 ""  Pathogen
