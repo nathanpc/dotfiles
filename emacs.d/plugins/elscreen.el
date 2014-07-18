@@ -1691,8 +1691,10 @@ Use \\[toggle-read-only] to permit editing."
                   ("-e"                . elscreen-command-line-funcall))))
 
   (static-when elscreen-on-emacs
-    (if (string-match "^\\(19\\|2[0-2]\\)" emacs-version) ; emacs22 or prior-to
-    	(progn
+    (cond
+     ;  -----------------------
+     ((< emacs-major-version 23)	; emacs22 or prior to
+	(progn
     (defun elscreen-e21-command-line ()
       (when (string-match "\\`-" argi)
         (error "Unknown option `%s'" argi))
@@ -1705,12 +1707,14 @@ Use \\[toggle-read-only] to permit editing."
         (elscreen-command-line-find-file file file-count line column))
       (setq line 0)
       (setq column 0)
-      t)
+      t) ; defun
 
     (add-hook 'after-init-hook (lambda ()
                                  (add-to-list 'command-line-functions
-                                              'elscreen-e21-command-line t))))
-	; else
+                                              'elscreen-e21-command-line t)))) ; progn
+    )  ; else
+     ;  -----------------------
+    ((= emacs-major-version 23)	; emacs23
       (progn
     (defun elscreen-e23-command-line ()
       (when (string-match "\\`-" argi)
@@ -1725,12 +1729,33 @@ Use \\[toggle-read-only] to permit editing."
       (setq cl1-line 0)
       (setq cl1-column 0)
       t) ; defun
-
+    
     (add-hook 'after-init-hook (lambda ()
                                  (add-to-list 'command-line-functions
-                                              'elscreen-e23-command-line t))))
-      ); endif
-    )
+                                              'elscreen-e23-command-line t)))) ; progn
+      ) ; else
+     ;  -----------------------
+    ((> emacs-major-version 23)	; emacs24 or later
+      (progn
+    (defun elscreen-e24-command-line ()
+      (when (string-match "\\`-" cl1-argi)
+        (error "Unknown option `%s'" cl1-argi))
+      (setq file-count (1+ file-count))
+      (setq inhibit-startup-buffer-menu t)
+      (let* ((file
+              (expand-file-name
+               (command-line-normalize-file-name orig-argi)
+               cl1-dir)))
+        (elscreen-command-line-find-file file file-count cl1-line cl1-column))
+      (setq cl1-line 0)
+      (setq cl1-column 0)
+      t) ; defun
+    
+    (add-hook 'after-init-hook (lambda ()
+                                 (add-to-list 'command-line-functions
+                                              'elscreen-e24-command-line t)))) ; progn
+      )
+      )) ; endif (emacs22 or prior to)
 
   (static-when elscreen-on-xemacs
     (defadvice command-line-1 (around elscreen-xmas-command-line-1 activate)

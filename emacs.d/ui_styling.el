@@ -12,11 +12,11 @@
 (set-scroll-bar-mode 'right)
 
 ; Enable tabs.
-(require 'elscreen)
-(require 'elscreen-color-theme)
-(require 'elscreen-dired)
-(require 'elscreen-speedbar)
-(elscreen-start)
+;(require 'elscreen)
+;(require 'elscreen-color-theme)
+;(require 'elscreen-dired)
+;(require 'elscreen-speedbar)
+;(elscreen-start)
 ;(load "elscreen" "ElScreen" t)
 ;(global-set-key (kbd "C-c t c") 'elscreen-create)
 ;(global-set-key (kbd "C-c t q") 'elscreen-kill)

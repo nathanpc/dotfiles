@@ -1,1 +1,0 @@
-/home/nathanpc/dotfiles/emacs.d
