@@ -64,3 +64,7 @@ set showcmd
 set hlsearch
 set incsearch
 
+""
+""  Pathogen
+""
+execute pathogen#infect()
