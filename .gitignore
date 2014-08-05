@@ -1,6 +1,1 @@
 .DS_Store
-
-vim/backup
-
-emacs.d/auto-save-list/
-emacs.d/session.*
