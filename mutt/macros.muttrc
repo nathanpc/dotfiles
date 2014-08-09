@@ -25,6 +25,7 @@ macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Other
 bind index,pager R group-reply
+bind index n toggle-new
 bind index <Space> collapse-thread
 bind attach <Return> view-mailcap
 macro index <Tab> '<sync-mailbox><imap-fetch-mail>'
