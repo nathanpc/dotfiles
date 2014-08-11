@@ -29,9 +29,13 @@ set fish_pager_color_description 555\x1eyellow
 set fish_pager_color_prefix cyan
 set fish_pager_color_progress cyan
 
-#set fish_user_paths /opt/arduino
+# Path settings.
+set fish_user_paths /opt/arduino\x1e/opt/hpgcc/2.0SP2/bin\x1e/opt/hpgcc/2.0SP2/cc/bin
 
+# Other environment variables.
 set -gx TERM screen-256color-bce
+set -gx HPGCC /opt/hpgcc/2.0SP2
+set -gx HPAPINEROOT /opt/hpgcc/2.0SP2-hpapine
 
 # Fish startup script.
 
