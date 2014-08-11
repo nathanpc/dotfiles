@@ -48,11 +48,6 @@ set tabstop=4
 set autoindent
 
 ""
-""  Syntax
-""
-au BufNewFile,BufRead *.cir set filetype=spice
-
-""
 ""  Must-have options.
 ""
 filetype indent plugin on
@@ -63,6 +58,19 @@ set wildmenu
 set showcmd
 set hlsearch
 set incsearch
+
+""
+""  Syntax
+""
+au BufNewFile,BufRead *.cir set filetype=spice
+au BufReadPost *.rkt,*.rktl set filetype=racket
+au BufRead,BufNewFile *.scrbl setfiletype scribble
+
+""
+"" Specific options.
+""
+au filetype racket set lisp
+au filetype racket set expandtab
 
 ""
 ""  Backup
