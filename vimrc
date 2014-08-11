@@ -65,6 +65,7 @@ set incsearch
 au BufNewFile,BufRead *.cir set filetype=spice
 au BufReadPost *.rkt,*.rktl set filetype=racket
 au BufRead,BufNewFile *.scrbl setfiletype scribble
+let g:rainbow_active = 1  " Rainbow Parenthesis.
 
 ""
 "" Specific options.
