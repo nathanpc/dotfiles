@@ -1,8 +1,6 @@
 "" My .vimrc
 "" Author: Nathan Campos <nathanpc@dreamintech.net>
 
-set nocompatible
-
 ""
 ""  UI
 ""
@@ -39,6 +37,7 @@ set pastetoggle=<F11>
 "set nostartofline
 set confirm
 set history=1000
+set nocompatible
 
 ""
 ""  Indentation options.
