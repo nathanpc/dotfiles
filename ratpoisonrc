@@ -1,0 +1,11 @@
+# Change directory to $HOME.
+chdir
+
+# Set the default terminal emulator.
+alias term exec rxvt
+
+# Disable the startup message.
+startup_message off
+
+# Better frame names.
+set winname class
