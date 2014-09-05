@@ -3,22 +3,26 @@
 !!
 
 ! Every shell is a login shell by default.
-xterm*loginshell: true
+*loginshell: true
 
 ! Have a bit of scrollback.
-xterm*savelines: 500
+*savelines: 500
 
 ! Right hand side scrollbar.
-xterm*rightScrollBar: true
-xterm*ScrollBar: true
+! *rightScrollBar: true
+*scrollBar: false
 
 ! Stop the output from jumping to the bottom.
-xterm*scrollTtyOutput: false
+*scrollTtyOutput: false
 
 
 !!
 !! Theme
 !!
+
+*depth: 32
+*.transparent: true
+*.shading: 30
 
 !TomorrowNight
 #define t_background        #1d1f21
