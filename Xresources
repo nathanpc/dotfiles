@@ -9,23 +9,26 @@
 *savelines: 500
 
 ! Right hand side scrollbar.
-! *rightScrollBar: true
-*scrollBar: false
+! URxvt*rightScrollBar: true
+URxvt*scrollBar: false
 
 ! Stop the output from jumping to the bottom.
 *scrollTtyOutput: false
 
+! Clickable URLs.
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 
 !!
 !! Theme
 !!
 
-*depth: 32
-*.transparent: true
-*.shading: 30
+URxvt*depth: 32
 
 !TomorrowNight
-#define t_background        #1d1f21
+!#define t_background      #1d1f21
+#define t_background        rgba:1d00/1f00/2100/dddd
 #define t_current_line      #282a2e
 #define t_selection      	#373b41
 #define t_foreground      	#c5c8c6
@@ -74,3 +77,7 @@
 ! Light Grey (Selection) + White (Current Line)
 *.color7:       t_selection
 *.color15:      t_current_line
+
+! URLs.
+URxvt.colorUL: t_aqua
+
