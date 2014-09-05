@@ -1,6 +1,8 @@
 "" My .vimrc
 "" Author: Nathan Campos <nathanpc@dreamintech.net>
 
+set nocompatible
+
 ""
 ""  UI
 ""
@@ -37,7 +39,6 @@ set pastetoggle=<F11>
 "set nostartofline
 set confirm
 set history=1000
-set nocompatible
 
 ""
 ""  Indentation options.
@@ -63,7 +64,8 @@ set incsearch
 ""
 au BufNewFile,BufRead *.cir set filetype=spice
 au BufReadPost *.rkt,*.rktl set filetype=racket
-au BufRead,BufNewFile *.scrbl setfiletype scribble
+au BufNewFile,BufRead *.scrbl set filetype=scribble
+au BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
 let g:rainbow_active = 1  " Rainbow Parenthesis.
 
 ""
