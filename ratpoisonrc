@@ -2,10 +2,13 @@
 chdir
 
 # Set the default terminal emulator.
-alias term exec rxvt
+alias term exec urxvt
+unbind c
+bind c exec urxvt
 
 # Disable the startup message.
 startup_message off
 
 # Better frame names.
 set winname class
+
