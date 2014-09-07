@@ -2,6 +2,12 @@
 !! Settings
 !!
 
+! Window size.
+URxvt*geometry: 93x29
+!URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
+URxvt.iso14755: off
+URxvt.iso14755_52: off
+
 ! Every shell is a login shell by default.
 *loginshell: true
 
@@ -15,8 +21,20 @@ URxvt*scrollBar: false
 ! Stop the output from jumping to the bottom.
 *scrollTtyOutput: false
 
+! Perl.
+URxvt.perl-ext-common: default,matcher,tabbed,fullscreen,vtwheel,clipboard
+
+! Fullscreen.
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Tabs!
+URxvt.tabbed.new-button: true
+URxvt.tabbed.title: true
+URxvt.tabbed.reopen-on-close: true
+URxvt.keysym.Control-Tab: perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-Tab: perl:tabbedex:new_tab
+
 ! Clickable URLs.
-URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
@@ -80,4 +98,12 @@ URxvt*depth: 32
 
 ! URLs.
 URxvt.colorUL: t_aqua
+
+! Tabs.
+URxvt.tabbed.tabbar-fg: 7
+URxvt.tabbed.tabbar-bg: 8
+URxvt.tabbed.tab-fg: 8
+URxvt.tabbed.tab-bg: 7
+URxvt.tabbed.title-bg: 8
+URxvt.tabbed.title-fg: 7
 
