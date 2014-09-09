@@ -10,3 +10,7 @@ fi
 # Update the X resources database.
 xrdb -merge ~/.Xresources
 
+# Setup the touchpad.
+synclient TapButton1=1 &
+synclient &
+
