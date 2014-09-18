@@ -12,3 +12,6 @@ startup_message off
 # Better frame names.
 set winname class
 
+# Autostart.
+exec ratinit.sh &
+
