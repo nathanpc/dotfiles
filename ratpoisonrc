@@ -1,17 +1,13 @@
 # Change directory to $HOME.
 chdir
 
-# Set the default terminal emulator.
-alias term exec urxvt
-unbind c
-bind c exec urxvt
-
 # Disable the startup message.
 startup_message off
 
 # Better frame names.
 set winname class
 
-# Autostart.
-exec ratinit.sh &
+# Unmanage panels.
+unmanage panel
+set padding 0 0 0 26
 
