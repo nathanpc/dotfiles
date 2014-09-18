@@ -39,5 +39,5 @@
 	nm-applet &
 ) &
 
-exec ratpoison
+exec /usr/bin/dbus-launch --exit-with-session ratpoison
 
