@@ -38,6 +38,11 @@ URxvt.keysym.Control-Shift-Tab: perl:tabbedex:new_tab
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
+! Clipboard.
+!URxvt.keysym.M-c: perl:clipboard:copy
+!URxvt.keysym.M-v: perl:clipboard:paste
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
 !!
 !! Theme
 !!
