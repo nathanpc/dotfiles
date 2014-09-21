@@ -13,3 +13,6 @@
 [submodule "emacs.d/plugins/emacs-for-python"]
 	path = emacs.d/plugins/emacs-for-python
 	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule "vim/bundle/rainbow"]
+	path = vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow.git
