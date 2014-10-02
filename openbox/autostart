@@ -1,3 +1,6 @@
+# Merge X configs.
+xrdb -merge ~/.Xresources &
+
 # Wallpaper
 nitrogen --restore &
 
