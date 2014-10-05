@@ -11,8 +11,8 @@ macro index \CO '<enter-command>sidebar-open<enter><enter-command>exec first-ent
 macro pager \CO '<enter-command>sidebar-open<enter><enter-command>exec first-entry<enter>'
 
 # Accounts
-macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/eeepc904<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
-macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/dreamintech<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
+macro index,pager <F1> '<sync-mailbox><enter-command>source ~/.mutt/accounts/eeepc904<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
+macro index,pager <F2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/dreamintech<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
 
 # Navigation
 bind pager <Up> previous-line

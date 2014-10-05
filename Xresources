@@ -21,6 +21,9 @@ URxvt*scrollBar: false
 ! Stop the output from jumping to the bottom.
 *scrollTtyOutput: false
 
+! Set the terminal name.
+URxvt.termName: rxvt-256color
+
 ! Perl.
 URxvt.perl-ext-common: default,matcher,tabbed,fullscreen,vtwheel,clipboard
 
