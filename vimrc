@@ -66,6 +66,7 @@ au BufNewFile,BufRead *.cir set filetype=spice
 au BufReadPost *.rkt,*.rktl set filetype=racket
 au BufNewFile,BufRead *.scrbl set filetype=scribble
 au BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
+au BufNewFile,BufRead *.m,*.oct set filetype=octave
 let g:rainbow_active = 1  " Rainbow Parenthesis.
 
 ""
