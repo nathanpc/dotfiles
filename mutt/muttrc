@@ -10,6 +10,7 @@ set mailcap_path = ~/.mutt/attachments
 set move = no  # Stop asking to "move read messages to mbox"!
 set imap_keepalive = 900
 set mail_check = 120
+set timeout = 5  # Thanks Google for not following the spec...
 
 # External applications.
 set editor = "vim"
