@@ -69,7 +69,8 @@ URxvt*depth: 32
 
 
 *.foreground:   t_foreground
-*.background:   t_background
+*.background:	rgb:1d00/1f00/2100
+URxvt.background: t_background
 *.cursorColor:  #aeafad
 
 ! Black / Grey
