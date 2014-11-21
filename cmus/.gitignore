@@ -1,0 +1,8 @@
+cache
+command-history
+lib.pl
+playlist.pl
+search-history
+socket*
+
+last-cmus.py
