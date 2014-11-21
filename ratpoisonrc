@@ -9,5 +9,4 @@ set winname class
 
 # Unmanage panels.
 unmanage panel
-set padding 0 0 0 26
-
+#set padding 0 0 0 26
