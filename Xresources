@@ -4,7 +4,7 @@
 
 ! Window size.
 URxvt*geometry: 93x29
-!URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
+URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
 URxvt.iso14755: off
 URxvt.iso14755_52: off
 
@@ -68,7 +68,7 @@ URxvt*depth: 32
 #define t_purple        	#b294bb
 
 
-*.foreground:   t_foreground
+*.foreground:   #c5c8c6  !t_foreground
 *.background:	rgb:1d00/1f00/2100
 URxvt.background: t_background
 *.cursorColor:  #aeafad
