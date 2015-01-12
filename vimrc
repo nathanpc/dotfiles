@@ -15,7 +15,7 @@ set mouse=a
 set number
 set cul
 set guioptions-=T
-colorscheme Tomorrow-Night
+colorscheme Tomorrow
 
 if has("gui_running")
 	set lines=55 columns=80
@@ -62,12 +62,14 @@ set incsearch
 ""
 ""  Syntax
 ""
-au BufNewFile,BufRead *.cir set filetype=spice
-au BufReadPost *.rkt,*.rktl set filetype=racket
-au BufNewFile,BufRead *.scrbl set filetype=scribble
-au BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
-au BufNewFile,BufRead *.m,*.oct set filetype=octave
+au! BufNewFile,BufRead *.cir set filetype=spice
+au! BufReadPost *.rkt,*.rktl set filetype=racket
+au! BufNewFile,BufRead *.scrbl set filetype=scribble
+au! BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
+au! BufNewFile,BufRead *.m,*.oct set filetype=octave
+au! BufNewFile,BufRead *.csv,*.dat set filetype=csv
 let g:rainbow_active = 1  " Rainbow Parenthesis.
+let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
 
 ""
 "" Specific options.
