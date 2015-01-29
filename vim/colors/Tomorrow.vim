@@ -2,12 +2,15 @@
 " http://chriskempson.com
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
+" Customized by Nathan Campos to fit the Uncomplicated theme.
 
 " Default GUI Colours
 let s:foreground = "4d4d4c"
-let s:background = "fafafa"
+"let s:background = "fafafa"
+let s:background = "e9e9e9"
 let s:selection = "d6d6d6"
-let s:line = "efefef"
+"let s:line = "efefef"
+let s:line = "dbdbdb"
 let s:comment = "8e908c"
 let s:red = "c82829"
 let s:orange = "f5871f"
