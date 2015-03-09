@@ -1,1 +1,0 @@
-/home/nathanpc/.bash_it/plugins/available/python.plugin.bash

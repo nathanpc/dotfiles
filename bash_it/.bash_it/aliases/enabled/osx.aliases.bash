@@ -1,1 +1,0 @@
-/home/nathanpc/.bash_it/aliases/available/osx.aliases.bash
