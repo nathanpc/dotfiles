@@ -124,8 +124,12 @@ export PATH=/opt/microchip/xc8/v1.12/bin:/opt/microchip/xc8/v1.12/bin:/home/nath
 export CCL_DEFAULT_DIRECTORY=/opt/ccl
 
 # Pretty startup logo.
-/opt/screenfetch/screenfetch-dev
+#/opt/screenfetch/screenfetch-dev
 
 # Set the terminal title.
 #PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+
+# Prompt.
+#export PROMPT_COMMAND="if [[ $? = "0" ]]; then ST_COLOR=\"\e[0;32m\"; else ST_COLOR=\"\e[0;31m\"; fi"
+export PS1=$'\n\e[0;32m\u\e[m@\e[0;34m\h\e[m in \e[0;31m\w\e[m\n\u2192 '
 
