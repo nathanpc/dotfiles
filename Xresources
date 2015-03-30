@@ -68,7 +68,8 @@ URxvt*depth: 32
 #define t_purple        	#b294bb
 
 
-*.foreground:   #c5c8c6  !t_foreground
+*.foreground:   #c5c8c6
+!t_foreground
 *.background:	rgb:1d00/1f00/2100
 URxvt.background: t_background
 *.cursorColor:  #aeafad
