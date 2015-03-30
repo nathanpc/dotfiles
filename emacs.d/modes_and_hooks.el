@@ -87,6 +87,19 @@
 (setq auto-mode-alist
 	  (append '(("\\.\\(gp\\|gnuplot\\)$" . gnuplot-mode)) auto-mode-alist))
 
+;;
+;; Octave
+;;
+(autoload 'octave-mode "octave-mod" nil t)
+(setq auto-mode-alist
+	  (cons '("\\.m$" . octave-mode) auto-mode-alist))
+(add-hook 'octave-mode-hook
+          (lambda ()
+            (abbrev-mode 1)
+            (auto-fill-mode 1)
+            (if (eq window-system 'x)
+                (font-lock-mode 1))))
+
 
 ;;
 ;; Others.
