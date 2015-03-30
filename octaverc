@@ -1,0 +1,2 @@
+edit mode async
+EDITOR('gvim %s')
