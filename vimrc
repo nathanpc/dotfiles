@@ -39,6 +39,7 @@ set pastetoggle=<F11>
 "set nostartofline
 set confirm
 set history=1000
+set clipboard=unnamedplus
 
 ""
 ""  Indentation options.
@@ -83,6 +84,14 @@ au filetype racket set expandtab
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+
+""
+"" Key mapping.
+""
+vmap <C-c> "+y
+map  <C-v> "+p
+vmap <C-v> "+p
+imap <C-v> <esc><C-v>
 
 ""
 ""  Pathogen
