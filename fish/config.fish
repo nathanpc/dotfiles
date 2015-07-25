@@ -30,7 +30,7 @@ set fish_pager_color_prefix cyan
 set fish_pager_color_progress cyan
 
 # Path settings.
-set fish_user_paths /opt/arduino\x1e/opt/hpgcc/2.0SP2/bin\x1e/opt/hpgcc/2.0SP2/cc/bin
+#set fish_user_paths /opt/arduino\x1e/opt/hpgcc/2.0SP2/bin\x1e/opt/hpgcc/2.0SP2/cc/bin
 
 # Other environment variables.
 set -gx TERM rxvt-256color
