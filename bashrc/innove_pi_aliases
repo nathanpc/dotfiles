@@ -3,5 +3,5 @@
 #
 # Author: Nathan Campos <nathanpc@dreamintech.net>
 
-alias ss = "screen -dRR"  # Starts GNU screen.
-alias gps = "git submodule update --recursive --remote"  # Pulls updates from each submodule.
+alias ss="screen -dRR"  # Starts GNU screen.
+alias gps="git submodule update --recursive --remote"  # Pulls updates from each submodule.
