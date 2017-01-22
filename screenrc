@@ -16,7 +16,7 @@ defscrollback 30000
 termcapinfo xterm ti@:te@
 
 # Status bar.
-backtick 1 5 5 battery-status
-backtick 2 5 5 list-ips
+#backtick 1 5 5 battery-status
+backtick 1 5 5 list-ips
 hardstatus alwayslastline "%{b kw}%u%-Lw%{= rW}%50> %n%f %t %{-}%+Lw%< %= %{b kw}%2` | %1` | %{y}%D %M %d%{w}%{g} %C %A%{w}"
 
