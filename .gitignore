@@ -1,1 +1,6 @@
+# Vim stuff.
+vim/bundle/
+vim/.netrwhist
+
+# Misc.
 .DS_Store

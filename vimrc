@@ -3,6 +3,7 @@
 
 set nocompatible  " Must be iMproved.
 filetype off      " required by Vundle.
+set encoding=UTF-8
 
 ""
 "" Vundle Package Manager
@@ -15,6 +16,38 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
+
+" Languages.
+Plugin 'StanAngeloff/php.vim'
+Plugin 'skammer/vim-css-color'
+Plugin 'mattn/emmet-vim'
+Plugin 'alvan/vim-closetag'
+Plugin 'hail2u/vim-css3-syntax'
+
+" Git integration.
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Auto-complete.
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+
+" Fuzzy finder.
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" NERDTree.
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Syntax checker.
+Plugin 'vim-syntastic/syntastic'
+
+" Powerline.
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Last ones.
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 filetype plugin indent on
@@ -33,6 +66,8 @@ set number
 set cul
 set guioptions-=T
 colorscheme base16-tomorrow-night
+set splitbelow
+set splitright
 
 if has("gui_running")
 	set lines=55 columns=80
@@ -59,6 +94,7 @@ set clipboard=unnamedplus
 ""
 set shiftwidth=4
 set tabstop=4
+set smartindent
 set autoindent
 
 ""
@@ -101,8 +137,56 @@ set directory=~/.vim/tmp
 ""
 "" Key mapping.
 ""
-vmap <C-c> "+y
-map  <C-v> "+p
-vmap <C-v> "+p
-imap <C-v> <esc><C-v>
+" Ctrl-Shift-Classics
+map <C-S-v> "*]p
+map <C-S-c> "*yy
+map <C-S-x> "*c
+
+""
+"" Pseudo-tabs (vim-airline) navigation.
+""
+" Ctrl-T New tab.
+map <C-t> :enew<CR> 
+" Ctrl-C Close tab.
+map <C-c> :bp <BAR> bd #<CR>
+" Ctrl-[ Previous tab.
+map <C-[> :bprevious<CR>
+" Ctrl-] Next tab.
+map <C-]> :bnext<CR>
+
+""
+"" Plugin configurations.
+""
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" delimitMate
+let delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" CSS3 Syntax
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
