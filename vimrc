@@ -36,7 +36,7 @@ colorscheme base16-tomorrow-night
 
 if has("gui_running")
 	set lines=55 columns=80
-	set guifont=Monaco\ 9
+	set guifont=LiterationMono\ Nerd\ Font\ 10
 endif
 
 
