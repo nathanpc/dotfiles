@@ -1,28 +1,30 @@
-!!
-!! Settings
-!!
+!! .Xresources
+!! Terminal configurations for my awesome setup.
+!! 
+!! Nathan Campos <nathanpc@dreamintech.net>
 
-! Window size.
-URxvt*geometry: 93x29
-URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
-URxvt.iso14755: off
-URxvt.iso14755_52: off
+! Set the terminal to use 256 colors.
+URxvt.termName: rxvt-256color
+
+! Window size and icon.
+URxvt*geometry: 85x29
+!URxvt.borderColor: #000030
+URxvt.internalBorder: 1
+URxvt.iconFile: /usr/share/icons/Papirus-Adapta/64x64/apps/urxvt.svg
+
+! Terminal font.
+URxvt*font: xft:LiterationMono\ Nerd\ Font:size=10
+URxvt.letterSpace: -1
 
 ! Every shell is a login shell by default.
 *loginshell: true
 
-! Have a bit of scrollback.
-*savelines: 500
-
-! Right hand side scrollbar.
-! URxvt*rightScrollBar: true
-URxvt*scrollBar: false
-
-! Stop the output from jumping to the bottom.
-*scrollTtyOutput: false
-
-! Set the terminal name.
-URxvt.termName: rxvt-256color
+! Scrolling related stuff.
+URxvt.saveLines: 4095
+URxvt.rightScrollBar: false
+!URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+URxvt.scrollTtyOutput: false
 
 ! Perl.
 URxvt.perl-ext-common: default,matcher,tabbed,fullscreen,vtwheel,clipboard
@@ -45,69 +47,73 @@ URxvt.matcher.button: 1
 !URxvt.keysym.M-c: perl:clipboard:copy
 !URxvt.keysym.M-v: perl:clipboard:paste
 !URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! Disables the most annoying feature ever.
+URxvt.iso14755: false
+
+! Transparent background.
+!URxvt*inheritPixmap: true
+!URxvt*transparent: true
+!URxvt*shading: 50
 
 !!
-!! Theme
+!! Theme: Base16 Tomorrow Night 256
 !!
 
-URxvt*depth: 32
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+#define base09 #de935f
+#define base0A #f0c674
+#define base0B #b5bd68
+#define base0C #8abeb7
+#define base0D #81a2be
+#define base0E #b294bb
+#define base0F #a3685a
 
-!TomorrowNight
-!#define t_background      #1d1f21
-#define t_background        rgba:1d00/1f00/2100/dddd
-#define t_current_line      #282a2e
-#define t_selection      	#373b41
-#define t_foreground      	#c5c8c6
-#define t_comment	     	#969896
-#define t_red		     	#cc6666
-#define t_orange	     	#de935f
-#define t_yellow        	#f0c674
-#define t_green	        	#b5bd68
-#define t_aqua	        	#8abeb7
-#define t_blue	        	#81a2be
-#define t_purple        	#b294bb
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-*.foreground:   #c5c8c6
-!t_foreground
-*.background:	rgb:1d00/1f00/2100
-URxvt.background: t_background
-*.cursorColor:  #aeafad
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
 
-! Black / Grey
-*.color0:       #000000
-*.color8:       #666666
-
-! Red / Bright Red
-*.color1:       t_red
-*.color9:       #FF3334
-
-! Green + Bright Green
-*.color2:       t_green
-*.color10:      #9ec400
-
-! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3:       t_orange
-*.color11:      t_yellow
-
-! Blue + Bright Blue
-*.color4:       t_blue
-*.color12:      t_blue
-
-! Magenta (Purple) + Bright Magenta
-*.color5:       t_purple
-*.color13:      #b777e0
-
-! Cyan (Aqua) + Bright Cyan
-*.color6:       t_aqua
-*.color14:      #54ced6
-
-! Light Grey (Selection) + White (Current Line)
-*.color7:       t_selection
-*.color15:      t_current_line
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
 
 ! URLs.
-URxvt.colorUL: t_aqua
+URxvt.colorUL: #8abeb7
 
 ! Tabs.
 URxvt.tabbed.tabbar-fg: 7
