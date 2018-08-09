@@ -19,6 +19,7 @@ Plugin 'chriskempson/base16-vim'
 
 " Languages.
 Plugin 'StanAngeloff/php.vim'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'skammer/vim-css-color'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
@@ -147,8 +148,8 @@ map <C-S-x> "*c
 ""
 " Ctrl-T New tab.
 map <C-t> :enew<CR> 
-" Ctrl-C Close tab.
-map <C-c> :bp <BAR> bd #<CR>
+" Ctrl-X Close tab.
+map <C-x> :bp <BAR> bd #<CR>
 " Ctrl-[ Previous tab.
 map <C-[> :bprevious<CR>
 " Ctrl-] Next tab.
