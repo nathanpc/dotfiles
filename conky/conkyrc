@@ -5,15 +5,15 @@ conky.config = {
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
-	default_color = 'white',
-    default_outline_color = 'white',
-    default_shade_color = 'white',
+	default_color = 'c5c8c6',
+    default_outline_color = 'c5c8c6',
+    default_shade_color = 'c5c8c6',
     draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'DejaVu Sans Mono:size=12',
+    font = 'LiterationMono Nerd Font:size=11',
     gap_x = 5,
     gap_y = 60,
     minimum_height = 5,
@@ -24,21 +24,27 @@ conky.config = {
     out_to_stderr = false,
     extra_newline = false,
     own_window = true,
-    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+	own_window_colour = '1d1f21',
     own_window_class = 'Conky',
-    own_window_type = 'override',
-	own_window_transparent = true,
-    stippled_borders = 0,
+    own_window_type = 'normal',
+	own_window_transparent = false,
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+	stippled_borders = 0,
     update_interval = 1.0,
 	double_buffer = true,
     uppercase = false,
     use_spacer = 'none',
     show_graph_scale = false,
-    show_graph_range = false
+    show_graph_range = false,
+	maximum_width = 400,
+	short_units = true
 }
 
+homedir = os.getenv("HOME")
+
 conky.text = [[
-$nodename - $sysname $kernel on $machine
+${alignc}$nodename
+${alignc}$sysname $kernel
 $hr
 ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in MHz):$color $freq
@@ -48,7 +54,16 @@ ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
 ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
-${color grey}File systems:
+${color}CPU Usage: ${cpu cpu0}%
+${color blue}${cpugraph cpu0 50}
+${color}Memory: ${mem}/${memmax}${alignr}Swap: ${swap}/${swapmax}
+${color green}${memgraph 50}
+${execi 60 $HOME/.conky/scripts/current-netif.sh}${if_existing ]] .. homedir .. [[/.conky/tmp/netif-up enx4865ee137aff}${color}Download: ${downspeed enx4865ee137aff}${alignr}Upload: ${upspeed enx4865ee137aff}
+${color yellow}${downspeedgraph enx4865ee137aff 50,170} ${upspeedgraph enx4865ee137aff 50,170}${endif}
+${color}Disk Read: ${diskio_read}${alignr}Disk Write: ${diskio_write}
+${color red}${diskiograph_read /dev/sda 50,170} ${diskiograph_write /dev/sda 50,170}
+${color}$hr
+${color grey}File systems
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 ${color grey}Networking:
 Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
