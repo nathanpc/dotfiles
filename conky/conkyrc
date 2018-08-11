@@ -75,6 +75,11 @@ ${alignc}$sysname $kernel $machine
 ${alignc}${color}Uptime: $uptime
 ${alignc}${color}Processes: $processes  Running: $running_processes
 $hr
+${alignc}Weather in Goiabeiras
+Mostly Cloudy 22°C${alignr}Feels Like: 24°C
+Low: 18°C${alignr}High: 24°C
+Humidity: 88%${alignr}Wind: SSE 19.3 km/h
+$hr
 ${color}CPU Usage: ${color5}${cpu cpu0}%
 ${cpugraph cpu0 50}
 ${color}Memory: ${color3}${mem}${color}/${color3}${memmax}${color}${alignr}Swap: ${color3}${swap}${color}/${color3}${swapmax}
