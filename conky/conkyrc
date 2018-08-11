@@ -1,5 +1,9 @@
--- vim: ts=4 sw=4 noet ai cindent syntax=lua
+-- Twilight Night Conky
+-- A dark and soft conky for clean desktops.
+--
+-- Nathan Campos <nathanpc@dreamintech.net>
 
+-- Conky configuration.
 conky.config = {
     alignment = 'top_right',
     background = false,
@@ -48,6 +52,7 @@ conky.config = {
 	color6 = 'b294bb'   -- purple
 }
 
+-- Gets the output of a command.
 function os.capture(cmd, raw)
   local f = assert(io.popen(cmd, 'r'))
   local s = assert(f:read('*a'))
@@ -59,9 +64,23 @@ function os.capture(cmd, raw)
   return s
 end
 
+-- Builds the conky text to display a graph of the current active network interface.
+function conky.netgraphs()
+	local netifcs = os.capture("ip addr | awk '/state UP/ {print $2}' | sed 's/.$//'", true)
+	local code = ""
+
+	for netif in string.gmatch(netifcs, '[^\r\n]+') do
+		code = code .. "${if_existing " .. os.getenv("HOME") .. "/.conky/tmp/netif-up " .. netif .. "}${color}Download: ${color2}${downspeed " .. netif .. "}${color}${alignr}Upload: ${color2}${upspeed " .. netif .. "}\n${downspeedgraph " .. netif .. " 50,170} ${upspeedgraph " .. netif .. " 50,170}${endif}"
+	end
+
+	return code
+end
+
+-- Some variables to assist conky.
 homedir = os.getenv("HOME")
 bootdev = os.capture("~/.conky/scripts/get-boot-device.sh", false)
 
+-- The theme itself.
 conky.text = [[
 ${alignc}$nodename
 ${alignc}$sysname $kernel
@@ -72,9 +91,8 @@ ${color}CPU Usage: ${color5}${cpu cpu0}%
 ${cpugraph cpu0 50}
 ${color}Memory: ${color3}${mem}${color}/${color3}${memmax}${color}${alignr}Swap: ${color3}${swap}${color}/${color3}${swapmax}
 ${memgraph 50}
-${execi 60 $HOME/.conky/scripts/current-netif.sh}${if_existing ]] .. homedir .. [[/.conky/tmp/netif-up enx4865ee137aff}${color}Download: ${color2}${downspeed enx4865ee137aff}${color}${alignr}Upload: ${color2}${upspeed enx4865ee137aff}
-${downspeedgraph wlo1 50,170} ${upspeedgraph wlo1 50,170}${endif}${if_existing ]] .. homedir .. [[/.conky/tmp/netif-up wlo1}${color}Download: ${color2}${downspeed wlo1}${color}${alignr}Upload: ${color2}${upspeed wlo1}
-${downspeedgraph wlo1 50,170} ${upspeedgraph wlo1 50,170}${endif}
+${execi 60 $HOME/.conky/scripts/current-netif.sh}]] .. conky.netgraphs() .. [[
+
 ${color}Disk Read: ${color0}${diskio_read ]] .. bootdev .. [[}${color}${alignr}Disk Write: ${color0}${diskio_write ]] .. bootdev .. [[}
 ${diskiograph_read ]] .. bootdev .. [[ 50,170} ${diskiograph_write ]] .. bootdev .. [[ 50,170}
 ${color}$hr
@@ -87,3 +105,4 @@ ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}]]
 
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
