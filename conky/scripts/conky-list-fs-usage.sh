@@ -7,7 +7,7 @@
 
 for media in /media/$USER/*/; do
 	if [ -d $media ]; then
-		printf "\n$(basename $media) \${alignr}\${fs_used $media}/\${fs_size $media}\n\${fs_bar 6 $media}"
+		printf "\n$(basename $media | cut -c -20) \${alignr}\${fs_used $media}/\${fs_size $media}\n\${fs_bar 6 $media}"
 	fi
 done
 
