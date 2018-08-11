@@ -1,7 +1,7 @@
 -- Twilight Night Conky
 -- A dark and soft conky for clean desktops.
 --
--- Nathan Campos <nathanpc@dreamintech.net>
+-- Author: Nathan Campos <nathanpc@dreamintech.net>
 
 -- Conky configuration.
 conky.config = {
@@ -40,7 +40,7 @@ conky.config = {
     use_spacer = 'none',
     show_graph_scale = false,
     show_graph_range = false,
-	maximum_width = 400,
+	maximum_width = 350,
 	short_units = true,
 	-- Tomorrow Night --
 	color0 = 'cc6666',  -- red
@@ -98,8 +98,10 @@ ${diskiograph_read ]] .. bootdev .. [[ 50,170} ${diskiograph_write ]] .. bootdev
 ${color}Battery: ${color6}${battery_percent BAT0}%${color}${alignr}${battery_time BAT0}
 ${color6}${battery_bar 6 BAT0}
 ${color}$hr
-${color grey}File systems
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+System${alignr}${fs_used /}/${fs_size /}
+${fs_bar 6 /}
+${if_existing /media/Windows}Windows${alignr}${fs_used /media/Windows}/${fs_size /media/Windows}
+${fs_bar 6 /media/Windows}${endif}${execpi 60 $HOME/.conky/scripts/conky-list-fs-usage.sh}
 $hr
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
