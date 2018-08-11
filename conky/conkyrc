@@ -81,9 +81,9 @@ ${color}Memory: ${color3}${mem}${color}/${color3}${memmax}${color}${alignr}Swap:
 ${memgraph 50}
 ${execpi 60 $HOME/.conky/scripts/conky-current-netif.sh}
 ${color}Disk Read: ${color0}${diskio_read ]] .. bootdev .. [[}${color}${alignr}Disk Write: ${color0}${diskio_write ]] .. bootdev .. [[}
-${diskiograph_read ]] .. bootdev .. [[ 50,170} ${diskiograph_write ]] .. bootdev .. [[ 50,170}
+${diskiograph_read ]] .. bootdev .. [[ 50,170} ${diskiograph_write ]] .. bootdev .. [[ 50,170}${if_existing $HOME/.conky/tmp/show-batt}
 ${color}Battery: ${color6}${battery_percent BAT0}%${color}${alignr}${battery_time BAT0}
-${color6}${battery_bar 6 BAT0}
+${color6}${battery_bar 6 BAT0}${endif}
 ${color}$hr
 System${alignr}${fs_used /}/${fs_size /}
 ${fs_bar 6 /}${execpi 60 $HOME/.conky/scripts/conky-list-fs-usage.sh}
