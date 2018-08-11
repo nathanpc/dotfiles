@@ -64,18 +64,6 @@ function os.capture(cmd, raw)
   return s
 end
 
--- Builds the conky text to display a graph of the current active network interface.
-function conky.netgraphs()
-	local netifcs = os.capture("ip addr | awk '/state UP/ {print $2}' | sed 's/.$//'", true)
-	local code = ""
-
-	for netif in string.gmatch(netifcs, '[^\r\n]+') do
-		code = code .. "${if_existing " .. os.getenv("HOME") .. "/.conky/tmp/netif-up " .. netif .. "}${color}Download: ${color2}${downspeed " .. netif .. "}${color}${alignr}Upload: ${color2}${upspeed " .. netif .. "}\n${downspeedgraph " .. netif .. " 50,170} ${upspeedgraph " .. netif .. " 50,170}${endif}"
-	end
-
-	return code
-end
-
 -- Some variables to assist conky.
 homedir = os.getenv("HOME")
 bootdev = os.capture("~/.conky/scripts/get-boot-device.sh", false)
@@ -91,8 +79,7 @@ ${color}CPU Usage: ${color5}${cpu cpu0}%
 ${cpugraph cpu0 50}
 ${color}Memory: ${color3}${mem}${color}/${color3}${memmax}${color}${alignr}Swap: ${color3}${swap}${color}/${color3}${swapmax}
 ${memgraph 50}
-${execi 60 $HOME/.conky/scripts/current-netif.sh}]] .. conky.netgraphs() .. [[
-
+${execpi 60 $HOME/.conky/scripts/conky-current-netif.sh}
 ${color}Disk Read: ${color0}${diskio_read ]] .. bootdev .. [[}${color}${alignr}Disk Write: ${color0}${diskio_write ]] .. bootdev .. [[}
 ${diskiograph_read ]] .. bootdev .. [[ 50,170} ${diskiograph_write ]] .. bootdev .. [[ 50,170}
 ${color}Battery: ${color6}${battery_percent BAT0}%${color}${alignr}${battery_time BAT0}
