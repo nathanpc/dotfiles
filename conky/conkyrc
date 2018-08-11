@@ -37,7 +37,15 @@ conky.config = {
     show_graph_scale = false,
     show_graph_range = false,
 	maximum_width = 400,
-	short_units = true
+	short_units = true,
+	-- Tomorrow Night --
+	color0 = 'cc6666',  -- red
+	color1 = 'de935f',  -- orange
+	color2 = 'f0c674',  -- yellow
+	color3 = 'b5bd68',  -- green
+	color4 = '8abeb7',  -- cyan
+	color5 = '81a2be',  -- blue
+	color6 = 'b294bb'   -- purple
 }
 
 homedir = os.getenv("HOME")
@@ -55,13 +63,13 @@ ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
 ${color}CPU Usage: ${cpu cpu0}%
-${color blue}${cpugraph cpu0 50}
+${color5}${cpugraph cpu0 50}
 ${color}Memory: ${mem}/${memmax}${alignr}Swap: ${swap}/${swapmax}
-${color green}${memgraph 50}
+${color3}${memgraph 50}
 ${execi 60 $HOME/.conky/scripts/current-netif.sh}${if_existing ]] .. homedir .. [[/.conky/tmp/netif-up enx4865ee137aff}${color}Download: ${downspeed enx4865ee137aff}${alignr}Upload: ${upspeed enx4865ee137aff}
-${color yellow}${downspeedgraph enx4865ee137aff 50,170} ${upspeedgraph enx4865ee137aff 50,170}${endif}
+${color2}${downspeedgraph enx4865ee137aff 50,170} ${upspeedgraph enx4865ee137aff 50,170}${endif}
 ${color}Disk Read: ${diskio_read}${alignr}Disk Write: ${diskio_write}
-${color red}${diskiograph_read /dev/sda 50,170} ${diskiograph_write /dev/sda 50,170}
+${color0}${diskiograph_read /dev/sda 50,170} ${diskiograph_write /dev/sda 50,170}
 ${color}$hr
 ${color grey}File systems
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
