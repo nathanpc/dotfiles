@@ -7,7 +7,7 @@
 import urllib.request
 import json
 
-with urllib.request.urlopen("http://api.wunderground.com/api/d9bd3f9e4521751b/conditions/q/Brazil/SBVT.json") as response:
+with urllib.request.urlopen("http://api.wunderground.com/api/d9bd3f9e4521751b/conditions/q/Brazil/SBVT.json", timeout = 5) as response:
     data = json.loads(response.read())["current_observation"]
 
     print("${{alignc}}Weather in {:s}".format(data["display_location"]["city"]))

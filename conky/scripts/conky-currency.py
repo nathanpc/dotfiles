@@ -28,7 +28,7 @@ query_str = query_str[:-1]
 
 # Let's go!
 try:
-    with urllib.request.urlopen(query_str) as response:
+    with urllib.request.urlopen(query_str, timeout = 5) as response:
         # Get the data and extract the currencies available.
         data = json.loads(response.read())
         currencies = data.keys()
