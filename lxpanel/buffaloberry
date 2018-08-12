@@ -65,6 +65,9 @@ Plugin {
     Button {
       id=firefox.desktop
     }
+    Button {
+      id=google-chrome.desktop
+    }
     FlatButton=-1
     GroupedTasks=1
     UseSmallerIcons=-1
