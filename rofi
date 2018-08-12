@@ -1,0 +1,14 @@
+!! ~/.config/rofi/config
+!! Rofi configuration file.
+!!
+!! Nathan Campos <nathanpc@dreamintech.net>
+
+! General configuration.
+rofi.modi: run,window,drun
+rofi.combi-modi: window,drun
+
+! Theming.
+rofi.theme: android_notification
+rofi.font: LiberationMono Nerd Font 12
+
+! vim: ft=xdefaults
