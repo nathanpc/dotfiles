@@ -89,6 +89,7 @@ set pastetoggle=<F11>
 set confirm
 set history=1000
 set clipboard=unnamedplus
+set modeline
 
 ""
 ""  Indentation options.
