@@ -1,0 +1,35 @@
+# Macros
+
+# Sidebar
+macro index B '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager B '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro index \cB '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager \cB '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+macro index \CO '<enter-command>sidebar-open<enter><enter-command>exec first-entry<enter>'
+macro pager \CO '<enter-command>sidebar-open<enter><enter-command>exec first-entry<enter>'
+
+# Accounts
+macro index,pager <F1> '<sync-mailbox><enter-command>source ~/.mutt/accounts/eeepc904<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
+macro index,pager <F2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/dreamintech<enter><change-folder>!<enter><enter-command>set sort_aux = reverse-last-date-received<enter><enter-command>exec first-entry<enter>'
+
+# Navigation
+bind pager <Up> previous-line
+bind pager <Down> next-line
+bind pager gg top
+bind index gg first-entry
+bind pager G bottom
+bind index G last-entry
+macro index a "<limit>all\n" "show all messages (undo limit)"
+
+# Other
+bind index,pager R group-reply
+bind index n toggle-new
+bind index <Space> collapse-thread
+bind attach <Return> view-mailcap
+macro index <Tab> '<sync-mailbox><imap-fetch-mail>'
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+bind compose p postpone-message
+
