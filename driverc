@@ -1,0 +1,6 @@
+# Global onfiguration.
+depth=-1
+hidden=true
+no-prompt=true
+fix-clashes=true
+verbose=true
