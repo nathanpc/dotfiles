@@ -151,8 +151,8 @@ map <C-S-x> "*c
 map <C-t> :enew<CR> 
 " Ctrl-X Close tab.
 map <C-x> :bp <BAR> bd #<CR>
-" Ctrl-[ Previous tab.
-map <C-[> :bprevious<CR>
+" Ctrl-[ Previous tab. (apparently same as ESC *facepalm*)
+"map <C-[> :bprevious<CR>
 " Ctrl-] Next tab.
 map <C-]> :bnext<CR>
 
