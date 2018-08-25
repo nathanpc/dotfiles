@@ -14,7 +14,7 @@ Global {
   setdocktype=1
   setpartialstrut=1
   usefontcolor=1
-  fontcolor=#cad3d8
+  fontcolor=#cfd8dc
   background=0
   backgroundfile=/usr/share/lxpanel/images/lubuntu-background.png
   iconsize=24
@@ -186,25 +186,6 @@ Plugin {
     graph-parm-filter-enable=0
     graph-parm-colors=#FF586E75,#FF657B83,#FF839496,#FF93A1A1,#FF586E75,#FFCFD8DC,#FFCFD8DC
     graph-parm-background-direction=0
-    graph-parm-command=
-    graph-cpu-dblclick-cmdline=
-    graph-cpu-filter=
-    graph-mem-dblclick-cmdline=
-    graph-mem-filter=
-    graph-net-dblclick-cmdline=
-    graph-net-filter=
-    graph-swap-dblclick-cmdline=
-    graph-swap-filter=
-    graph-load-dblclick-cmdline=
-    graph-load-filter=
-    graph-disk-dblclick-cmdline=
-    graph-disk-filter=
-    graph-temp-dblclick-cmdline=
-    graph-temp-filter=
-    graph-bat-dblclick-cmdline=
-    graph-bat-filter=
-    graph-parm-dblclick-cmdline=
-    graph-parm-filter=
   }
 }
 Plugin {
@@ -228,11 +209,6 @@ Plugin {
 }
 Plugin {
   type=bluetooth
-  Config {
-  }
-}
-Plugin {
-  type=tray
   Config {
   }
 }
