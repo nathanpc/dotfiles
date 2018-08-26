@@ -3,4 +3,5 @@ vim/bundle/
 vim/.netrwhist
 
 # Misc.
+*.bkp
 .DS_Store
