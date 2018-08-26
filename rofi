@@ -8,7 +8,7 @@ rofi.modi: run,window,drun
 rofi.combi-modi: window,drun
 
 ! Theming.
-rofi.theme: android_notification
+rofi.theme: Pop-Dark
 rofi.font: LiberationMono Nerd Font 12
 
 ! vim: ft=xdefaults
