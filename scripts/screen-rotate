@@ -10,7 +10,8 @@
 
 if [ $# -eq 1 ]; then
 	# Grabs the primary monitor to rotate.
-	xrandr --output `xrandr | grep "connected primary" | cut -d ' ' -f 1` --rotate $1
+	XDISPLAY=`xrandr --current | grep primary | sed -e 's/ .*//g'`
+	xrandr --output $XDISPLAY --rotate $1
 elif [ $# -eq 2 ]; then
 	# User selected a specific monitor to rotate.
 	xrandr --output $1 --rotate $2
