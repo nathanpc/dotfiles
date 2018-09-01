@@ -388,8 +388,8 @@
     <!-- Keybindings for running Run menu from Lxpanel on Home + R-->
     <keybind key="W-r">
       <action name="Execute">
-          <command>rofi -show run</command>
-		  <!--<command>lxsession-default launcher</command>-->
+        <command>rofi -show run</command>
+        <!--<command>lxsession-default launcher</command>-->
       </action>
     </keybind>
     <keybind key="A-F2">
