@@ -72,7 +72,14 @@ set splitright
 
 if has("gui_running")
 	set lines=55 columns=80
-	set guifont=LiterationMono\ Nerd\ Font\ 10
+
+	if has("gui_win32")
+		" Windows font.
+		set guifont=Liberation_Mono:h9:cANSI:qDRAFT
+	elseif has("gui_gtk2") || has("gui_gtk3")
+		" Linux font.
+		set guifont=LiterationMono\ Nerd\ Font\ 10
+	endif
 endif
 
 
