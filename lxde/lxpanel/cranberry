@@ -226,6 +226,18 @@ Plugin {
   }
 }
 Plugin {
+  type=xkb
+  Config {
+    Model=pc105
+    LayoutsList=us,br,latam
+    VariantsList=,nativo,
+    ToggleOpt=grp:alt_shift_toggle
+    KeepSysLayouts=0
+    DisplayType=0
+    FlagSize=1
+  }
+}
+Plugin {
   type=dclock
   Config {
     ClockFmt=%a %b %d  %T
