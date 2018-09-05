@@ -229,8 +229,8 @@ Plugin {
   type=xkb
   Config {
     Model=pc105
-    LayoutsList=us,br,latam
-    VariantsList=,nativo,
+    LayoutsList=us,latam,br
+    VariantsList=,,
     ToggleOpt=grp:alt_shift_toggle
     KeepSysLayouts=0
     DisplayType=0
