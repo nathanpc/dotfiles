@@ -16,14 +16,27 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
+Plugin 'luochen1990/rainbow'
 
 " Languages.
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
 Plugin 'StanAngeloff/php.vim'
+Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'skammer/vim-css-color'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'gagbo/vim-gnuplot'
+Plugin 'jvirtanen/vim-octave'
+Plugin 'chrisbra/csv.vim'
+Plugin '1995parham/vim-spice'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'nickng/vim-scribble'
+Plugin 'vim-python/python-syntax'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Git integration.
 Plugin 'tpope/vim-fugitive'
@@ -121,20 +134,20 @@ set incsearch
 ""
 ""  Syntax
 ""
-"au! BufNewFile,BufRead *.cir set filetype=spice
-"au! BufReadPost *.rkt,*.rktl set filetype=racket
-"au! BufNewFile,BufRead *.scrbl set filetype=scribble
-"au! BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
-"au! BufNewFile,BufRead *.m,*.oct set filetype=octave
-"au! BufNewFile,BufRead *.csv,*.dat set filetype=csv
-"let g:rainbow_active = 1  " Rainbow Parenthesis.
-"let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
+au! BufNewFile,BufRead *.cir set filetype=spice
+au! BufReadPost *.rkt,*.rktl set filetype=racket
+au! BufNewFile,BufRead *.scrbl set filetype=scribble
+au! BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
+au! BufNewFile,BufRead *.m,*.oct set filetype=octave
+au! BufNewFile,BufRead *.csv,*.dat set filetype=csv
 
 ""
 "" Specific options.
 ""
 au filetype racket set lisp
 au filetype racket set expandtab
+let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
+let g:python_highlight_all = 1
 
 ""
 ""  Backup
@@ -197,5 +210,22 @@ augroup VimCSS3Syntax
   autocmd!
 
   autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+" Rainbow Parenthesis.
+let g:rainbow_active = 1
+
+" PHP
+" Coloring PHP documentation in comments.
+function! PhpSyntaxOverride()
+  " Put snippet overrides in this function.
+  hi! link phpDocTags phpDefine
+  hi! link phpDocParam phpType
+endfunction
+
+" Override the PHP file type.
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
