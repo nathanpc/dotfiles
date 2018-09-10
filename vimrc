@@ -80,7 +80,8 @@ Plugin '1995parham/vim-spice'
 
 " Auto-complete.
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 
 " Syntax checker.
 Plugin 'vim-syntastic/syntastic'
