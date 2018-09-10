@@ -18,7 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
-Plugin 'luochen1990/rainbow'
+"Plugin 'luochen1990/rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Git integration.
@@ -205,6 +205,10 @@ set directory=~/.vim/tmp
 map <C-S-v> "*]p
 map <C-S-c> "*yy
 map <C-S-x> "*c
+
+" Move normally through wrapped lines.
+map <Up> gk
+map <Down> gj
 
 ""
 "" Pseudo-tabs (vim-airline) navigation.
