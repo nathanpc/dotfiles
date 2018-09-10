@@ -18,33 +18,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'luochen1990/rainbow'
 
-" Languages.
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'StanAngeloff/php.vim'
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'captbaritone/better-indent-support-for-php-with-html'
-Plugin 'skammer/vim-css-color'
-Plugin 'mattn/emmet-vim'
-Plugin 'alvan/vim-closetag'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'gagbo/vim-gnuplot'
-Plugin 'jvirtanen/vim-octave'
-Plugin 'chrisbra/csv.vim'
-Plugin '1995parham/vim-spice'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'nickng/vim-scribble'
-Plugin 'vim-python/python-syntax'
-Plugin 'Vimjas/vim-python-pep8-indent'
-
 " Git integration.
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-
-" Auto-complete.
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Raimondi/delimitMate'
 
 " Fuzzy finder.
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -59,6 +35,40 @@ Plugin 'vim-syntastic/syntastic'
 " Powerline.
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" Auto-complete.
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+
+" HTML, CSS and Javascript.
+Plugin 'othree/html5.vim'
+Plugin 'alvan/vim-closetag'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'skammer/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mattn/emmet-vim'
+
+" PHP
+Plugin 'StanAngeloff/php.vim'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
+
+" Python
+Plugin 'vim-python/python-syntax'
+Plugin 'Vimjas/vim-python-pep8-indent'
+
+" Octave
+Plugin 'gagbo/vim-gnuplot'
+Plugin 'jvirtanen/vim-octave'
+
+" Racket and Lisp.
+Plugin 'wlangstroth/vim-racket'
+Plugin 'nickng/vim-scribble'
+
+" Other languages.
+Plugin 'chrisbra/csv.vim'
+Plugin '1995parham/vim-spice'
 
 " Last ones.
 Plugin 'ryanoasis/vim-devicons'
