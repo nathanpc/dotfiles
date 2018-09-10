@@ -29,16 +29,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" Syntax checker.
-Plugin 'vim-syntastic/syntastic'
-
 " Powerline.
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Auto-complete.
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Raimondi/delimitMate'
 
 " HTML, CSS and Javascript.
 Plugin 'othree/html5.vim'
@@ -69,6 +62,13 @@ Plugin 'nickng/vim-scribble'
 " Other languages.
 Plugin 'chrisbra/csv.vim'
 Plugin '1995parham/vim-spice'
+
+" Auto-complete.
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+
+" Syntax checker.
+Plugin 'vim-syntastic/syntastic'
 
 " Last ones.
 Plugin 'ryanoasis/vim-devicons'
