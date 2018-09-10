@@ -82,6 +82,7 @@ Plugin '1995parham/vim-spice'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Raimondi/delimitMate'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'FooSoft/vim-argwrap'
 
 " Syntax checker.
 Plugin 'vim-syntastic/syntastic'
