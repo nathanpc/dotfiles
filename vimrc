@@ -33,6 +33,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 " HTML, CSS and Javascript.
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
@@ -50,6 +54,9 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 " Python
 Plugin 'vim-python/python-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
+
+" Perl
+Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
 " Octave
 Plugin 'gagbo/vim-gnuplot'
@@ -224,6 +231,9 @@ augroup END
 
 " Rainbow Parenthesis.
 let g:rainbow_active = 1
+
+" Markdown.
+let g:vim_markdown_folding_disabled = 1
 
 " PHP
 " Coloring PHP documentation in comments.
