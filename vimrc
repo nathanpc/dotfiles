@@ -1,4 +1,6 @@
+"" ~/.vimrc
 "" My Vim configuration.
+""
 "" Author: Nathan Campos <nathanpc@dreamintech.net>
 
 set nocompatible  " Must be iMproved.
@@ -17,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
 Plugin 'luochen1990/rainbow'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Git integration.
 Plugin 'tpope/vim-fugitive'
@@ -37,14 +40,19 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" HTML, CSS and Javascript.
+" HTML and CSS.
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
 Plugin 'skammer/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " PHP
 Plugin 'StanAngeloff/php.vim'
@@ -109,6 +117,12 @@ if has("gui_running")
 	elseif has("gui_gtk2") || has("gui_gtk3")
 		" Linux font.
 		set guifont=LiterationMono\ Nerd\ Font\ 10
+	endif
+else
+	" Fix the 256 color stuff with base16.
+	if filereadable(expand("~/.vimrc_background"))
+		let base16colorspace=256
+		source ~/.vimrc_background
 	endif
 endif
 
@@ -202,6 +216,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='molokai'
 
 " delimitMate
 let delimitMate_expand_cr = 1
@@ -220,12 +235,13 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_error_symbol = "❌"
+let g:syntastic_warning_symbol = "⚠️"
 
 " CSS3 Syntax
 augroup VimCSS3Syntax
   autocmd!
-
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 

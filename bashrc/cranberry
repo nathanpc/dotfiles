@@ -126,6 +126,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Base16 Shell <https://github.com/chriskempson/base16-shell>
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 # MPLAB X compilers.
 export PATH="$PATH:"/opt/microchip/xc8/v1.45/bin""
 export PATH="$PATH:"/opt/microchip/xc16/v1.35/bin""
