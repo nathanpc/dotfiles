@@ -110,6 +110,7 @@ colorscheme base16-tomorrow-night
 set splitbelow
 set splitright
 
+" Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
 	set lines=55 columns=80
 
@@ -126,6 +127,14 @@ else
 		let base16colorspace=256
 		source ~/.vimrc_background
 	endif
+endif
+
+" Show the 80 column line.
+if exists('+colorcolumn')
+	set colorcolumn=80
+else
+	highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+	match OverLength /\%>80v.\+/
 endif
 
 
@@ -223,11 +232,11 @@ let g:airline_theme='molokai'
 " delimitMate
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+	au!
+	au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+	au FileType tex let b:delimitMate_quotes = ""
+	au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+	au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
 " Syntastic
@@ -243,8 +252,8 @@ let g:syntastic_warning_symbol = "⚠️"
 
 " CSS3 Syntax
 augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
+	autocmd!
+	autocmd FileType css setlocal iskeyword+=-
 augroup END
 
 " Rainbow Parenthesis.
@@ -256,14 +265,14 @@ let g:vim_markdown_folding_disabled = 1
 " PHP
 " Coloring PHP documentation in comments.
 function! PhpSyntaxOverride()
-  " Put snippet overrides in this function.
-  hi! link phpDocTags phpDefine
-  hi! link phpDocParam phpType
+	" Put snippet overrides in this function.
+	hi! link phpDocTags phpDefine
+	hi! link phpDocParam phpType
 endfunction
 
 " Override the PHP file type.
 augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
+	autocmd!
+	autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
