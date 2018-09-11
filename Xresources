@@ -3,6 +3,14 @@
 !! 
 !! Nathan Campos <nathanpc@dreamintech.net>
 
+!!
+!! Tcl/Tk
+!!
+*TkTheme: clam
+
+!!
+!! URxvt
+!!
 ! Set the terminal to use 256 colors.
 URxvt.termName: rxvt-256color
 

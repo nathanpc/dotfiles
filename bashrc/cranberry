@@ -132,6 +132,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# Tk themes.
+export TCLLIBPATH=~/.local/share/tkthemes
+
 # MPLAB X compilers.
 export PATH="$PATH:"/opt/microchip/xc8/v1.45/bin""
 export PATH="$PATH:"/opt/microchip/xc16/v1.35/bin""
