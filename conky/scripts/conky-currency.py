@@ -46,4 +46,6 @@ try:
         else:
             print("Too many rates, update the code.")
 except Exception as e:
-    print("Error: " + str(e))
+    #print("Error: " + str(e))
+    print("Unable to fetch exchange rates.")
+
