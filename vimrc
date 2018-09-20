@@ -59,6 +59,11 @@ Plugin 'StanAngeloff/php.vim'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
+
 " Python
 Plugin 'vim-python/python-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
