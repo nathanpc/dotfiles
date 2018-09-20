@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
 "Plugin 'luochen1990/rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -111,7 +112,7 @@ set mouse=a
 set number
 set cul
 set guioptions-=T
-colorscheme base16-tomorrow-night
+colorscheme molokai
 set splitbelow
 set splitright
 
