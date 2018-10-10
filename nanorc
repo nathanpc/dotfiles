@@ -1,0 +1,19 @@
+# ~/.nanorc
+# Making nano a more better (and saner) tiny editor.
+#
+# Author: Nathan Campos <nathanpc@dreamintech.net>
+
+# UI improvements.
+set morespace     # Removes that dumb empty line at the top.
+set linenumbers   # No way someone can work without line numbers.
+set constantshow  # I don't like empty lines.
+set mouse         # We are living in the 21st century.
+set smooth        # Same as above.
+
+# Text editing improvements.
+set autoindent
+set tabsize 4
+set softwrap    # Why would anyone not want line wrapping?
+
+# Misc.
+set historylog
