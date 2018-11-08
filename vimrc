@@ -232,6 +232,9 @@ map <C-]> :bnext<CR>
 "" Plugin configurations.
 ""
 
+" NERDTree
+let NERDTreeShowHidden = 1
+
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
