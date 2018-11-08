@@ -22,7 +22,7 @@ URxvt*iso14755_52: false
 URxvt*geometry: 85x29
 !URxvt.borderColor: #000030
 URxvt.internalBorder: 1
-URxvt.iconFile: /usr/share/icons/Papirus-Adapta/64x64/apps/urxvt.svg
+URxvt.iconFile: /usr/share/icons/ePapirus/64x64/apps/urxvt.svg
 
 ! Terminal font.
 URxvt*font: xft:LiterationMono\ Nerd\ Font:size=10
