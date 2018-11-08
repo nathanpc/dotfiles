@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Make RVM available.
+source /etc/profile.d/rvm.sh
+
 # Neofetch to make things fancy when starting up.
 neofetch
 
