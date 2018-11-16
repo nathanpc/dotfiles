@@ -200,14 +200,6 @@ Plugin {
   }
 }
 Plugin {
-  type=wincmd
-  Config {
-    Button1=iconify
-    Button2=shade
-    Toggle=0
-  }
-}
-Plugin {
   type=bluetooth
   Config {
   }
@@ -226,6 +218,19 @@ Plugin {
     network=0
     session=0
     sound=1
+  }
+}
+Plugin {
+  type=weather
+  Config {
+    alias=Estoril
+    city=Estoril
+    state=Lisbon
+    country=Portugal
+    woeid="740758"
+    units=c
+    interval=30
+    enabled=1
   }
 }
 Plugin {
