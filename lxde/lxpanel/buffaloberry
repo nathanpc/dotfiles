@@ -66,6 +66,9 @@ Plugin {
       id=firefox.desktop
     }
     Button {
+      id=qutebrowser.desktop
+    }
+    Button {
       id=google-chrome.desktop
     }
     FlatButton=-1
