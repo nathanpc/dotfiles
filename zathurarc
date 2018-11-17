@@ -4,6 +4,5 @@ set default-fg "#c5c8c6"
 set statusbar-bg "#282a2e"
 set statusbar-fg "#b4b7b4"
 set font "LiterationMono Nerd Font 11"
-set window-icon "/usr/share/icons/Papirus-Adapta/64x64@2x/apps/zathura.svg"
+set window-icon "/usr/share/icons/ePapirus/64x64@2x/apps/zathura.svg"
 set window-height 900
-
