@@ -1,0 +1,11 @@
+# ~/.config/terminator/config
+# Terminator configuration.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
+[global_config]
+use_system_font = False
+font = LiterationMono Nerd Font Mono 10
+
+# vim:filetype=config
+
