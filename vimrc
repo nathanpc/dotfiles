@@ -83,6 +83,7 @@ Plugin 'nickng/vim-scribble'
 " Other languages.
 Plugin 'chrisbra/csv.vim'
 Plugin '1995parham/vim-spice'
+Plugin 'mboughaba/i3config.vim'
 
 " Auto-complete.
 Plugin 'Valloric/YouCompleteMe'
@@ -118,14 +119,14 @@ set splitright
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
-	set lines=55 columns=80
+	set lines=55 columns=84
 
 	if has("gui_win32")
 		" Windows font.
 		set guifont=Liberation_Mono:h9:cANSI:qDRAFT
 	elseif has("gui_gtk2") || has("gui_gtk3")
 		" Linux font.
-		set guifont=LiterationMono\ Nerd\ Font\ 10
+		set guifont=LiterationMono\ Nerd\ Font\ Mono\ 10
 	endif
 else
 	" Fix the 256 color stuff with base16.

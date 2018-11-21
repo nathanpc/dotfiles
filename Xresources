@@ -25,7 +25,7 @@ URxvt.internalBorder: 1
 URxvt.iconFile: /usr/share/icons/ePapirus/64x64/apps/urxvt.svg
 
 ! Terminal font.
-URxvt*font: xft:LiterationMono\ Nerd\ Font:size=10
+URxvt*font: xft:LiterationMono\ Nerd\ Font\ Mono:size=10
 URxvt.letterSpace: -1
 
 ! Every shell is a login shell by default.
