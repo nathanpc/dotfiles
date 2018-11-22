@@ -1,6 +1,11 @@
 [global_config]
-  geometry_hinting = True
   title_font = LiterationMono Nerd Font Mono 10
+  title_inactive_bg_color = "#969896"
+  title_inactive_fg_color = "#1d1f21"
+  title_receive_bg_color = "#81a2be"
+  title_receive_fg_color = "#e8e8e8"
+  title_transmit_bg_color = "#cc6666"
+  title_transmit_fg_color = "#e8e8e8"
   title_use_system_font = False
 [keybindings]
   close_term = <Primary><Alt>w
@@ -8,13 +13,23 @@
   paste = <Primary><Alt>v
 [layouts]
   [[default]]
-    [[[child1]]]
-      parent = window0
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = f174048e-b74e-4954-8e39-0fd2100b057a
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 1237:116
+      size = 690, 500
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
       profile = default
       type = Terminal
-    [[[window0]]]
-      parent = ""
-      type = Window
+      uuid = f174048e-b74e-4954-8e39-0fd2100b057a
 [plugins]
 [profiles]
   [[default]]
@@ -24,6 +39,8 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#aaaaaa"
+    font = LiterationMono Nerd Font Mono 10
     foreground_color = "#c5c8c6"
     palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
     scrollback_lines = 5000
+    use_system_font = False
