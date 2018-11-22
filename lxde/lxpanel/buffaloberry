@@ -57,13 +57,10 @@ Plugin {
       id=menu://applications/Accessories/pcmanfm.desktop
     }
     Button {
-      id=rxvt-unicode.desktop
+      id=terminator.desktop
     }
     Button {
       id=gvim.desktop
-    }
-    Button {
-      id=firefox.desktop
     }
     Button {
       id=qutebrowser.desktop
