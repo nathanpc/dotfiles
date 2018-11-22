@@ -1,11 +1,29 @@
-# ~/.config/terminator/config
-# Terminator configuration.
-#
-# Author: Nathan Campos <nathan@innoveworkshop.com>
-
 [global_config]
-use_system_font = False
-font = LiterationMono Nerd Font Mono 10
-
-# vim:filetype=config
-
+  geometry_hinting = True
+  title_font = LiterationMono Nerd Font Mono 10
+  title_use_system_font = False
+[keybindings]
+  close_term = <Primary><Alt>w
+  close_window = <Primary><Alt>q
+  paste = <Primary><Alt>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_color = "#1d1f21"
+    background_darkness = 0.7
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    foreground_color = "#c5c8c6"
+    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    scrollback_lines = 5000
