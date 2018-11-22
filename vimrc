@@ -179,6 +179,8 @@ set wildmenu
 set showcmd
 set hlsearch
 set incsearch
+set title
+set titleold=
 
 ""
 ""  Syntax
