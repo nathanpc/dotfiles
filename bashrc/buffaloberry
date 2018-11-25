@@ -135,6 +135,7 @@ source /etc/profile.d/rvm.sh
 # Microchip compilers.
 export PATH="$PATH:/opt/microchip/xc8/v2.00/bin"
 export PATH="$PATH:/opt/microchip/xc16/v1.35/bin"
+export PATH="$PATH:/opt/microchip/xc32/v2.10/bin"
 
 # Neofetch to make things fancy when starting up.
 neofetch
