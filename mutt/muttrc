@@ -1,0 +1,20 @@
+# ~/.mutt/muttrc
+# The main mutt configuration file.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
+# Load the passwords in.
+source ~/.mutt/.passwords
+
+# Personal Gmail account.
+folder-hook "eeepc904@gmail.com" "source ~/.mutt/eeepc904@gmail.com"
+
+# Load the default account.
+source ~/.mutt/eeepc904@gmail.com
+
+# Macros for switching accounts.
+macro index <f2> "<sync-mailbox><enter-command>source ~/.mutt/eeepc904@gmail.com<enter><change-folder>!<enter>"
+
+# Fetch mail shortcut.
+bind index G imap-fetch-mail
+
