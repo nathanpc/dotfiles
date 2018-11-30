@@ -250,6 +250,17 @@ Plugin {
   }
 }
 Plugin {
+  type=xkb
+  Config {
+    Model=pc105
+    LayoutsList=us,us
+    VariantsList=,intl
+    ToggleOpt=grp:shift_caps_toggle
+    KeepSysLayouts=0
+    DisplayType=0
+  }
+}
+Plugin {
   type=launchbar
   Config {
     Button {
