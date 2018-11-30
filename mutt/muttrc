@@ -6,15 +6,24 @@
 # Load the passwords in.
 source ~/.mutt/.passwords
 
-# Personal Gmail account.
+# Hooks for the multiple accounts.
 folder-hook "eeepc904@gmail.com" "source ~/.mutt/eeepc904@gmail.com"
+folder-hook "nathanpc@dreamintech.net" "source ~/.mutt/nathanpc@dreamintech.net"
+folder-hook "nathan@innoveworkshop.com" "source ~/.mutt/nathan@innoveworkshop.com"
+folder-hook "hi@nathancampos.me" "source ~/.mutt/hi@nathancampos.me"
+
+# Macros for switching accounts.
+macro index <f2> "<sync-mailbox><enter-command>source ~/.mutt/eeepc904@gmail.com<enter><change-folder>!<enter>"
+macro index <f3> "<sync-mailbox><enter-command>source ~/.mutt/nathanpc@dreamintech.net<enter><change-folder>!<enter>"
+macro index <f4> "<sync-mailbox><enter-command>source ~/.mutt/nathan@innoveworkshop.com<enter><change-folder>!<enter>"
+macro index <f5> "<sync-mailbox><enter-command>source ~/.mutt/hi@nathancampos.me<enter><change-folder>!<enter>"
 
 # Load the default account.
 source ~/.mutt/eeepc904@gmail.com
 
-# Macros for switching accounts.
-macro index <f2> "<sync-mailbox><enter-command>source ~/.mutt/eeepc904@gmail.com<enter><change-folder>!<enter>"
-
 # Fetch mail shortcut.
 bind index G imap-fetch-mail
+
+# Speed up folder switching.
+set sleep_time = 0
 

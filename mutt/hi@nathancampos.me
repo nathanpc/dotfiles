@@ -1,0 +1,19 @@
+# Name and From.
+set realname = "Nathan Campos"
+set from = "hi@nathancampos.me"
+
+# IMAP and SMTP.
+set imap_user = $from
+set folder = "imaps://imappro.zoho.com:993"
+set imap_pass = $my_pass_nathancampos
+set smtp_url = "smtp://$from@smtp.zoho.com:465/"
+set smtp_pass = $my_pass_nathancampos
+
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set header_cache = ~/.mutt/$from-mail/cache/headers
+set message_cachedir = ~/.mutt/$from-mail/cache/bodies
+set certificate_file = ~/.mutt/$from-mail/certificates
+
+# vim: set ft=muttrc:
+
