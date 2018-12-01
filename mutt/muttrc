@@ -24,6 +24,29 @@ source ~/.mutt/eeepc904@gmail.com
 # Fetch mail shortcut.
 bind index G imap-fetch-mail
 
-# Speed up folder switching.
-set sleep_time = 0
+# Making this a saner email client.
+set sleep_time = 0   # Speed up folder switching.
+set wait_key = no    # No need to wait when doing shell stuff.
+set delete           # Just delete it!
+unset confirmappend  # Just do it!
+set quit             # Just quit!
+unset mark_old       # Why would I ever need this?
+set beep_new         # "You've got mail!"
+set pipe_decode      # Strip headers and eval mimes when piping.
+set thorough_search  # Strip headers and eval mimes before searching.
+
+# Sidebar options.
+set sidebar_visible = yes
+set sidebar_width   = 24
+#color sidebar_new color221 color233
+
+# Status bar.
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Header options.
+ignore *                                # Ignore all headers.
+unignore from: to: cc: date: subject:   # Show only the ones we care about.
+unhdr_order *                           # Let's reorder the headers.
+hdr_order from: to: cc: date: subject:  # This is a lot better.
 
