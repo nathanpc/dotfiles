@@ -27,8 +27,11 @@ bind index gg first-entry     # Go to the first email.
 bind index G last-entry       # Go to the last email.
 bind index o imap-fetch-mail  # Fetch mail for the current account.
 bind index p recall-message   # Show a list of the drafts.
+bind index r toggle-new       # Toggle unread.
+bind index N search-opposite  # Vim-style back searching.
 macro index C "<copy-message>?<toggle-mailboxes>" "Copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "Move a message to a mailbox"
+macro index a "<limit>all\n" "Show all messages (undo limit)"
 
 # Sidebar navigation.
 bind index,pager j sidebar-next  # Vim-style next item in the sidebar.
@@ -46,6 +49,7 @@ macro pager \Cu "|urlview<enter>" "Call urlview to open links"
 
 # Attachments view shortcuts.
 bind attach <return> view-mailcap  # View the attachment.
+macro attach V "<pipe-entry>cat >~/.cache/mutt/mail.html && qutebrowser --target tab ~/.cache/mutt/mail.html && rm ~/.cache/mutt/mail.html<enter>"
 
 # Compose view shortcuts.
 bind compose p postpone-message  # Send message to the drafts folder.
@@ -111,4 +115,8 @@ set reverse_name                      # Reply as whomever it was to.
 set include                           # Include message in replies.
 set forward_quote                     # Include message in forwards.
 set editor = "vim"                    # Of course we'll use vim.
+
+# Attachment options.
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
 

@@ -1,0 +1,7 @@
+# ~/.mutt/mailcap
+# Tells mutt how to handle attachments.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
