@@ -10,13 +10,19 @@ mono  underline   underline
 mono  indicator   reverse
 
 # Main colors.
-color status      green          default
-color indicator   black          white
+color status      blue           default
+color indicator   black          blue
 mono  indicator   bold
 color tree        blue           default
 color error       brightwhite    brightred
 mono  error       bold
 color message     yellow         default
+
+# Sidebar.
+color sidebar_divider    blue      default
+color sidebar_new        yellow    default
+color sidebar_highlight  black     blue
+color sidebar_indicator  blue      default
 
 # Reset the message colors to reset them appropriately.
 uncolor index                              "~P"

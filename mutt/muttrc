@@ -77,7 +77,10 @@ set mail_check = 120       # Check for new mail.
 
 # Sidebar options.
 set sidebar_visible = yes
-set sidebar_width   = 24
+set sidebar_width = 24
+#set sidebar_folder_indent = yes
+set sidebar_short_path = yes
+set sidebar_format = "%B%* %?N?[%N]?"
 
 # Status bar.
 set status_chars  = " *%A"
