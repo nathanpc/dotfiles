@@ -26,6 +26,7 @@ bind index g noop             # Just make mutt shut up about this.
 bind index gg first-entry     # Go to the first email.
 bind index G last-entry       # Go to the last email.
 bind index o imap-fetch-mail  # Fetch mail for the current account.
+bind index p recall-message   # Show a list of the drafts.
 macro index C "<copy-message>?<toggle-mailboxes>" "Copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "Move a message to a mailbox"
 
@@ -44,7 +45,10 @@ bind pager R group-reply       # Reply to all.
 macro pager \Cu "|urlview<enter>" "Call urlview to open links"
 
 # Attachments view shortcuts.
-bind attach <return> view-mailcap
+bind attach <return> view-mailcap  # View the attachment.
+
+# Compose view shortcuts.
+bind compose p postpone-message  # Send message to the drafts folder.
 
 # Making this a saner email client.
 set sleep_time = 0   # Speed up folder switching.
@@ -90,4 +94,21 @@ ignore *                                # Ignore all headers.
 unignore from: to: cc: date: subject:   # Show only the ones we care about.
 unhdr_order *                           # Let's reorder the headers.
 hdr_order from: to: cc: date: subject:  # This is a lot better.
+
+# Composing options.
+set envelope_from                     # Which from?
+set sig_dashes                        # Dases before the signature.
+set edit_headers                      # Show headers when composing.
+set fast_reply                        # Skip to composing when replying.
+set askcc                             # Ask for CC when they are present.
+set fcc_attach                        # Save attachments with the body.
+unset mime_forward                    # Forward attachments as part of body.
+set forward_format = "Fwd: %s"        # Subject for a forwarded message.
+set forward_decode                    # Decode when forwarding.
+set attribution = "On %d, %n wrote:"  # Format of the quoting header.
+set reply_to                          # Use ""Reply to:" field if present.
+set reverse_name                      # Reply as whomever it was to.
+set include                           # Include message in replies.
+set forward_quote                     # Include message in forwards.
+set editor = "vim"                    # Of course we'll use vim.
 
