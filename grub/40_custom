@@ -1,0 +1,19 @@
+#!/bin/sh
+# /etc/grub.d/40_custom
+# Custom GRUB menu entries.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
+# Necessary for things to work. DO NOT CHANGE!
+exec tail -n +3 $0
+
+menuentry "Power Off" --class shutdown {
+	echo "System shutting down..."
+	halt
+}
+
+menuentry "Reboot" --class reboot {
+	echo "System is rebooting..."
+	reboot
+}
+
