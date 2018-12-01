@@ -26,19 +26,22 @@ bind index g noop             # Just make mutt shut up about this.
 bind index gg first-entry     # Go to the first email.
 bind index G last-entry       # Go to the last email.
 bind index o imap-fetch-mail  # Fetch mail for the current account.
+macro index C "<copy-message>?<toggle-mailboxes>" "Copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "Move a message to a mailbox"
 
 # Sidebar navigation.
-bind index,pager j sidebar-next
-bind index,pager k sidebar-prev
-bind index,pager O sidebar-open
+bind index,pager j sidebar-next  # Vim-style next item in the sidebar.
+bind index,pager k sidebar-prev  # Vim-style previous item in the sidebar.
+bind index,pager O sidebar-open  # Use O to open the selected folder.
 
 # Pager view shortcuts.
-bind pager <up> previous-line
-bind pager <down> next-line
+bind pager <up> previous-line  # Sane way of going up.
+bind pager <down> next-line    # Sane way of going down.
 bind pager g noop              # Just make mutt shut up about this.
-bind pager gg top
-bind pager G bottom
-bind pager R group-reply
+bind pager gg top              # Go to the top of the message
+bind pager G bottom            # Go to the bottom of the message.
+bind pager R group-reply       # Reply to all.
+macro pager \Cu "|urlview<enter>" "Call urlview to open links"
 
 # Attachments view shortcuts.
 bind attach <return> view-mailcap
@@ -53,10 +56,6 @@ unset mark_old       # Why would I ever need this?
 set beep_new         # "You've got mail!"
 set pipe_decode      # Strip headers and eval mimes when piping.
 set thorough_search  # Strip headers and eval mimes before searching.
-
-# Making copy and move dialogs saner.
-macro index C "<copy-message>?<toggle-mailboxes>" "Copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "Move a message to a mailbox"
 
 # Sidebar options.
 set sidebar_visible = yes
@@ -75,6 +74,16 @@ set sort_aux = reverse-last-date-received    # Order the messages correctly.
 set uncollapse_jump                          # Don't collapse on an unread message.
 set sort_re                                  # Use regex to determine threads.
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Pager options.
+set pager_index_lines = 10  # Index lines to show while in the pager.
+set pager_context = 3       # Number of context lines to show.
+set pager_stop              # Don't go to the next message automatically.
+set menu_scroll             # Scroll in menus.
+set tilde                   # Show those vim tildes.
+unset markers               # I hate those stupid plus signs.
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
 
 # Header options.
 ignore *                                # Ignore all headers.
