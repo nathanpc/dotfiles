@@ -21,8 +21,27 @@ macro index <f5> "<sync-mailbox><enter-command>source ~/.mutt/hi@nathancampos.me
 # Load the default account.
 source ~/.mutt/eeepc904@gmail.com
 
-# Fetch mail shortcut.
-bind index G imap-fetch-mail
+# Index view shortcuts.
+bind index g noop             # Just make mutt shut up about this.
+bind index gg first-entry     # Go to the first email.
+bind index G last-entry       # Go to the last email.
+bind index o imap-fetch-mail  # Fetch mail for the current account.
+
+# Sidebar navigation.
+bind index,pager j sidebar-next
+bind index,pager k sidebar-prev
+bind index,pager O sidebar-open
+
+# Pager view shortcuts.
+bind pager <up> previous-line
+bind pager <down> next-line
+bind pager g noop              # Just make mutt shut up about this.
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+
+# Attachments view shortcuts.
+bind attach <return> view-mailcap
 
 # Making this a saner email client.
 set sleep_time = 0   # Speed up folder switching.
@@ -35,6 +54,10 @@ set beep_new         # "You've got mail!"
 set pipe_decode      # Strip headers and eval mimes when piping.
 set thorough_search  # Strip headers and eval mimes before searching.
 
+# Making copy and move dialogs saner.
+macro index C "<copy-message>?<toggle-mailboxes>" "Copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "Move a message to a mailbox"
+
 # Sidebar options.
 set sidebar_visible = yes
 set sidebar_width   = 24
@@ -43,6 +66,15 @@ set sidebar_width   = 24
 # Status bar.
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Index options.
+set date_format = "%d/%m/%y"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                           # Sort like Gmail.
+set sort_aux = reverse-last-date-received    # Order the messages correctly.
+set uncollapse_jump                          # Don't collapse on an unread message.
+set sort_re                                  # Use regex to determine threads.
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Header options.
 ignore *                                # Ignore all headers.
