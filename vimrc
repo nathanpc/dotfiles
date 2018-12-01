@@ -21,6 +21,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 "Plugin 'luochen1990/rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'altercation/vim-colors-solarized'
 
 " Git integration.
 Plugin 'tpope/vim-fugitive'
@@ -113,9 +114,13 @@ set mouse=a
 set number
 set cul
 set guioptions-=T
-colorscheme molokai
 set splitbelow
 set splitright
+set termguicolors
+
+" Colorscheme
+set background=dark
+colorscheme molokai
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
