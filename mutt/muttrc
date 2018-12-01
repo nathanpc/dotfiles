@@ -69,14 +69,19 @@ set beep_new         # "You've got mail!"
 set pipe_decode      # Strip headers and eval mimes when piping.
 set thorough_search  # Strip headers and eval mimes before searching.
 
+# Improved IMAP support.
+set imap_check_subscribed  # Adds all IMAP folders to the sidebar.
+unset imap_passive         # Open a new IMAP connection automatically.
+set imap_keepalive = 300   # Keep IMAP session alive by pooling.
+set mail_check = 120       # Check for new mail.
+
 # Sidebar options.
 set sidebar_visible = yes
 set sidebar_width   = 24
-#color sidebar_new color221 color233
 
 # Status bar.
 set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
 # Index options.
 set date_format = "%d/%m/%y"
