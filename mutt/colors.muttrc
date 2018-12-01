@@ -1,0 +1,77 @@
+# ~/.mutt/colots.muttrc
+# Coloring for the best mail client.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
+# Default.
+color normal      white          default
+mono  bold        bold
+mono  underline   underline
+mono  indicator   reverse
+
+# Main colors.
+color status      green          default
+color indicator   black          white
+mono  indicator   bold
+color tree        blue           default
+color error       brightwhite    brightred
+mono  error       bold
+color message     yellow         default
+
+# Reset the message colors to reset them appropriately.
+uncolor index                              "~P"
+uncolor index                              "~C @.com"
+uncolor index                              "~N ~u"
+uncolor index                              "~N !~u"
+uncolor index                              "~T"
+uncolor index                              "~D"
+
+# Message index colors.
+color index       brightblack    default   "~P"
+color index       green          default   "~C @.com"
+color index       brightcyan     default   "~N ~u"
+color index       brightyellow   default   "~N !~u"
+color index       brightgreen    default   "~T"
+color index       brightred      default   "~D"
+
+# Message headers.
+color hdrdefault  white          default
+color header      yellow         default   "^subject:"
+
+# Message bodies.
+color attachment  brightcyan     default
+color search      brightblack    white
+color signature   yellow         default
+color tilde       brightblack    default
+
+# Quote blocks.
+color quoted      magenta        default
+color quoted1     cyan           default
+color quoted2     green          default
+color quoted3     magenta        default
+color quoted4     cyan           default
+color quoted5     green          default
+color quoted6     magenta        default
+color quoted7     cyan           default
+
+# URLs.
+color body        cyan           default   "(^|<| )mailto:[^ ]+@[^ ]( |>|$)"
+color body        cyan           default   "(^|<| )(http|https|ftp|file|telnet|news|finger)://[^ ]+( |>|$)"
+
+# Email addresses.
+color body        brightblue     default   "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# Smilies in both directions.
+color body        brightyellow   default   "(^| )+(|[<>|])[8;:](|[^ ])[)(/|DOPS]( |$)+"
+color body        brightyellow   default   "(^| )+[)(/|DOPS](|[^ ])[8;:](|[<>|])( |$)+"
+
+# *bold*, _underline_, and /italic/
+color body        brightwhite    default   "(^| )\\*[^ ]+\\*( |$)"
+mono  body        bold                     "(^| )\\*[^ ]+\\*( |$)"
+color body        white          default   "(^| )_[^ ]+_( |$)"
+mono  body        underline                "(^| )_[^ ]+_( |$)"
+color body        brightwhite    default   "(^| )/[^ ]+/( |$)"
+mono  body        bold                     "(^| )/[^ ]+/( |$)"
+
+# vim: set ft=muttrc:
+

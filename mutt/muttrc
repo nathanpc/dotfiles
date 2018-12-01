@@ -127,3 +127,6 @@ set editor = "vim"                    # Of course we'll use vim.
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
 
+# Mutt colorscheme.
+source ~/.mutt/colors.muttrc
+
