@@ -54,6 +54,10 @@ macro attach V "<pipe-entry>cat >~/.cache/mutt/mail.html && qutebrowser --target
 # Compose view shortcuts.
 bind compose p postpone-message  # Send message to the drafts folder.
 
+# Editor view shortcuts.
+bind editor <Tab> complete-query
+bind editor ^T complete
+
 # Making this a saner email client.
 set sleep_time = 0   # Speed up folder switching.
 set wait_key = no    # No need to wait when doing shell stuff.
@@ -98,6 +102,9 @@ ignore *                                # Ignore all headers.
 unignore from: to: cc: date: subject:   # Show only the ones we care about.
 unhdr_order *                           # Let's reorder the headers.
 hdr_order from: to: cc: date: subject:  # This is a lot better.
+
+# Address book options.
+set query_command = "goobook query '%s'"
 
 # Composing options.
 set envelope_from                     # Which from?
