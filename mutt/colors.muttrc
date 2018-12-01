@@ -11,7 +11,7 @@ mono  indicator   reverse
 
 # Main colors.
 color status      blue           default
-color indicator   black          blue
+color indicator   black          brightblack
 mono  indicator   bold
 color tree        blue           default
 color error       brightwhite    brightred
