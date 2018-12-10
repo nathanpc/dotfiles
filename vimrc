@@ -87,7 +87,7 @@ Plugin '1995parham/vim-spice'
 Plugin 'mboughaba/i3config.vim'
 
 " Auto-complete.
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Raimondi/delimitMate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'FooSoft/vim-argwrap'
