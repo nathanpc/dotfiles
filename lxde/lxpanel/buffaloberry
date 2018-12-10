@@ -66,10 +66,13 @@ Plugin {
       id=qutebrowser.desktop
     }
     Button {
-      id=google-chrome.desktop
+      id=kicad.desktop
+    }
+    Button {
+      id=pcbcalculator.desktop
     }
     FlatButton=-1
-    GroupedTasks=1
+    GroupedTasks=0
     UseSmallerIcons=-1
     IconsOnly=0
     ShowAllDesks=-1
