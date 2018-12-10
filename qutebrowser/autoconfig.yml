@@ -3,10 +3,6 @@
 
 config_version: 1
 global:
-  aliases:
-    w: session-save --current --only-active-window
-  auto_save.session: true
-  session.default_name: main
-  url.searchengines:
-    DEFAULT: https://google.com/search?q={}
-  url.start_pages: https://qutebrowser.org/index.html
+  colors.completion.category.fg: white
+  colors.tabs.even.bg: '#1d1f21'
+  colors.tabs.odd.bg: '#1d1f21'
