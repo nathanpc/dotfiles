@@ -139,13 +139,16 @@ export PATH=/snap/bin/:$PATH
 # Make RVM available.
 source /etc/profile.d/rvm.sh
 
+# Color GCC for older compilers.
+export PATH="/home/nathan/dotfiles/scripts:$PATH"
+
 # Microchip compilers.
 export PATH="$PATH:/opt/microchip/xc8/v2.00/bin"
 export PATH="$PATH:/opt/microchip/xc16/v1.35/bin"
 export PATH="$PATH:/opt/microchip/xc32/v2.10/bin"
 
 # Espressif ESP8266 toolchain.
-export PATH=/opt/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+export PATH="$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin"
 
 # Neofetch to make things fancy when starting up.
 neofetch
