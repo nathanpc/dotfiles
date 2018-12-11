@@ -1,6 +1,12 @@
+# ~/.driverc
+# odeke-em/drive configuration.
+#
+# Author: Nathan Campos <nathan@innoveworkshop.com>
+
 # Global onfiguration.
 depth=-1
-hidden=true
+#hidden=true
 no-prompt=true
 fix-clashes=true
-verbose=true
+#verbose=true
+
