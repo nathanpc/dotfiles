@@ -4,22 +4,47 @@
 # Author: Nathan Campos <nathanpc@dreamintech.net>
 
 
-# TODO: Get some inspiration from this awesome config: http://www.theatomheart.net/rice/qutebrowser-config/
+# Home page.
+c.url.start_pages = "https://qutebrowser.org/index.html"
 
+# Session.
+c.auto_save.interval = 120000
+c.auto_save.session = True
+c.session.default_name = "main"
 
+# Aliases.
 c.aliases = {
     "w": "session-save --current --only-active-window",
     "q": "quit",
     "wq": "quit --save"
 }
 
-c.auto_save.session = True
-c.session.default_name = "main"
+# Search engines.
 c.url.searchengines = {
     "DEFAULT": "https://google.com/search?q={}"
 }
 
-c.url.start_pages = "https://qutebrowser.org/index.html"
+# Ignore all those silly tracking parameters when yanking.
+c.url.yank_ignored_parameters = ["ref", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]
+
+# Content.
+c.content.default_encoding = "iso-8859-1"
+c.content.geolocation = "ask"
+c.content.pdfjs = True
+c.content.plugins = True
+c.content.webgl = True
+
+# Editor.
+c.editor.command = ["gvim", "-f", "{}"]
+c.editor.encoding = "utf-8"
+
+# Window title.
+c.window.title_format = "{perc}{title}{title_sep}qutebrowser"
+
+# Input.
+c.input.insert_mode.auto_leave = True
+c.input.insert_mode.auto_load = True
+c.input.insert_mode.plugins = True
 
 
 # Color scheme.
@@ -101,7 +126,7 @@ c.colors.prompts.selected.bg = base0A
 c.colors.statusbar.normal.fg = base0B
 c.colors.statusbar.normal.bg = base00
 c.colors.statusbar.insert.fg = base00
-c.colors.statusbar.insert.bg = base0D
+c.colors.statusbar.insert.bg = base0B
 c.colors.statusbar.passthrough.fg = base00
 c.colors.statusbar.passthrough.bg = base0C
 c.colors.statusbar.private.fg = base00
