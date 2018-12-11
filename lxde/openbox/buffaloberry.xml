@@ -48,7 +48,7 @@
   <theme>
     <!--  Lubuntu specific : Theme = Lubuntu and font = Ubuntu
   -->
-    <name>Mistral</name>
+    <name>Lubuntu Arc</name>
     <titleLayout>CIMLSDN</titleLayout>
     <!--
     available characters are NDSLIMC, each can occur at most once.
