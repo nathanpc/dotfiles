@@ -86,6 +86,9 @@ Plugin 'chrisbra/csv.vim'
 Plugin '1995parham/vim-spice'
 Plugin 'mboughaba/i3config.vim'
 
+" Microcontrollers and embedded programming.
+Plugin 'vim-esp8266' , { 'pinned' : 1 }
+
 " Auto-complete.
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Raimondi/delimitMate'
