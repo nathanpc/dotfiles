@@ -94,6 +94,7 @@ Plugin 'vim-esp8266' , { 'pinned' : 1 }
 "Plugin 'Raimondi/delimitMate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'FooSoft/vim-argwrap'
+Plugin 'ervandew/supertab'
 
 " Syntax checker.
 Plugin 'vim-syntastic/syntastic'
@@ -207,6 +208,7 @@ au filetype racket set lisp
 au filetype racket set expandtab
 let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
 let g:python_highlight_all = 1
+"let g:load_doxygen_syntax = 1 
 
 ""
 ""  Backup
