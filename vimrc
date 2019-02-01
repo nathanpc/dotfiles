@@ -21,7 +21,9 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 "Plugin 'luochen1990/rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'romainl/Apprentice'
 
 " Git integration.
 Plugin 'tpope/vim-fugitive'
@@ -71,7 +73,7 @@ Plugin 'vim-python/python-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Perl
-Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+"Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
 " Octave
 Plugin 'gagbo/vim-gnuplot'
@@ -95,6 +97,9 @@ Plugin 'vim-esp8266' , { 'pinned' : 1 }
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'ervandew/supertab'
+
+" Tags.
+Plugin 'majutsushi/tagbar'
 
 " Syntax checker.
 Plugin 'vim-syntastic/syntastic'
@@ -229,6 +234,9 @@ map <C-S-x> "*c
 map <Up> gk
 map <Down> gj
 
+" Toggle Tagbar.
+map <F8> :TagbarToggle<CR>
+
 ""
 "" Pseudo-tabs (vim-airline) navigation.
 ""
@@ -253,7 +261,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='molokai'
+let g:airline_theme = 'molokai'
 
 " delimitMate
 let delimitMate_expand_cr = 1
