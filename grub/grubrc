@@ -14,7 +14,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="acpi=force"
 GRUB_CMDLINE_LINUX=""
 
 # Set an awesome theme.
-GRUB_THEME=/boot/grub/themes/grub2-solarized-dark/theme.txt
+#GRUB_THEME=/boot/grub/themes/grub2-solarized-dark/theme.txt
 
 # Uncomment to enable BadRAM filtering, modify to suit your needs
 # This works with Linux (no patch required) and with any kernel that obtains
