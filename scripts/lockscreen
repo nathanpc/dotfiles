@@ -1,11 +1,19 @@
 #!/bin/bash
+# Fancy i3lock configuration with blurred screenshot background.
+# Based on https://github.com/petvas/i3lock-blur
+#
+# Author: Nathan Campos <nathanpc@dreamintech.net>
 
-path=/var/tmp
+# Variables and settings.
+lockbg=/tmp/lock-background.png
+resolution=$(xrandr | grep 'current' | sed -E 's/.*current\s([0-9]+)\sx\s([0-9]+).*/\1x\2/')
 
-scrot $path/shot.png
-convert $path/shot.png -blur 0x20 $path/shot-blurred.png
-convert -size 1920x1080 xc:transparent -font Courier-bold -pointsize 15 -fill Gray -draw "text 30,1045 'Away since `date`'" $path/watermark.png
-composite -dissolve 80% -quality 100 $path/watermark.png $path/shot-blurred.png $path/final.png
-i3lock -u -i $path/final.png
-rm $path/shot-blurred.png $path/watermark.png $path/final.png
+# Use ffmpeg to quickly build the blurred image.
+ffmpeg -f x11grab -video_size $resolution -y -i $DISPLAY -filter_complex "boxblur=10:1" -vframes 1 $lockbg -loglevel quiet
+
+# Lock the screen.
+i3lock -i $lockbg
+
+# Clean the temporary background image.
+rm $lockbg
 
