@@ -1,4 +1,5 @@
 [global_config]
+  geometry_hinting = True
   title_font = LiterationMono Nerd Font Mono 10
   title_inactive_bg_color = "#969896"
   title_inactive_fg_color = "#1d1f21"
