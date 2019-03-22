@@ -8,6 +8,7 @@
   title_transmit_bg_color = "#cc6666"
   title_transmit_fg_color = "#e8e8e8"
   title_use_system_font = False
+  use_custom_url_handler = True
 [keybindings]
   close_term = <Primary><Alt>w
   close_window = <Primary><Alt>q
