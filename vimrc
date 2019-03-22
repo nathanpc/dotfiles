@@ -205,6 +205,7 @@ au! BufNewFile,BufRead *.scrbl set filetype=scribble
 au! BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnuplot
 au! BufNewFile,BufRead *.m,*.oct set filetype=octave
 au! BufNewFile,BufRead *.csv,*.dat set filetype=csv
+au! BufNewFile,BufRead *.conf,*.ini set filetype=dosini
 
 ""
 "" Specific options.
