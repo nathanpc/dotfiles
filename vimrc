@@ -206,15 +206,8 @@ au! BufNewFile,BufRead *.gnu,*.plt,*.gpi,*.gih,*.gp,*.gnuplot set filetype=gnupl
 au! BufNewFile,BufRead *.m,*.oct set filetype=octave
 au! BufNewFile,BufRead *.csv,*.dat set filetype=csv
 au! BufNewFile,BufRead *.conf,*.ini set filetype=dosini
-
-""
-"" Specific options.
-""
 au filetype racket set lisp
 au filetype racket set expandtab
-let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
-let g:python_highlight_all = 1
-"let g:load_doxygen_syntax = 1 
 
 ""
 ""  Backup
@@ -238,7 +231,11 @@ map <Down> gj
 " Toggle Tagbar.
 map <F8> :TagbarToggle<CR>
 
-""
+" Move between windows using Ctrl+Alt+[Left/Right].
+map <Esc>[1;7D :wincmd h<CR>
+map <Esc>[1;7C :wincmd l<CR>
+
+"
 "" Pseudo-tabs (vim-airline) navigation.
 ""
 " Ctrl-T New tab.
@@ -311,4 +308,10 @@ augroup phpSyntaxOverride
 	autocmd!
 	autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" CSV
+let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
+
+" Python
+let g:python_highlight_all = 1
 
