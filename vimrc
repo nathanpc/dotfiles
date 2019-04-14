@@ -47,9 +47,9 @@ Plugin 'plasticboy/vim-markdown'
 " HTML and CSS.
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
-Plugin 'skammer/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
+Plugin 'lilydjwg/colorizer'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
@@ -74,6 +74,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Perl
 "Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plugin 'hotchpotch/perldoc-vim'
 
 " Octave
 Plugin 'gagbo/vim-gnuplot'
@@ -103,6 +104,10 @@ Plugin 'majutsushi/tagbar'
 
 " Syntax checker.
 Plugin 'vim-syntastic/syntastic'
+
+" Bling.
+Plugin 'inside/vim-search-pulse'
+Plugin 'RRethy/vim-illuminate'
 
 " Last ones.
 Plugin 'ryanoasis/vim-devicons'
