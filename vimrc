@@ -236,9 +236,11 @@ map <Down> gj
 " Toggle Tagbar.
 map <F8> :TagbarToggle<CR>
 
-" Move between windows using Ctrl+Alt+[Left/Right].
+" Move between windows using Ctrl+Alt+[Left/Right/Up/Down].
 map <Esc>[1;7D :wincmd h<CR>
 map <Esc>[1;7C :wincmd l<CR>
+map <Esc>[1;7A :wincmd k<CR>
+map <Esc>[1;7B :wincmd h<CR>
 
 "
 "" Pseudo-tabs (vim-airline) navigation.
