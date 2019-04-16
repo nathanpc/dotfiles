@@ -240,7 +240,7 @@ map <F8> :TagbarToggle<CR>
 map <Esc>[1;7D :wincmd h<CR>
 map <Esc>[1;7C :wincmd l<CR>
 map <Esc>[1;7A :wincmd k<CR>
-map <Esc>[1;7B :wincmd h<CR>
+map <Esc>[1;7B :wincmd j<CR>
 
 "
 "" Pseudo-tabs (vim-airline) navigation.
