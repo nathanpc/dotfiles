@@ -1,4 +1,5 @@
 # Misc.
 *.bkp
 .DS_Store
+*~
 
