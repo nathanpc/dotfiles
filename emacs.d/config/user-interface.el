@@ -5,7 +5,8 @@
 
 ;; GUI specific configuration.
 (if window-system
-    (tool-bar-mode -1))  ; Hide that horrible toolbar.
+    (tool-bar-mode -1))          ; Hide that horrible toolbar.
+(setq frame-resize-pixelwise t)  ; No gaps.
 
 ;; Set default font.
 (set-default-font "LiterationMono Nerd Font Mono 10")
@@ -16,6 +17,7 @@
 (set-scroll-bar-mode 'right)  ; Put the scrollbar where it should be.
 (line-number-mode 1)          ; Show line number in the mode line.
 (column-number-mode 1)        ; Show column number in the mode line.
+(size-indication-mode t)      ; Show file size in the mode line.
 (global-linum-mode t)         ; Show line numbers in the left fringe.
 (global-hl-line-mode 1)       ; Highlight the current line.
 
@@ -48,5 +50,9 @@
 			  '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1
 			     font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'highlight-todos)
+
+;; Miscellaneous.
+(defalias 'yes-or-no-p 'y-or-n-p)  ; Use y or n instead of yes or no in prompts.
+(setq echo-keystrokes 0.1)         ; Show key combination hints faster.
 
 (provide 'user-interface)

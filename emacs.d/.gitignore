@@ -1,5 +1,7 @@
 # Useless Emacs stuff.
 auto-save-list/
+backups/
+recentf
 
 # Compiled Emacs Lisp.
 *.elc
