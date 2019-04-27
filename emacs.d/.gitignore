@@ -1,3 +1,6 @@
 # Useless Emacs stuff.
 auto-save-list/
 
+# Compiled Emacs Lisp.
+*.elc
+
