@@ -46,8 +46,7 @@
 (setq mode-require-final-newline t)
 
 ;; Package management.
-(add-to-list 'package-archives
-			 '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Load our configuration modules.
 (add-to-list 'load-path "~/.emacs.d/config")
@@ -62,7 +61,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (monokai-theme))))
+ '(custom-safe-themes
+   (quote
+	("5f27195e3f4b85ac50c1e2fac080f0dd6535440891c54fcfa62cdcefedf56b1b" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" default)))
+ '(package-selected-packages (quote (ample-theme base16-theme monokai-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
