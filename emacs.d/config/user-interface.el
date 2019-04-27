@@ -11,6 +11,9 @@
 ;; Set default font.
 (set-default-font "LiterationMono Nerd Font Mono 10")
 
+;; Set default theme.
+(load-theme 'monokai t)
+
 ;; Make Emacs look more like a normal text editor.
 (transient-mark-mode 1)       ; Highlight selection.
 (delete-selection-mode 1)     ; Replace selected text if I start typing.
