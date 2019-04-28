@@ -4,7 +4,9 @@ elpa/
 # Useless Emacs stuff.
 auto-save-list/
 backups/
+.cache/
 recentf
+smex-items
 
 # Compiled Emacs Lisp.
 *.elc

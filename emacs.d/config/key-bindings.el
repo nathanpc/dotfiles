@@ -12,4 +12,7 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-y") 'redo)
 
+;; Smex.
+(global-set-key (kbd "M-x") 'smex)
+
 (provide 'key-bindings)
