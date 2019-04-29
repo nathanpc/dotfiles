@@ -16,7 +16,7 @@
  '(dimmer-mode t nil (dimmer))
  '(package-selected-packages
    (quote
-	(company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
+	(dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
  '(sml/theme (quote respectful)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -63,6 +63,9 @@
 
 ;; Package management.
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; Load non-ELPA plugins.
+(add-to-list 'load-path "~/.emacs.d/plugins")
 
 ;; Load our configuration modules.
 (add-to-list 'load-path "~/.emacs.d/config")

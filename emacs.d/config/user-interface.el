@@ -100,4 +100,8 @@
 (setq company-idle-delay 0)                       ; Auto-complete instantly.
 (add-hook 'after-init-hook 'global-company-mode)  ; Enable company-mode.
 
+;; Jump to definition.
+(add-hook 'prog-mode-hook 'dumb-jump-mode)
+(add-hook 'dumb-jump-after-jump-hook 'recenter)
+
 (provide 'user-interface)

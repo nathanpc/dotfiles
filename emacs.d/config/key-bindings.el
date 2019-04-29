@@ -15,4 +15,11 @@
 ;; Smex.
 (global-set-key (kbd "M-x") 'smex)
 
+;; Better comments.
+(add-hook 'c-mode-common-hook (lambda () 
+								(local-set-key "\r"
+											   'c-doc-block-comment-return)
+								(local-set-key (kbd "/")
+											   'c-doc-block-comment-end-slash)))
+
 (provide 'key-bindings)
