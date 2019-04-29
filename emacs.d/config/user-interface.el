@@ -1,3 +1,4 @@
+
 ;; ~/.emacs.d/user-interface.el
 ;; Configures the user interface, making Emacs look nice and pretty.
 ;;
@@ -36,10 +37,13 @@
 
 ;; Smooth scrolling.
 (setq scroll-step 1)                      ; Keyboard scroll one line at a time.
-(setq mouse-wheel-scroll-amount
-      '(1 ((shift) . 1)))                 ; Wheel scrolls one line at a time.
+(setq scroll-conservatively 101)          ; Move minimum when cursor exits view.
+(setq mouse-wheel-scroll-amount '(1))     ; Mouse scroll moves 1 line at a time.
 (setq mouse-wheel-progressive-speed nil)  ; Disable accelerated scrolling.
 (setq mouse-wheel-follow-mouse t)         ; Only scroll the window under mouse.
+(setq redisplay-dont-pause nil)           ; Prioritize events instead of redraw.
+(setq jit-lock-defer-time 0)              ; Should improve performance.
+(setq fast-but-imprecise-scrolling t)     ; Supposed to improve performance.
 
 ;; Highlight when a line is greater than 80 characters.
 (setq-default
