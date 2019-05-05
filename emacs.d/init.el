@@ -16,7 +16,7 @@
  '(dimmer-mode t nil (dimmer))
  '(package-selected-packages
    (quote
-	(dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
+	(highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
  '(sml/theme (quote respectful)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

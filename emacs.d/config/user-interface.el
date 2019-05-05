@@ -101,4 +101,8 @@
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 (add-hook 'dumb-jump-after-jump-hook 'recenter)
 
+;; Highlight numbers and escape sequences.
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+(add-hook 'prog-mode-hook 'hes-mode)
+
 (provide 'user-interface)
