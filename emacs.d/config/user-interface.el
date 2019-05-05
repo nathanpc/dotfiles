@@ -1,4 +1,3 @@
-
 ;; ~/.emacs.d/user-interface.el
 ;; Configures the user interface, making Emacs look nice and pretty.
 ;;
@@ -8,6 +7,7 @@
 (if window-system
     (tool-bar-mode -1))          ; Hide that horrible toolbar.
 (setq frame-resize-pixelwise t)  ; No gaps.
+(setq auto-window-vscroll nil)   ; Improves performance.
 
 ;; Set default font.
 (set-default-font "LiterationMono Nerd Font Mono 10")
@@ -22,14 +22,14 @@
 (doom-themes-org-config)             ; Improves org-mode native fontification.
 
 ;; Make Emacs look more like a normal text editor.
-(transient-mark-mode 1)       ; Highlight selection.
-(delete-selection-mode 1)     ; Replace selected text if I start typing.
-(set-scroll-bar-mode 'right)  ; Put the scrollbar where it should be.
-(line-number-mode 1)          ; Show line number in the mode line.
-(column-number-mode 1)        ; Show column number in the mode line.
-(size-indication-mode t)      ; Show file size in the mode line.
-(global-linum-mode t)         ; Show line numbers in the left fringe.
-(global-hl-line-mode 1)       ; Highlight the current line.
+(transient-mark-mode 1)             ; Highlight selection.
+(delete-selection-mode 1)           ; Replace selected text if I start typing.
+(set-scroll-bar-mode 'right)        ; Put the scrollbar where it should be.
+(line-number-mode 1)                ; Show line number in the mode line.
+(column-number-mode 1)              ; Show column number in the mode line.
+(size-indication-mode t)            ; Show file size in the mode line.
+(global-display-line-numbers-mode)  ; Show line numbers in the left fringe.
+(global-hl-line-mode 1)             ; Highlight the current line.
 
 ;; Syntax highlighting
 (global-font-lock-mode 1)              ; Enable syntax highlighting.
@@ -37,7 +37,8 @@
 
 ;; Smooth scrolling.
 (setq scroll-step 1)                      ; Keyboard scroll one line at a time.
-(setq scroll-conservatively 101)          ; Move minimum when cursor exits view.
+(setq scroll-conservatively 10000)        ; Move minimum when cursor exits view.
+(setq scroll-preserve-screen-position 1)  ; Cursor stays in place when scrolling.
 (setq mouse-wheel-scroll-amount '(1))     ; Mouse scroll moves 1 line at a time.
 (setq mouse-wheel-progressive-speed nil)  ; Disable accelerated scrolling.
 (setq mouse-wheel-follow-mouse t)         ; Only scroll the window under mouse.
@@ -54,14 +55,14 @@
 ;; Highlight white spaces.
 (setq whitespace-display-mappings
       '((space-mark 32 [183] [46])
-	(newline-mark 10 [8629 10])
-	(tab-mark 9 [8594 9] [92 9])))
+		(newline-mark 10 [8629 10])
+		(tab-mark 9 [8594 9] [92 9])))
 
 ;; Highlight TODOs.
 (defun highlight-todos ()
   (font-lock-add-keywords nil
-			  '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1
-			     font-lock-warning-face t))))
+						  '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1
+							 font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'highlight-todos)
 
 ;; Miscellaneous.
@@ -78,10 +79,6 @@
 ;; Git Gutter.
 (require 'git-gutter-fringe)  ; Adds a nice Git gutter to the left fringe.
 (global-git-gutter-mode t)    ; Enables it globally.
-; TODO: Match the colors with the theme.
-;(set-face-foreground 'git-gutter-fr:modified "yellow")
-;(set-face-foreground 'git-gutter-fr:added    "blue")
-;(set-face-foreground 'git-gutter-fr:deleted  "white")
 
 ;; Indent guides.
 (setq highlight-indent-guides-method 'character)          ; Thin line style.

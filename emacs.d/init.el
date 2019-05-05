@@ -34,6 +34,7 @@
 (setq load-prefer-newer t)             ; Only load *.elc when they are the newest versions.
 (setq debug-on-error t)                ; Make errors more noticeable.
 (setq apropos-do-all t)                ; Include non-interactive functions in the help search.
+(setq gc-cons-threshold 20000000)      ; Set the garbage colletor threshold to 20MB.
 
 ;; Use UTF-8 everywhere.
 (setq locale-coding-system 'utf-8)

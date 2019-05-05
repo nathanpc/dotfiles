@@ -11,7 +11,6 @@
 (defun c-doc-block-comment-return ()
   "Auto-completion of documentation comment blocks after RET"
   (interactive)
-  (message "Newline")
   (setq last (point))
   (setq is-inside                         ; Check if inside a valid comment.
         (if (search-backward "*/" nil t)  ; Check if there are endings before.
@@ -23,13 +22,13 @@
       (progn
 		(insert "\n* ")                   ; Insert "* " with the newline.
 		(indent-for-tab-command))         ; Indent comment properly.
-    (insert "\n")))                       ; Not inside, insert the newline only.
+    (insert "\n")                         ; Not inside, insert the newline only.
+	(indent-for-tab-command)))            ; Indent the line normally.
 
 (defun c-doc-block-comment-end-slash ()
   "End documentation comment blocks easily after hitting '/'"
   (interactive)
   (setq last (point))
-  (message "Hello!")
   (setq is-inside                         ; Check if inside a valid comment.
         (if (search-backward "*/" nil t)  ; Check if there are endings before.
             (search-forward "/*" last t)  ; Check if it's a new comment block.
@@ -37,6 +36,7 @@
           (search-backward "/*" nil t)))  ; Check if we are really inside.
   (goto-char last)                        ; Reset cursor position again.
   (if is-inside
+	  ; TODO: Check if this is really a empty line.
 	  (if (search-backward "* " nil t)            ; At an empty comment block line.
 		  (progn
 			(goto-char last)                      ; Reset cursor after search.
