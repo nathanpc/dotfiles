@@ -43,4 +43,13 @@
 			(backward-delete-char-untabify 1))))  ; Delete the trailling whitespace.
   (insert "/"))                                   ; Insert the typed character.
 
+(defun inhibit-startup-screen-for-file ()
+  "Startup screen inhibitor for `command-line-functions`.
+Inhibits startup screen on the first unrecognised option which
+names an existing file."
+  (ignore
+   (setq inhibit-startup-screen
+         (file-exists-p
+          (expand-file-name argi command-line-default-directory)))))
+
 (provide 'custom-functions)

@@ -12,6 +12,9 @@
 ;; Set default font.
 (set-default-font "LiterationMono Nerd Font Mono 10")
 
+;; Inhibit the startup screen only when appropriate.
+(add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
+
 ;; Set default theme.
 (require 'doom-themes)               ; Import the awesome theme.
 (setq doom-themes-enable-bold t)     ; Enable bold in the theme.
