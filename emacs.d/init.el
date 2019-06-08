@@ -63,7 +63,8 @@
 (setq mode-require-final-newline t)
 
 ;; Package management.
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+			 '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Load non-ELPA plugins.
 (add-to-list 'load-path "~/.emacs.d/plugins")

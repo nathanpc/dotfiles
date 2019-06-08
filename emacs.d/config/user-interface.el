@@ -4,7 +4,7 @@
 ;; Author: Nathan Campos <nathanpc@dreamintech.net>
 
 ;; GUI specific configuration.
-(if window-system
+(if (display-graphic-p)
     (tool-bar-mode -1))          ; Hide that horrible toolbar.
 (setq frame-resize-pixelwise t)  ; No gaps.
 (setq auto-window-vscroll nil)   ; Improves performance.
@@ -86,6 +86,7 @@
 ;; Indent guides.
 (setq highlight-indent-guides-method 'character)          ; Thin line style.
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)  ; Show guides in code.
+(add-hook 'text-mode-hook 'highlight-indent-guides-mode)  ; Show guides in text.
 
 ;; Dimmer.
 (setq dimmer-fraction 0.35)  ; Make other buffers dimmer.
@@ -107,5 +108,8 @@
 ;; Highlight numbers and escape sequences.
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 (add-hook 'prog-mode-hook 'hes-mode)
+
+;; Man completion.
+(require 'man-completion)
 
 (provide 'user-interface)
