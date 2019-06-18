@@ -1,6 +1,9 @@
 # ELPA
 elpa/
 
+# JDEE
+jdee-server/
+
 # Useless Emacs stuff.
 auto-save-list/
 backups/
