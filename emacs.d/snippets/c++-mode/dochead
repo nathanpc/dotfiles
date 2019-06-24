@@ -1,0 +1,13 @@
+# name: Document header
+# contributor: Nathan Campos <nathanpc@dreamintech.net>
+# --
+/**
+ * `(file-name-nondirectory (buffer-file-name))`
+ * $0
+ *
+ * @author: `user-full-name` <`user-mail-address`>
+ */
+
+#include <`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`>
+
+$1

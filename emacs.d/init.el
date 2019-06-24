@@ -16,7 +16,7 @@
  '(dimmer-mode t nil (dimmer))
  '(package-selected-packages
    (quote
-	(jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
+	(yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
  '(sml/theme (quote respectful)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -28,7 +28,7 @@
 
 ;; Environment settings.
 (setq user-full-name "Nathan Campos")
-(setq user-mail-address "nathanpc@dreamintech.net")
+(setq user-mail-address "nathan@innoveworkshop.com")
 (set-language-environment "English")   ; Default to English.
 (recentf-mode 1)                       ; Keep a list of recently opened files.
 (setq load-prefer-newer t)             ; Only load *.elc when they are the newest versions.
@@ -68,6 +68,9 @@
 
 ;; Load non-ELPA plugins.
 (add-to-list 'load-path "~/.emacs.d/plugins")
+
+;; Set the Yasnippet snippet folder.
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
 ;; Load our configuration modules.
 (add-to-list 'load-path "~/.emacs.d/config")

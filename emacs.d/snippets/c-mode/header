@@ -1,0 +1,16 @@
+# name: Header template
+# contributor: Nathan Campos <nathanpc@dreamintech.net>
+# --
+/**
+ * `(file-name-nondirectory (buffer-file-name))`
+ * $0
+ *
+ * @author: `user-full-name` <`user-mail-address`>
+ */
+
+#ifndef ${2:_`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H_}
+#define $2
+
+$1
+
+#endif /* $2 */
