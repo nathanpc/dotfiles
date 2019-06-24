@@ -8,6 +8,6 @@
  * @author: `user-full-name` <`user-mail-address`>
  */
 
-#include <`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`>
+#include <`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h>
 
 $1
