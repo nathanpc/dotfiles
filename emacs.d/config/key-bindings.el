@@ -19,7 +19,7 @@
 (add-hook 'c-mode-common-hook
 		  (lambda ()
 			; Toggle between C source and header files.
-			(local-set-key (kdb "C-c h") 'c-toggle-header)
+			(local-set-key (kbd "C-c h") 'c-toggle-header)
 
 			; Better C comment documentation blocks.
 			(local-set-key "\r"

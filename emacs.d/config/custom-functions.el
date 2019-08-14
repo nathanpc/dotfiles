@@ -70,6 +70,6 @@ names an existing file."
 					   (concat (file-name-sans-extension newfile) ".cpp")))))
   (if (file-exists-p filename)
 	  (find-file filename)
-	(error (concat "Header or source file that you tried to switch doesn't exist: " filename))))
+	(error (concat "Header or source file that you tried to switch to doesn't exist: " filename))))
 
 (provide 'custom-functions)
