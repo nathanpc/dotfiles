@@ -150,6 +150,9 @@ export PATH="$PATH:/opt/microchip/xc32/v2.10/bin"
 # Espressif ESP8266 toolchain.
 export PATH="$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin"
 
+# Casio Prizm SDK.
+export PATH="$PATH:/opt/prizm-sdk/bin"
+
 # Neofetch to make things fancy when starting up.
 neofetch
 
