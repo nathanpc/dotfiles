@@ -15,6 +15,9 @@
 ;; Inhibit the startup screen only when appropriate.
 (add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
 
+;; Import the special icons for Emacs.
+(require 'all-the-icons)
+
 ;; Set default theme.
 (require 'doom-themes)               ; Import the awesome theme.
 (setq doom-themes-enable-bold t)     ; Enable bold in the theme.
@@ -72,9 +75,17 @@
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Use y or n instead of yes or no in prompts.
 (setq echo-keystrokes 0.1)         ; Show key combination hints faster.
 
-;; Smart Mode-Line.
-(setq sml/theme 'respectful)  ; Make sure SML respects the current theme.
-(sml/setup)                   ; Load smart-mode-line.
+;; Doom Modeline.
+(require 'doom-modeline)
+(doom-modeline-mode t)
+(setq doom-modeline-buffer-file-name-style
+	  'relative-from-project)                  ; Show path relative to project.
+(setq doom-modeline-indent-info t)             ; Show indentation information.
+(setq doom-modeline-minor-modes
+	  (featurep 'minions))                     ; Display minor modes.
+(defun show-word-count-doom-modeline ()
+  (setq doom-modeline-enable-word-count t))    ; Display word count text mode.
+(add-hook 'text-mode-hook 'show-word-count-doom-modeline)
 
 ;; Smex.
 (smex-initialize)  ; Start Smex.
