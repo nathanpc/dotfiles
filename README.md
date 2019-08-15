@@ -35,6 +35,6 @@ Here I went with a very clean and texty look, using the [Tomorrow Night](https:/
 
 ### Vim
 
-My previous text editor of choice with a bunch of plugins, all the common configurations to make it saner, tons of new shortcuts, and the classic [Tomorrow Night](https://github.com/chriskempson/base16-tomorrow-scheme) color scheme.
+My previous text editor of choice with a bunch of plugins, all the common configurations to make it saner, tons of new shortcuts, and the classic [Molokai](https://github.com/tomasr/molokai) color scheme.
 
 ![Vim setup](/screenshots/gvim.png?raw=true)
