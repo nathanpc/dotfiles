@@ -52,24 +52,4 @@ names an existing file."
          (file-exists-p
           (expand-file-name argi command-line-default-directory)))))
 
-(defun c-toggle-header ()
-  "Toggles between source and a header file"
-  (interactive)
-  (setq filename (buffer-file-name))
-  (setq filename (if (string-match "cp?" (file-name-extension filename))
-					 (progn
-					   (setq newfile (concat (file-name-sans-extension filename) ".h"))
-					   (if (file-exists-p newfile)
-						   newfile
-						 (replace-regexp-in-string "\/src\/" "/include/" newfile)))
-				   (progn
-					 (setq newfile (replace-regexp-in-string "\/include\/" "/src/" filename))
-					 (setq newfile (concat (file-name-sans-extension newfile) ".c"))
-					 (if (file-exists-p newfile)
-						 newfile
-					   (concat (file-name-sans-extension newfile) ".cpp")))))
-  (if (file-exists-p filename)
-	  (find-file filename)
-	(error (concat "Header or source file that you tried to switch to doesn't exist: " filename))))
-
 (provide 'custom-functions)
