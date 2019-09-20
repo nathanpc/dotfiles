@@ -20,6 +20,9 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+# Enable completion.
+source /usr/share/bash-completion/bash_completion
+
 # Make my scripts available.
 export PATH="/home/nathan/dotfiles/scripts:$PATH"
 
