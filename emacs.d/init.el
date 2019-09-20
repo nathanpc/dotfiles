@@ -3,8 +3,10 @@
 ;;
 ;; Author: Nathan Campos <nathanpc@dreamintech.net>
 
+;; Package management.
+(load "~/.emacs.d/packman")
+
 ;; Automatically generated stuff.
-(package-initialize)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -61,10 +63,6 @@
 ;; Files should always end with a newline.
 (setq require-final-newline t)
 (setq mode-require-final-newline t)
-
-;; Package management.
-(add-to-list 'package-archives
-			 '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Load non-ELPA plugins.
 (add-to-list 'load-path "~/.emacs.d/plugins")
