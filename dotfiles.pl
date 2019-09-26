@@ -78,7 +78,7 @@ sub get_dotfiles {
 
 # Creates symlinks for a dotfile.
 sub create_symlinks {
-	my ($name, $files) = @_;
+	my ($name, $files, $force) = @_;
 
 	# Check if the requested name exists.
 	print "Checking if " . colored($name, "blue") .
@@ -94,15 +94,36 @@ sub create_symlinks {
 			print "Checking if the target " . colored($target, "blue") .
 				" is available... ";
 			if (-e $target) {
-				print colored("FAIL", "red") . "\n";
-				die "Target file for '$name' already exists at '$target'.";
+				# File already exists.
+				if ($force) {
+					print colored("IGNORED", "yellow") . "\n";
+				} else {
+					print colored("FAIL", "red") . "\n";
+					die "Target file for '$name' already exists at '$target'." .
+						" Use the flag '-sf' to force a overwrite.";
+				}
+			} else {
+				# Target doesn't exist yet.
+				print colored("OK", "green") . "\n";
 			}
 
-			# TODO: Create symlink.
 			print "Creating symlink... " . colored($target, "cyan") .
-				" -> " . colored($source, "blue") . "\n";
+				" -> " . colored($source, "blue");
+
+			# Remove the target file in a overwrite situation.
+			if ($force) {
+				unlink $target;
+			}
+
+			# Create actual symlink.
+			if (symlink $source, $target) {
+				print colored(" OK", "green") . "\n";
+			} else {
+				print colored(" FAIL", "red") . "\n";
+			}
 		}
 	} else {
+		# Can't find a dotfile with that name.
 		print colored("FAIL", "red") . "\n";
 		die "Can't find a dotfile named '$name'";
 	}
@@ -136,9 +157,10 @@ sub usage {
 	print "Usage: $0 <options> [program]\n\n";
 
 	print colored("Options:", "bold") . "\n";
-	print "    -l          \tLists the available dotfiles.\n";
-	print "    -s [program]\tCreates symlinks of dotfiles for a given program.\n";
-	print "    -h          \tThis message.\n";
+	print "    -l           \tLists the available dotfiles.\n";
+	print "    -s [program] \tCreates symlinks of dotfiles for a given program.\n";
+	print "    -sf [program]\tForcefully creates symlinks of dotfiles for a given program.\n";
+	print "    -h           \tThis message.\n";
 }
 
 # The main entry point.
@@ -154,10 +176,10 @@ sub main {
 		} elsif ($ARGV[0] eq "-l") {
 			# List available dotfiles.
 			list_dotfiles(\%files);
-		} elsif ($ARGV[0] eq "-s") {
+		} elsif (($ARGV[0] eq "-s") or ($ARGV[0] eq "-sf")) {
 			# Create symlinks.
 			if (scalar(@ARGV) > 1) {
-				create_symlinks($ARGV[1], \%files);
+				create_symlinks($ARGV[1], \%files, $ARGV[0] eq "-sf");
 			} else {
 				usage();
 			}
