@@ -71,6 +71,17 @@
 							 font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'highlight-todos)
 
+;; Nice dashboard.
+(require 'dashboard)
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq dashboard-set-navigator t)
+(setq dashboard-items '((recents  . 15)
+                        (bookmarks . 8)
+                        (registers . 8)))
+(dashboard-setup-startup-hook)
+
 ;; Miscellaneous.
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Use y or n instead of yes or no in prompts.
 (setq echo-keystrokes 0.1)         ; Show key combination hints faster.
