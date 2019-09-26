@@ -131,6 +131,12 @@
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 (add-hook 'prog-mode-hook 'hes-mode)
 
+;; Smoother scrolling.
+(require 'fast-scroll)
+(setq fast-scroll-throttle 0.1)
+(fast-scroll-config)
+(fast-scroll-mode 1)
+
 ;; Man completion.
 (require 'man-completion)
 

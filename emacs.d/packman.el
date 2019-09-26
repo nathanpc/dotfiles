@@ -15,7 +15,7 @@
 
 ; Declare packages.
 (setq package-list
-      '(doom-modeline package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe))
+      '(doom-modeline package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe dashboard fast-scroll))
 
 ; Fetch the list of available packages. 
 (unless package-archive-contents
