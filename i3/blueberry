@@ -199,6 +199,7 @@ bar {
 }
 
 # Auto start some things.
+exec udiskisctl mount -b /dev/sdb1
 exec --no-startup-id nitrogen --restore
 exec compton -c -C -b
 
