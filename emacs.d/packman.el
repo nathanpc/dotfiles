@@ -22,8 +22,11 @@
   (package-refresh-contents))
 
 ; Iterate on packages and install missing ones
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+(defun install-selected-packages ()
+  "Installs the packages listed in ~/.emacs.d/packman.el"
+  (interactive)
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package))))
 
 (provide 'packman)
