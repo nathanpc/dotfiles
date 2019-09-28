@@ -36,5 +36,12 @@ fi
 # Setup dual monitors.
 xrandr --output HDMI1 --auto --output HDMI2 --auto --right-of HDMI1
 
+# Setup some X options.
+xset b off  # Turn bell off.
+xset s off  # Turn screensaver off.
+
+# Start screensaver.
+xscreensaver &
+
 # Start the window manager.
 exec i3
