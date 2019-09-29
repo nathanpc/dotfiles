@@ -60,7 +60,9 @@ sub get_dotfiles {
 
 			# Check if source file exists.
 			if (!-e $source) {
-				croak "Source '$source' for '" . $file->{name} . "' doesn't exist.";
+				print colored("Warning: ", "yellow") . "Source '$source' for '"
+					. $file->{name} . "' doesn't exist.\n";
+				next;
 			}
 
 			# Append dotfile sources to the list.
