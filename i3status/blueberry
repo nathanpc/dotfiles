@@ -37,7 +37,7 @@ ethernet _first_ {
 volume master {
     format = " %volume"
     format_muted = " (%volume)"
-    device = "pulse:1"
+    device = "default"
     mixer = "Master"
     mixer_idx = 0
 }
