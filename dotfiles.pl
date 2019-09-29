@@ -36,6 +36,7 @@ my @dotfiles = (
 	{ name => "vim", sources => [ "vim/vimrc", "vim/vim" ], targets => [ "~/.vimrc", "~/.vim" ], hostspecific => 0 },
 	{ name => "xinit", sources => [ "xinitrc" ], targets => [ "~/.xinitrc" ], hostspecific => 0 },
 	{ name => "Xresources", sources => [ "Xresources" ], targets => [ "~/.Xresources" ], hostspecific => 0 },
+	{ name => "xscreensaver", sources => [ "xscreensaver" ], targets => [ "~/.xscreensaver" ], hostspecific => 0 },
 	{ name => "zathura", sources => [ "zathurarc" ], targets => [ "~/.config/zathura/zathurarc" ], hostspecific => 0 }
 );
 
