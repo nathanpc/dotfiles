@@ -17,4 +17,7 @@
 (setq show-paren-style 'parenthesis)  ; Highlight the matching paren only.
 (show-paren-mode 1)                   ; Turn on paren match highlighting.
 
+;; Remove trailling whitespace.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'code-styling)
