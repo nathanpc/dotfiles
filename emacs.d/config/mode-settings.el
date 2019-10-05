@@ -15,6 +15,9 @@
 ;; Open header files in C++ mode.
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; Use a better Perl mode.
+(defalias 'perl-mode 'cperl-mode)
+
 ;; Setup R mode.
 (require 'ess-r-mode)
 (setq comint-input-ring-size 1000)  ; Get a nice history.
