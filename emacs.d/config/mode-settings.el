@@ -20,10 +20,10 @@
 
 ;; Setup R mode.
 (require 'ess-r-mode)
+(setq ess-fancy-comments nil)       ; Disable weird comment indentation.
 (setq comint-input-ring-size 1000)  ; Get a nice history.
 (setq ess-indent-level 2)           ; Make sure everything is indented by
 (setq ess-arg-function-offset 2)    ; 2 spaces.
 (setq ess-else-offset 2)
 
 (provide 'mode-settings)
-
