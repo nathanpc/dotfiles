@@ -3,6 +3,13 @@
 #'
 #' @author Nathan Campos <nathanpc@dreamintech.net>
 
+# Set the best CRAN mirror.
+local({
+    r = getOption("repos")
+    r["CRAN"] = "https://cran.rstudio.com/"
+    options(repos = r)
+})
+
 # Setup a local home library.
 rhome <- paste("~/.R/", paste(R.version$major, R.version$minor, sep = "."),
                sep = "")
