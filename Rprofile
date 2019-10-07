@@ -24,7 +24,6 @@ if (interactive()) {
 # Set some options.
 options(editor = "emacs")          # Emacs is my default editor.
 options(width = 80)                # 80 collumn mode.
-options(warn = 2)                  # Warnings are errors.
 options(useFancyQuotes = FALSE)    # Fancy quotes are stupid.
 options(max.print = 100)           # Limit R printing.
 Sys.setenv(R_HISTSIZE = "100000")  # Increase history.
@@ -38,9 +37,9 @@ options(warnPartialMatchAttr = TRUE,
 utils::rc.settings(ipck = TRUE)
 
 # Colored output when running a capable terminal.
-if (Sys.getenv("TERM") == "xterm-256color") {
-    library("colorout")
-}
+options(colorout.emacs = TRUE)
+options(colorout.dumb = TRUE)
+library("colorout")
 
 # Clean up.
 rm(rhome)

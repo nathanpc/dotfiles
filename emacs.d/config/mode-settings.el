@@ -25,5 +25,7 @@
 (setq ess-indent-level 2)           ; Make sure everything is indented by
 (setq ess-arg-function-offset 2)    ; 2 spaces.
 (setq ess-else-offset 2)
+(require 'ansi-color)               ; Enable colored output inside R shell.
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (provide 'mode-settings)
