@@ -4,9 +4,14 @@
 #
 # Author: Nathan Campos <nathanpc@dreamintech.net>
 
+# Check for arguments.
+if [ "$1" == "" ] || [ $# -gt 1 ]; then
+	echo "Usage: $0 <mountpoint>"
+	exit 1
+fi
+
 # Samba share mounting point.
-loc=/media/samba/Nathan
-testdir=$loc/test
+testdir=$1/test
 
 echo "Setting up test directory at $testdir"
 mkdir -p $testdir
