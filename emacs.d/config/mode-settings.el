@@ -16,7 +16,13 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Use a better Perl mode.
-(defalias 'perl-mode 'cperl-mode)
+(defalias 'perl-mode 'cperl-mode)          ; Switch to the better Perl mode.
+(setq cperl-invalid-face nil)              ; Stops the stupid _ from appearing.
+(setq cperl-indent-level 4)                ; Indent with 4 spaces (or tab)
+(setq cperl-continued-statement-offset 4)  ; Fix hash indentation.
+(setq cperl-indent-parens-as-block t)      ; Fixes lines that end with comma.
+(setq cperl-close-paren-offset -4)         ; Stupid indentation on close braces.
+(setq cperl-hairy t)                       ; Enable everything.
 
 ;; Setup R mode.
 (require 'ess-r-mode)
