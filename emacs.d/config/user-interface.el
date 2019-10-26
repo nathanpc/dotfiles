@@ -43,7 +43,6 @@
 
 ;; Smooth scrolling.
 (setq scroll-step 1)                      ; Keyboard scroll one line at a time.
-(setq scroll-conservatively 10000)        ; Move minimum when cursor exits view.
 (setq scroll-preserve-screen-position 1)  ; Cursor stays in place when scrolling.
 (setq mouse-wheel-scroll-amount '(1))     ; Mouse scroll moves 1 line at a time.
 (setq mouse-wheel-progressive-speed nil)  ; Disable accelerated scrolling.
