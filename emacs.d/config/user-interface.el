@@ -36,6 +36,8 @@
 (size-indication-mode t)            ; Show file size in the mode line.
 (global-display-line-numbers-mode)  ; Show line numbers in the left fringe.
 (global-hl-line-mode 1)             ; Highlight the current line.
+(define-key global-map              ; Mouse Shift-Click selection.
+  (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ;; Syntax highlighting
 (global-font-lock-mode 1)              ; Enable syntax highlighting.
