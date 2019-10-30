@@ -9,6 +9,16 @@ package $0;
 use strict;
 use warnings;
 
+# Constructor.
+sub new {
+	my ($class) = @_;
+	my $self = {
+	};
+
+	bless $self, $class;
+	return $self;
+}
+
 $1# TODO: Write the module.
 
 1;
