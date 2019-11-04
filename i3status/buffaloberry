@@ -18,7 +18,7 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
 order += "disk /"
-order += "disk /media/nathan/External/"
+order += "disk /mnt/sd/"
 order += "load"
 order += "volume master"
 order += "tztime local"
@@ -66,7 +66,7 @@ disk "/" {
     format = " %avail" # (%used/%total)"
 }
 
-disk "/media/nathan/External/" {
+disk "/mnt/sd/" {
     format = " %avail" # (%used/%total)"
 }
 
