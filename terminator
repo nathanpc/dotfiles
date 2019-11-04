@@ -12,8 +12,8 @@
 [keybindings]
   close_term = <Primary><Alt>w
   close_window = <Primary><Alt>q
-  copy = <Primary><Shift>c
-  paste = <Primary><Shift>v
+  copy = <Alt>w
+  paste = <Primary>y
   split_horiz = <Alt>minus
   split_vert = <Alt>backslash
 [layouts]
