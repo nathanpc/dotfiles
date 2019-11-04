@@ -24,7 +24,7 @@ fi
 source /usr/share/bash-completion/bash_completion
 
 # Make my scripts available.
-export PATH="/home/nathan/dotfiles/scripts:$PATH"
+export PATH="$HOME/dotfiles/scripts:$PATH"
 
 # Show a nice splash screen.
 neofetch
