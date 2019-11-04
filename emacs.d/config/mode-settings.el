@@ -35,4 +35,13 @@
 (require 'ansi-color)               ; Enable colored output inside R shell.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;; Setup Javascript mode.
+(require 'js2-mode)                                      ; Use the best JS mode.
+(require 'xref-js2)                                      ; Better code jumps.
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))  ; Attach to extension.
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)        ; Better imenu.
+(add-hook 'js2-mode-hook (lambda ()
+						   (add-hook 'xref-backend-functions
+									 #'xref-js2-xref-backend nil t)))
+
 (provide 'mode-settings)
