@@ -24,6 +24,7 @@
 (setq cperl-close-paren-offset -4)         ; Stupid indentation on close braces.
 (setq cperl-hairy t)                       ; Enable everything.
 (add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("cpanfile\\'" . cperl-mode))
 
 ;; Setup R mode.
 (require 'ess-r-mode)

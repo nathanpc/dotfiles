@@ -10,7 +10,7 @@
 
 ;; Better Undo/Redo.
 (global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-y") 'redo)
+;(global-set-key (kbd "C-y") 'redo)
 
 ;; Smex.
 (global-set-key (kbd "M-x") 'smex)
@@ -37,7 +37,7 @@
 		  (lambda ()
 			; Load file.
 			(local-set-key (kbd "C-c r") 'ess-load-file)
-			
+
 		    ; Switch between source and interactive console.
 			(local-set-key (kbd "C-c s")
 						   'ess-switch-to-inferior-or-script-buffer)))
