@@ -22,7 +22,7 @@ function usage {
 # The "main" function.
 if [[ $# -gt 0 ]]; then
 	# Take screenshot.
-	scrot -c -d $1 -b -q 100 -m '/tmp/%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
+	scrot -c -d $1 -b -q 100 -m '/tmp/%Y-%m-%d_%H%M%S_$wx$h.png' -e 'mv $f ~/pictures/screenshots/'
 else
 	# Need some help?
 	usage
