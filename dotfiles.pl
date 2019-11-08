@@ -152,8 +152,6 @@ sub list_dotfiles {
 			print "    " . File::Spec->abs2rel($target, "/home/nathan/") .
 				"  ->  " . File::Spec->abs2rel($source, "/home/nathan") . "\n";
 		}
-
-		print "\n";
 	}
 }
 
