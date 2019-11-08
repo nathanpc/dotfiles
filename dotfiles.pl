@@ -20,11 +20,13 @@ my @dotfiles = (
 	{ name => "drive", sources => [ "driverc" ], targets => [ "~/.driverc" ], hostspecific => 0 },
 	{ name => "emacs", sources => [ "emacs.d" ], targets => [ "~/.emacs.d" ], hostspecific => 0 },
 	{ name => "gdb", sources => [ "gdbinit" ], targets => [ "~/.gdbinit" ], hostspecific => 0 },
+	{ name => "git", sources => [ "gitconfig" ], targets => [ "~/.gitconfig" ], hostspecific => 0 },
 	{ name => "i3", sources => [ "i3/{host}" ], targets => [ "~/.config/i3/config" ], hostspecific => 1 },
 	{ name => "i3status", sources => [ "i3status/{host}" ], targets => [ "~/.config/i3status/config" ], hostspecific => 1 },
 	{ name => "mutt", sources => [ "mutt" ], targets => [ "~/.mutt" ], hostspecific => 0 },
 	{ name => "nano", sources => [ "nanorc" ], targets => [ "~/.nanorc" ], hostspecific => 0 },
 	{ name => "octave", sources => [ "octaverc" ], targets => [ "~/.octaverc" ], hostspecific => 0 },
+	{ name => "r", sources => [ "Rprofile" ], targets => [ "~/.Rprofile" ], hostspecific => 0 },
 	{ name => "ratpoison", sources => [ "ratpoisonrc" ], targets => [ "~/.ratpoisonrc" ], hostspecific => 0 },
 	{ name => "rofi", sources => [ "rofi" ], targets => [ "~/.config/rofi/config" ], hostspecific => 0 },
 	{ name => "rtorrent", sources => [ "rtorrent.rc" ], targets => [ "~/.rtorrent.rc" ], hostspecific => 0 },
@@ -50,7 +52,7 @@ sub get_dotfiles {
 	# Iterate over the list of dotfiles.
 	for my $file (@dotfiles) {
 		$files{$file->{name}} = { sources => [], targets => [] };
-		
+
 		for my $orig_source (@{$file->{sources}}) {
 			my $source = File::Spec->catdir($dotpath, $orig_source);
 
@@ -92,7 +94,7 @@ sub create_symlinks {
 		for (my $i = 0; $i < scalar(@{$files->{$name}->{targets}}); $i++) {
 			my $target  = $files->{$name}->{targets}[$i];
 			my $source  = $files->{$name}->{sources}[$i];
-			
+
 			# Check if the target already exists.
 			print "Checking if the target " . colored($target, "blue") .
 				" is available... ";
@@ -137,7 +139,7 @@ sub list_dotfiles {
 	my ($files) = @_;
 
 	print "List of available dotfiles:\n\n";
-	
+
 	for my $progname (sort(keys %{$files})) {
 		my $file = $files->{$progname};
 
@@ -170,7 +172,7 @@ sub usage {
 sub main {
 	# Get dotfiles specified in the configuration.
 	my %files = get_dotfiles();
-	
+
 	# Check for command-line arguments.
 	if (scalar(@ARGV) > 0) {
 		if ($ARGV[0] eq "-h") {
