@@ -22,10 +22,11 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#0d0d0d" "#81a2be"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#0d0d0d" "#b5bd68"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#0d0d0d" "#5a5b5a"))
+ '(jdee-server-dir "~/.emacs.d/jdee-server")
  '(objed-cursor-color "#cc6666")
  '(package-selected-packages
    (quote
-	(xref-js2 js2-mode dashboard doom-modeline header-tracker package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
+	(web-mode xref-js2 js2-mode dashboard doom-modeline header-tracker package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
  '(sml/theme (quote respectful))
  '(vc-annotate-background "#1d1f21")
  '(vc-annotate-color-map
