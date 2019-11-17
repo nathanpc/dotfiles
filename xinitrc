@@ -41,7 +41,7 @@ xset b off  # Turn bell off.
 xset s off  # Turn screensaver off.
 
 # Start screensaver.
-xscreensaver &
+xscreensaver -nosplash &
 
 # Start the window manager.
 exec i3
