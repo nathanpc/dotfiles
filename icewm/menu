@@ -1,0 +1,21 @@
+menu "Development" folder {
+    prog "GDB" - xterm -e gdb
+}
+menu "Editors" folder {
+    prog "Nano" - xterm -e nano
+    prog "Vi" - xterm -e vi
+    prog "Vim" - xterm -e vim
+    prog "Xedit" - xedit
+}
+menu "Network" folder {
+    prog "FTP" - xterm -e ftp
+    prog "Mail" - xterm -e mail
+    prog "Talk" - xterm -e talk
+    prog "Telnet" - xterm -e telnet
+}
+menu "Shells" folder {
+    prog "GIT" - xterm -e git
+    prog "LXTerminal" - lxterminal
+    prog "ROX" - rox
+    prog "Xterm" - xterm
+}

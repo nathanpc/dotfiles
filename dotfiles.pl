@@ -23,6 +23,7 @@ my @dotfiles = (
 	{ name => "git", sources => [ "gitconfig" ], targets => [ "~/.gitconfig" ], hostspecific => 0 },
 	{ name => "i3", sources => [ "i3/{host}" ], targets => [ "~/.config/i3/config" ], hostspecific => 1 },
 	{ name => "i3status", sources => [ "i3status/{host}" ], targets => [ "~/.config/i3status/config" ], hostspecific => 1 },
+	{ name => "icewm", sources => [ "icewm" ], targets => [ "~/.icewm" ], hostspecific => 0 },
 	{ name => "mutt", sources => [ "mutt" ], targets => [ "~/.mutt" ], hostspecific => 0 },
 	{ name => "nano", sources => [ "nanorc" ], targets => [ "~/.nanorc" ], hostspecific => 0 },
 	{ name => "octave", sources => [ "octaverc" ], targets => [ "~/.octaverc" ], hostspecific => 0 },
