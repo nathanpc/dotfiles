@@ -3,9 +3,12 @@
 ""
 "" Author: Nathan Campos <nathanpc@dreamintech.net>
 
-set nocompatible  " Must be iMproved.
-filetype off      " required by Vundle.
-set encoding=UTF-8
+set nocompatible    " Must be iMproved.
+filetype off        " Required by Vundle.
+set encoding=UTF-8  " That sweet unicode.
+
+" Set the lightweight version according to a environment variable.
+let g:lightweight=empty($LIGHTWEIGHT_VIM)
 
 ""
 "" Vundle Package Manager
@@ -19,11 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Colorschemes.
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-"Plugin 'luochen1990/rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'joshdick/onedark.vim'
-Plugin 'romainl/Apprentice'
 
 " Git integration.
 Plugin 'tpope/vim-fugitive'
@@ -32,13 +31,15 @@ Plugin 'airblade/vim-gitgutter'
 " Fuzzy finder.
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" NERDTree.
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+if !g:lightweight
+	" NERDTree.
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" Powerline.
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+	" Powerline.
+	Plugin 'bling/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
+endif
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -258,15 +259,29 @@ map <C-]> :bnext<CR>
 "" Plugin configurations.
 ""
 
-" NERDTree
-let NERDTreeShowHidden = 1
+if !g:lightweight
+	" NERDTree
+	let NERDTreeShowHidden = 1
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme = 'molokai'
+	" Airline
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#hunks#non_zero_only = 1
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#fnamemod = ':t'
+	let g:airline_theme = 'molokai'
+	
+	" Syntastic
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_auto_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 1
+	let g:syntastic_error_symbol = "❌"
+	let g:syntastic_warning_symbol = "⚠️"
+	let g:syntastic_c_checkers = ['make']
+endif
 
 " delimitMate
 let delimitMate_expand_cr = 1
@@ -277,18 +292,6 @@ augroup mydelimitMate
 	au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
 	au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_error_symbol = "❌"
-let g:syntastic_warning_symbol = "⚠️"
-let g:syntastic_c_checkers = ['make']
 
 " CSS3 Syntax
 augroup VimCSS3Syntax
