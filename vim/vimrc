@@ -8,7 +8,7 @@ filetype off        " Required by Vundle.
 set encoding=UTF-8  " That sweet unicode.
 
 " Set the lightweight version according to a environment variable.
-let g:lightweight=empty($LIGHTWEIGHT_VIM)
+let g:lightweight=!empty($LIGHTWEIGHT_VIM)
 
 ""
 "" Vundle Package Manager
@@ -134,7 +134,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Colorscheme
 set background=dark
-colorscheme molokai
+colorscheme base16-tomorrow-night
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
