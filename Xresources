@@ -39,30 +39,24 @@ URxvt.scrollstyle: plain
 URxvt.scrollTtyOutput: false
 
 ! Perl.
-URxvt.perl-ext-common: default,matcher,tabbed,fullscreen,vtwheel,eval
+URxvt.perl-ext-common: default,matcher,fullscreen,vtwheel,eval
 
 ! Fullscreen.
 URxvt.keysym.F11: perl:fullscreen:switch
-
-! Tabs!
-URxvt.tabbed.new-button: true
-URxvt.tabbed.title: true
-URxvt.tabbed.reopen-on-close: true
-URxvt.keysym.Control-Tab: perl:tabbedex:next_tab
-URxvt.keysym.Control-Shift-Tab: perl:tabbedex:new_tab
 
 ! Clickable URLs.
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! Clipboard.
-URxvt.keysym.C-V: eval:paste_clipboard
-URxvt.keysym.C-C: eval:selection_to_clipboard
+URxvt.keysym.C-Y: eval:paste_clipboard
+URxvt.keysym.M-W: eval:selection_to_clipboard
 
 ! Transparent background.
 !URxvt*inheritPixmap: true
 !URxvt*transparent: true
 !URxvt*shading: 50
+urxvt*depth: 32
 
 !!
 !! Theme: Base16 Tomorrow Night 256
@@ -85,12 +79,9 @@ URxvt.keysym.C-C: eval:selection_to_clipboard
 #define base0E #b294bb
 #define base0F #a3685a
 
+urxvt*background: [70]base00
 *foreground:   base05
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
 *background:   base00
-#endif
 *cursorColor:  base05
 
 *color0:       base00
@@ -120,12 +111,4 @@ URxvt.keysym.C-C: eval:selection_to_clipboard
 
 ! URLs.
 URxvt.colorUL: #8abeb7
-
-! Tabs.
-URxvt.tabbed.tabbar-fg: 7
-URxvt.tabbed.tabbar-bg: 8
-URxvt.tabbed.tab-fg: 8
-URxvt.tabbed.tab-bg: 7
-URxvt.tabbed.title-bg: 8
-URxvt.tabbed.title-fg: 7
 
