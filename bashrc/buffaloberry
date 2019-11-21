@@ -11,8 +11,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Boring prompt.
 PS1='\u@\h:\w\$ '
-# Powerline function. More info at https://github.com/b-ryan/powerline-shell
+
+# Powerline function. More info at: https://github.com/b-ryan/powerline-shell
 function _update_ps1() {
 	PS1=$(powerline-shell $?)
 }
@@ -28,3 +30,4 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 
 # Show a nice splash screen.
 neofetch
+
