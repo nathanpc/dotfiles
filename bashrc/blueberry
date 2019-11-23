@@ -28,3 +28,4 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 
 # Show a nice splash screen.
 neofetch
+
