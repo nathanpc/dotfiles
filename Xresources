@@ -49,8 +49,8 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! Clipboard.
-URxvt.keysym.C-Y: eval:paste_clipboard
-URxvt.keysym.M-W: eval:selection_to_clipboard
+URxvt.keysym.C-y: eval:paste_clipboard
+URxvt.keysym.M-w: eval:selection_to_clipboard
 
 ! Transparent background.
 !URxvt*inheritPixmap: true
