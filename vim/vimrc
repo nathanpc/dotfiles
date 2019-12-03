@@ -28,17 +28,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
-" Fuzzy finder.
-Plugin 'ctrlpvim/ctrlp.vim'
-
 if !g:lightweight
 	" NERDTree.
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-	" Powerline.
-	Plugin 'bling/vim-airline'
-	Plugin 'vim-airline/vim-airline-themes'
 endif
 
 " Markdown
@@ -103,15 +96,17 @@ Plugin 'ervandew/supertab'
 " Tags.
 Plugin 'majutsushi/tagbar'
 
-" Syntax checker.
-Plugin 'vim-syntastic/syntastic'
+if !g:lightweight
+	" Syntax checker.
+	Plugin 'vim-syntastic/syntastic'
 
-" Bling.
-Plugin 'inside/vim-search-pulse'
-Plugin 'RRethy/vim-illuminate'
+	" Bling.
+	Plugin 'inside/vim-search-pulse'
+	Plugin 'RRethy/vim-illuminate'
 
-" Last ones.
-Plugin 'ryanoasis/vim-devicons'
+	" Last ones.
+	Plugin 'ryanoasis/vim-devicons'
+endif
 
 call vundle#end()
 filetype plugin indent on
@@ -200,6 +195,8 @@ set hlsearch
 set incsearch
 set title
 set titleold=
+" Fuzzy file finding.
+set path+=**
 
 ""
 ""  Syntax
@@ -220,6 +217,11 @@ au filetype racket set expandtab
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+
+""
+"" Wildignore
+""
+set wildignore=.git,build,*.o,*~,*.pyc,*.db
 
 ""
 "" Key mapping.
@@ -258,17 +260,19 @@ map <C-]> :bnext<CR>
 "" Plugin configurations.
 ""
 
-if !g:lightweight
-	" NERDTree
-	let NERDTreeShowHidden = 1
+" Netrw
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_banner = 0
+let g:netrw_list_hide = &wildignore
 
-	" Airline
-	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#hunks#non_zero_only = 1
-	let g:airline#extensions#tabline#enabled = 1
-	let g:airline#extensions#tabline#fnamemod = ':t'
-	let g:airline_theme = 'molokai'
-	
+" NERDTree
+let NERDTreeShowHidden = 1
+let NERDTreeRespectWildIgnore = 1
+
+if !g:lightweight
 	" Syntastic
 	set statusline+=%#warningmsg#
 	set statusline+=%{SyntasticStatuslineFlag()}
