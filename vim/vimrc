@@ -20,7 +20,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
-if !g:lightweight
+if g:lightweight
 	Plugin 'tomasr/molokai'
 endif
 Plugin 'chriskempson/base16-vim'
