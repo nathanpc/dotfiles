@@ -20,8 +20,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
+if !g:lightweight
+	Plugin 'tomasr/molokai'
+endif
 Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Git integration.
@@ -131,7 +133,11 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Colorscheme
 set background=dark
-colorscheme molokai "base16-tomorrow-night
+if !g:lightweight
+	colorscheme base16-tomorrow-night
+else
+	colorscheme molokai
+endif
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
