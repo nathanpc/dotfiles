@@ -25,6 +25,9 @@ fi
 # Enable completion.
 source /usr/share/bash-completion/bash_completion
 
+# Make gem executables available.
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
 # Make my scripts available.
 export PATH="$HOME/dotfiles/scripts:$PATH"
 
