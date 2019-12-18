@@ -11,6 +11,7 @@ backups/
 recentf
 smex-items
 *.data
+tramp
 
 # Compiled Emacs Lisp.
 *.elc
