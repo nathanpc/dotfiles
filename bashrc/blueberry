@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias cat='bat'
 
 PS1='\u@\h:\w\$ '
 # Powerline function. More info at https://github.com/b-ryan/powerline-shell
