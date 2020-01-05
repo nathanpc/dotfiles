@@ -10,8 +10,11 @@ startup_message off
 # Good amount of scrollback.
 defscrollback 2048
 
+# Fixes Vim background. (Nope)
+defbce on
+
 # Enable 256 colors.
-term rxvt-unicode-256color
+term screen-256color
 
 # Disable that annoying visual bell.
 vbell off
