@@ -252,8 +252,8 @@ map <Esc>[1;7C :wincmd l<CR>
 map <Esc>[1;7A :wincmd k<CR>
 map <Esc>[1;7B :wincmd j<CR>
 
-"
-"" Pseudo-tabs (vim-airline) navigation.
+""
+"" Pseudo-tabs navigation.
 ""
 " Ctrl-T New tab.
 map <C-t> :enew<CR> 
@@ -263,6 +263,38 @@ map <C-x> :bp <BAR> bd #<CR>
 "map <C-[> :bprevious<CR>
 " Ctrl-] Next tab.
 map <C-]> :bnext<CR>
+
+""
+"" Statusline
+""
+function! StatusLineModeText()
+	let l:cmode=mode()
+
+	if l:cmode == "n"
+		return "NORMAL"
+	elseif l:cmode == "i"
+		return "INSERT"
+	elseif l:cmode == "v"
+		return "VISUAL"
+	elseif l:cmode == "r"
+		return "REPLACE"
+	elseif l:cmode == "c"
+		return "COMMAND"
+	else
+		return "UNKNOWN " . toupper(l:cmode)
+	endif
+endfunction
+set statusline=
+set statusline+=%#Cursor#\ %{StatusLineModeText()}\ %#StatusLine#
+set statusline+=%(\ %h%w%q%)\ %f\ %m\ %r
+set statusline+=%=
+set statusline+=%#StatusLineNC#
+set statusline+=\ %{&fileformat}\ 
+set statusline+=%#StatusLine#
+set statusline+=\ %l:%c\ %p%%\ 
+set statusline+=%#Cursor#
+set statusline+=\ %{&filetype}\ 
+set statusline+=%#StatusLine#
 
 ""
 "" Plugin configurations.
