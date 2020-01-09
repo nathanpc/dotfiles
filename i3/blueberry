@@ -200,7 +200,7 @@ bar {
 
 # Auto start some things.
 exec --no-startup-id nitrogen --restore
-exec compton -c -C -b
+exec picom -c -C -b
 
 # vim:filetype=i3config
 
