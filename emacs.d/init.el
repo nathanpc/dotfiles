@@ -26,7 +26,7 @@
  '(objed-cursor-color "#cc6666")
  '(package-selected-packages
    (quote
-	(web-mode xref-js2 js2-mode dashboard doom-modeline header-tracker package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
+	(basic-mode web-mode xref-js2 js2-mode dashboard doom-modeline header-tracker package-lint yasnippet jdee markdown-mode highlight-escape-sequences highlight-numbers dumb-jump company rainbow-delimiters rainbow-mode dimmer smex highlight-indent-guides doom-themes git-gutter-fringe)))
  '(sml/theme (quote respectful))
  '(vc-annotate-background "#1d1f21")
  '(vc-annotate-color-map

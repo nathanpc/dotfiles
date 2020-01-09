@@ -19,7 +19,7 @@
 					  highlight-escape-sequences highlight-numbers dumb-jump
 					  company rainbow-delimiters rainbow-mode dimmer smex
 					  highlight-indent-guides doom-themes git-gutter-fringe
-					  dashboard fast-scroll ess js2-mode xref-js2))
+					  dashboard fast-scroll ess js2-mode xref-js2 basic-mode))
 
 ; Fetch the list of available packages.
 (unless package-archive-contents
