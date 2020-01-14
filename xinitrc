@@ -45,3 +45,5 @@ xscreensaver -nosplash &
 
 # Start the window manager.
 exec i3
+#exec openbox-session
+
