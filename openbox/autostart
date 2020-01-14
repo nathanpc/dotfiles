@@ -1,31 +1,22 @@
-# Merge X configs.
-xrdb -merge ~/.Xresources &
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
 
-# Wallpaper
-nitrogen --restore &
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
 
-# Window Composition
-xcompmgr -f -D 5 &
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
 
-# Awesome systray
-tint2 &
+# Auto start some things.
+nitrogen --restore
+picom -c -C -b
 
-# Conky
-conky &
-
-# Disable X screensaver/blanking.
-xset -dpms &
-xset s noblank &
-xset s off &
-
-# Disable Nautilus desktop.
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_desktop false &
-
-# Do not let Nautilus set the background image.
-gconftool-2 -s -t bool /desktop/gnome/background/draw_background false &
-
-# Make Nautilus use spatial mode, should start-up quicker.
-gconftool-2 -s -t bool /apps/nautilus/preferences/always_use_browser false &
-
-# Make Nautilus show the advanced permissions dialog 
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_advanced_permissions true &
