@@ -34,8 +34,7 @@ URxvt.letterSpace: -1
 ! Scrolling related stuff.
 URxvt.saveLines: 4095
 URxvt.rightScrollBar: false
-!URxvt.scrollBar: false
-URxvt.scrollstyle: plain
+URxvt.scrollBar: false
 URxvt.scrollTtyOutput: false
 
 ! Perl.
@@ -79,7 +78,7 @@ urxvt*depth: 32
 #define base0E #b294bb
 #define base0F #a3685a
 
-urxvt*background: [70]base00
+urxvt*background: [85]base00
 *foreground:   base05
 *background:   base00
 *cursorColor:  base05
