@@ -16,7 +16,6 @@ general {
 #order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 0"
 order += "disk /"
 order += "disk /mnt/hda/"
 order += "load"
@@ -37,7 +36,7 @@ ethernet _first_ {
 volume master {
     format = " %volume"
     format_muted = " (%volume)"
-    device = "default"
+    device = "sysdefault"
     mixer = "Master"
     mixer_idx = 0
 }
