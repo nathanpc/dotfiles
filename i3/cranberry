@@ -135,6 +135,26 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # Tomorrow Night (base16) theme colorscheme.
 set $base00 #1d1f21
 set $base01 #282a2e
@@ -186,4 +206,3 @@ exec --no-startup-id nitrogen --restore
 exec picom -c -C -b
 
 # vim:filetype=i3config
-
