@@ -41,9 +41,9 @@ xset b off  # Turn bell off.
 xset s off  # Turn screensaver off.
 
 # Start screensaver.
-xscreensaver -nosplash &
+#screensaver -nosplash &
 
 # Start the window manager.
-exec i3
-#exec startlxde
+#exec i3
+exec mate-session
 
