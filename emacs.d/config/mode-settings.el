@@ -15,6 +15,10 @@
 ;; Open header files in C++ mode.
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; Setup Scheme mode.
+(require 'geiser)
+(setq geiser-active-implementations '(guile))
+
 ;; Use a better Perl mode.
 (defalias 'perl-mode 'cperl-mode)          ; Switch to the better Perl mode.
 (setq cperl-invalid-face nil)              ; Stops the stupid _ from appearing.
@@ -44,5 +48,21 @@
 (add-hook 'js2-mode-hook (lambda ()
 						   (add-hook 'xref-backend-functions
 									 #'xref-js2-xref-backend nil t)))
+
+;; Setup C# mode.
+(defun cs-mode-hook ()
+  (omnisharp-mode)  ; Use omnisharp mode.
+  (company-mode)    ; Enable auto completion.
+  (flycheck-mode)   ; Enable syntax checking.
+
+  ; Enable electric pairs depending on the Emacs version.
+  (if (version< emacs-version "25.0")
+	  (electric-pair-local-mode 1)
+	(electric-pair-mode 1))
+
+  ; Setup some useful key bindings.
+  (local-set-key (kbd "C-c r r") 'omnisharp-run-code-action-refactoring)
+  (local-set-key (kbd "C-c C-c") 'recompile))
+(add-hook 'csharp-mode-hook 'cs-mode-hook)
 
 (provide 'mode-settings)

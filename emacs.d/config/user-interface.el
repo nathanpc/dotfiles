@@ -10,7 +10,7 @@
 (setq auto-window-vscroll nil)   ; Improves performance.
 
 ;; Set default font.
-(set-default-font "LiterationMono Nerd Font Mono 10")
+(set-default-font "LiterationMono Nerd Font Mono 9")
 
 ;; Inhibit the startup screen only when appropriate.
 (add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
