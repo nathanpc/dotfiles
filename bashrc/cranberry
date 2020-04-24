@@ -26,6 +26,9 @@ fi
 # Enable completion.
 source /usr/share/bash-completion/bash_completion
 
+# Make the Java executables available.
+source /etc/profile.d/jre.sh
+
 # Make gem executables available.
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
