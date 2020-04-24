@@ -40,6 +40,12 @@ endif
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" C and C++.
+Plugin 'justinmk/vim-syntax-extra'
+if !g:lightweight
+	Plugin 'vim-scripts/gtk-vim-syntax'
+endif
+
 " HTML and CSS.
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
