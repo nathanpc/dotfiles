@@ -10,6 +10,7 @@ photodir=$1
 curdate=`date +"%Y%m%d%H%M%S"`
 tmplist="/tmp/timelapse-$curdate.txt"
 outfile=$2
+bitrate=20000
 
 if [[ $# -lt 2 ]]; then
 	echo "Usage: $0 photodir outfile"
@@ -22,5 +23,5 @@ if [[ $# -lt 2 ]]; then
 fi
 
 ls -1 $photodir/*.JPG > $tmplist
-mencoder -nosound -noskip -oac copy -ovc copy -lavcopts vcodec=mpeg4 -o "$outfile" -mf type=jpeg:fps=30 "mf://@$tmplist"
+mencoder -nosound -noskip -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=$bitrate -o "$outfile" -mf type=jpeg:fps=30 "mf://@$tmplist"
 
