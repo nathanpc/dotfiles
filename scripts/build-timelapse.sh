@@ -10,13 +10,13 @@ photodir=$1
 curdate=`date +"%Y%m%d%H%M%S"`
 tmplist="/tmp/timelapse-$curdate.txt"
 outfile=$2
-bitrate=20000
+bitrate=10000
 
 if [[ $# -lt 2 ]]; then
 	echo "Usage: $0 photodir outfile"
 	echo
 	echo -e "    photodir\tDirectory where all your JPEGs are."
-	echo -e "    outfile\tOutput file with AVI extension."
+	echo -e "    outfile\tOutput file with MP4 extension."
 	echo
 
 	exit 1
