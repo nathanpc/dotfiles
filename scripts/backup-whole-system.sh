@@ -22,12 +22,12 @@ cd /
 fname=`hostname`
 fname+='-'
 fname+=`date -u +"%Y-%m-%d-T%H%M"`
-fname+=".tar.gz"
+fname+=".tar.bz2"
 echo "Saving the backup as $fname"
 
 # Make the archive.
 echo "Building the backup archive"
-tar -cvpzf $fname \
+tar -cvpjf $fname \
 	--exclude=/$fname \
 	--exclude=/mnt \
 	--exclude=/dev \
