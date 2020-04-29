@@ -36,6 +36,7 @@ tar -cvpjf $fname \
 	--exclude=/var/log \
 	--exclude=/var/cache/apt/archives \
 	--exclude=/usr/src/linux-headers* \
+	/
 
 endtime=`date`
 echo "Done!"
