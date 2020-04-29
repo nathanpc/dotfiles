@@ -24,6 +24,9 @@ fi
 # Enable completion.
 source /usr/share/bash-completion/bash_completion
 
+# Enable Java.
+source /etc/profile.d/jre.sh
+
 # Make my scripts available.
 export PATH="$HOME/dotfiles/scripts:$PATH"
 
