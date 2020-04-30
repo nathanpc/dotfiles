@@ -32,6 +32,7 @@ tar -cvpjf $fname \
 	--exclude=/mnt \
 	--exclude=/dev \
 	--exclude=/sys \
+	--exclude=/proc \
 	--exclude=/media \
 	--exclude=/var/log \
 	--exclude=/var/cache/apt/archives \
