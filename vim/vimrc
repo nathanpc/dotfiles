@@ -10,6 +10,11 @@ set encoding=UTF-8  " That sweet unicode.
 " Set the lightweight version according to a environment variable.
 let g:lightweight=!empty($LIGHTWEIGHT_VIM)
 
+if has('win32')
+	" Fix the runtime path under Windows.
+	set runtimepath=$HOME/dotfiles/vim/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/dotfiles/vim/vim/after,$HOME/dotfiles/vim/vim/bundle/Vundle.vim
+end
+
 ""
 "" Vundle Package Manager
 ""
@@ -133,9 +138,11 @@ set cul
 set guioptions-=T
 set splitbelow
 set splitright
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if !has('win32')
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+end
 
 " Colorscheme
 set background=dark
