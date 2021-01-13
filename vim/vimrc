@@ -193,8 +193,12 @@ set pastetoggle=<F11>
 "set nostartofline
 set confirm
 set history=1000
-set clipboard=unnamedplus
 set modeline
+if has('win32')
+	set clipboard=unnamed
+else
+	set clipboard=unnamedplus
+endif
 
 ""
 ""  Indentation options.
