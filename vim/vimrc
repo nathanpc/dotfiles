@@ -10,8 +10,8 @@ set encoding=UTF-8  " That sweet unicode.
 " Set the lightweight version according to a environment variable.
 let g:lightweight=!empty($LIGHTWEIGHT_VIM)
 
+" Fix the runtime path under Windows.
 if has('win32')
-	" Fix the runtime path under Windows.
 	set runtimepath=$HOME/dotfiles/vim/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/dotfiles/vim/vim/after,$HOME/dotfiles/vim/vim/bundle/Vundle.vim
 end
 
@@ -84,6 +84,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 " Perl
 Plugin 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plugin 'hotchpotch/perldoc-vim'
+Plugin 'yko/mojo.vim'
 
 " Octave
 Plugin 'gagbo/vim-gnuplot'
@@ -325,8 +326,8 @@ let g:netrw_list_hide = &wildignore
 let NERDTreeShowHidden = 1
 let NERDTreeRespectWildIgnore = 1
 
+" Syntastic
 if !g:lightweight
-	" Syntastic
 	set statusline+=%#warningmsg#
 	set statusline+=%{SyntasticStatuslineFlag()}
 	set statusline+=%*
@@ -380,4 +381,7 @@ let g:csv_autocmd_arrange = 1  " Auto arrange columns in a CSV file.
 
 " Python
 let g:python_highlight_all = 1
+
+" Perl
+let g:mojo_highlight_data = 1
 
