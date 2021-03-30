@@ -11,15 +11,17 @@ set encoding=UTF-8  " That sweet unicode.
 let g:lightweight=!empty($LIGHTWEIGHT_VIM)
 
 " Fix the runtime path under Windows.
-if has('win32')
-	set runtimepath=$HOME/dotfiles/vim/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/dotfiles/vim/vim/after,$HOME/dotfiles/vim/vim/bundle/Vundle.vim
-end
-
 ""
 "" Vundle Package Manager
 ""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('win32')
+	set shellslash
+	set runtimepath=$HOME/dotfiles/vim/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/dotfiles/vim/vim/after,$HOME/dotfiles/vim/vim/bundle/Vundle.vim
+	call vundle#begin('~/dotfiles/vim/vim/bundle/Vundle.vim')
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+end
 
 " Vundle itself.
 Plugin 'VundleVim/Vundle.vim'
@@ -134,7 +136,7 @@ set title
 set ruler
 set laststatus=2
 set mouse=a
-set number
+set number relativenumber
 set cul
 set guioptions-=T
 set splitbelow
@@ -159,7 +161,7 @@ if has("gui_running")
 
 	if has("gui_win32")
 		" Windows font.
-		set guifont=Liberation_Mono:h9:cANSI:qDRAFT
+		set guifont=LiterationMono_Nerd_Font_Mono:h9:cANSI:qDRAFT
 	elseif has("gui_gtk2") || has("gui_gtk3")
 		" Linux font.
 		set guifont=LiterationMono\ Nerd\ Font\ Mono\ 10
@@ -241,8 +243,13 @@ au filetype racket set expandtab
 ""  Backup
 ""
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+if has('win32')
+	set backupdir=~/dotfiles/vim/vim/backup
+	set directory=~/dotfiles/vim/vim/tmp
+else
+	set backupdir=~/.vim/backup
+	set directory=~/.vim/tmp
+end
 
 ""
 "" Wildignore
