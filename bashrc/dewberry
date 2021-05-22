@@ -1,0 +1,46 @@
+# .bashrc
+# Bash configuration file.
+#
+# Author: Nathan Campos <hi@nathancampos.me>
+
+# Add MacPorts to the system PATH.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+# Set default applications.
+export EDITOR=vim
+export VISUAL=${EDITOR}
+export PAGER=more
+
+# Set aliases
+alias ls='ls -G'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Enable completion.
+if [ -r /opt/local/share/bash-completion/bash_completion ]; then
+	. /opt/local/share/bash-completion/bash_completion
+fi
+
+# Set prompt.
+function prompt_ecode() {
+	RETVAL=$?
+	[ $RETVAL -ne 0 ] && echo -e "\033[0;31m"
+}
+case "$TERM" in
+	"dumb")
+		export PS1="$ "
+		;;
+	xterm*|rxvt*|eterm*|screen*)
+		export PS1="[\[\033[01;33m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]] \`prompt_ecode\`\\$\033[0m "
+		;;
+esac
+
+# Include my own scripts to the PATH.
+export PATH="$PATH:$HOME/dotfiles/scripts"
+
+# Show a pretty welcome message.
+if [ "$TERM" != "dumb"  ]; then
+	neofetch
+fi
+
