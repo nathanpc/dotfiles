@@ -30,16 +30,12 @@ if [ -r /usr/pkg/share/bash-completion/bash_completion ]; then
 fi
 
 # Set prompt.
-function prompt_ecode() {
-	RETVAL=$?
-	[ $RETVAL -ne 0 ] && echo -e "\033[0;31m"
-}
 case "$TERM" in
 	"dumb")
 		export PS1="$ "
 		;;
 	xterm*|rxvt*|eterm*|screen*)
-		export PS1="[\[\033[01;33m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]] \`prompt_ecode\`\\$\033[0m "
+		export PS1='[\[\033[01;33m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \[\033[00m\]] $([ $? -ne 0 ] && echo -e "\[\033[0;31m\]")\$\[\033[00m\] ' 
 		;;
 esac
 
