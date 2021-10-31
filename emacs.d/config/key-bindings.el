@@ -12,9 +12,6 @@
 (global-set-key (kbd "C-z") 'undo)
 ;(global-set-key (kbd "C-y") 'redo)
 
-;; Smex.
-(global-set-key (kbd "M-x") 'smex)
-
 ;; C/C++ mode.
 (add-hook 'c-mode-common-hook
 		  (lambda ()
@@ -31,21 +28,5 @@
 (add-hook 'lisp-interaction-mode-hook
 		  (lambda ()
 			(local-set-key (kbd "C-c r") 'eval-buffer)))
-
-;; ESS mode.
-(add-hook 'ess-mode-hook
-		  (lambda ()
-			; Load file.
-			(local-set-key (kbd "C-c r") 'ess-load-file)
-
-		    ; Switch between source and interactive console.
-			(local-set-key (kbd "C-c s")
-						   'ess-switch-to-inferior-or-script-buffer)))
-(add-hook 'inferior-ess-mode-hook
-		  (lambda ()
-			 (define-key inferior-ess-mode-map (kbd "<up>")
-			   'comint-previous-matching-input-from-input)
-			 (define-key inferior-ess-mode-map (kbd "<down>")
-			   'comint-next-matching-input-from-input)))
 
 (provide 'key-bindings)
