@@ -9,7 +9,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Set default applications.
 export EDITOR=vim
 export VISUAL=${EDITOR}
-export PAGER=more
+export PAGER=less
+export LESS=FRX
 
 # Set aliases
 alias ls='ls -G'
