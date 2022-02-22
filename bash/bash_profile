@@ -25,9 +25,9 @@ esac
 
 # Setup a fancy prompt.
 if [ "$color_prompt" = yes ]; then
-	export PS1='\[\033[00m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[00m\]]\$ '
+	export PS1='\[\033[00m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[00m\]]\$ '
 else
-	export PS1='[\u@\h \W]\$ '
+	export PS1='[\u@\h \w]\$ '
 fi
 
 # Enable the handy tab completions.
