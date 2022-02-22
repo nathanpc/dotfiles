@@ -5,17 +5,6 @@
 ###
 ### Author: Nathan Campos <nathan@innoveworkshop.com>
 
-# Handy ls aliases.
-alias ls='ls -F'
-alias ll='ls -la'
-alias la='ls -AF'
-
-# Handy git aliases.
-alias gs='git status'
-alias gc='git commit'
-alias gps='git push'
-alias gpl='git pull'
-
 # Making things colorful.
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -27,4 +16,15 @@ if [ -x /usr/bin/dircolors ]; then
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
 fi
+
+# Handy ls aliases.
+alias ls='ls -F --color=auto'
+alias ll='ls -la --color=auto'
+alias la='ls -AF --color=auto'
+
+# Handy git aliases.
+alias gs='git status'
+alias gc='git commit'
+alias gps='git push'
+alias gpl='git pull'
 
