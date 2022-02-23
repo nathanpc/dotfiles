@@ -19,6 +19,12 @@ echo "=                                                                         
 echo "================================================================================"
 echo ""
 
+# Check if we have sudo available.
+if ! [ -x "$(command -v sudo)" ]; then
+	echo "You need sudo first. Please set it up, we'll give you a root shell:"
+	su
+fi
+
 # Install of of the official packages needed.
 echo "Installing all of the packages we need from the official repositories..."
 sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
