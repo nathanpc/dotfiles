@@ -14,8 +14,8 @@ GIT = git
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen
-all: xserver consoleapps devenv editors shellconf
+.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt
+all: xserver termemus consoleapps devenv editors shellconf
 
 #
 # Shells
@@ -145,5 +145,25 @@ screen: $(DOTFILESDIR)/screenrc
 	@echo "Setting up GNU Screen..."
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/screenrc $(HOME)/.screenrc
+	@echo $(TXTDONE)
+
+#
+# Terminal Emulators
+#
+termemus: terminator urxvt
+
+# Terminator
+terminator: $(DOTFILESDIR)/terminator/
+	@echo "Setting up Terminator..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/terminator/ $(HOME)/.config/terminator
+	@echo $(TXTDONE)
+
+urxvt: $(DOTFILESDIR)/urxvt/ $(DOTFILESDIR)/urlview
+	@echo "Setting up URxvt..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/urxvt/ $(HOME)/.urxvt
+	@echo "    Setting up UrlView..."
+	$(LN) $(DOTFILESDIR)/urlview $(HOME)/.urlview
 	@echo $(TXTDONE)
 
