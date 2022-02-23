@@ -14,8 +14,8 @@ GIT = git
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf
-all: xserver devenv editors shellconf
+.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen
+all: xserver consoleapps devenv editors shellconf
 
 #
 # Shells
@@ -28,10 +28,12 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_profile
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/bash/bash_profile $(HOME)/.bash_profile
 	$(LN) $(DOTFILESDIR)/bash/bash_aliases $(HOME)/.bash_aliases
+	@echo "    Sourcing the new configuration..."
+	bash $(HOME)/.bash_profile
 	@echo "    Downloading Base16 Shell..."
 	test -d $(HOME)/.config/base16-shell || $(GIT) clone https://github.com/chriskempson/base16-shell.git $(HOME)/.config/base16-shell
-	@echo "    Setting up the shell colors..."
-	base16_tomorrow-night
+	#@echo "    Setting up the shell colors..."
+	#bash -l -c base16_tomorrow-night
 	@echo $(TXTDONE)
 
 #
@@ -53,7 +55,7 @@ vim: $(DOTFILESDIR)/vim/vim/ $(DOTFILESDIR)/vim/vimrc
 emacs: $(DOTFILESDIR)/emacs.d/
 	@echo "Setting up Emacs..."
 	@echo "    Symlinking dotfiles..."
-	$(LN) $(DOTFILESDIR)/emacs.d $(HOME)/.emacs.d
+	$(LN) $(DOTFILESDIR)/emacs.d/ $(HOME)/.emacs.d
 	@echo $(TXTDONE)
 
 # Nano
@@ -124,5 +126,24 @@ xscreensaverconf: $(DOTFILESDIR)/xscreensaver
 	$(LN) $(DOTFILESDIR)/xscreensaver $(HOME)/.xscreensaver
 	@echo "    Loading the new configuration..."
 	-xscreensaver-command -restart
+	@echo $(TXTDONE)
+
+#
+# Console Applications
+#
+consoleapps: mutt screen
+
+# Mutt
+mutt: $(DOTFILESDIR)/mutt/
+	@echo "Setting up Mutt..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/mutt/ $(HOME)/.mutt
+	@echo $(TXTDONE)
+
+# GNU Screen
+screen: $(DOTFILESDIR)/screenrc
+	@echo "Setting up GNU Screen..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/screenrc $(HOME)/.screenrc
 	@echo $(TXTDONE)
 
