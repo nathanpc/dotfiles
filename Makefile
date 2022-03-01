@@ -5,17 +5,20 @@
 
 # Important directories.
 DOTFILESDIR = $(HOME)/dotfiles
+FONTSDIR = /usr/share/fonts
 
 # Important commands.
 LN = ln -sfn
 MKDIR = mkdir -p
 GIT = git
+CURL = curl
+WGET = wget
 
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt
-all: xserver termemus consoleapps devenv editors shellconf
+.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts
+all: xserver termemus consoleapps devenv editors shellconf fonts
 
 #
 # Shells
@@ -165,5 +168,20 @@ urxvt: $(DOTFILESDIR)/urxvt/ $(DOTFILESDIR)/urlview
 	$(LN) $(DOTFILESDIR)/urxvt/ $(HOME)/.urxvt
 	@echo "    Setting up UrlView..."
 	$(LN) $(DOTFILESDIR)/urlview $(HOME)/.urlview
+	@echo $(TXTDONE)
+
+#
+# Fonts
+#
+
+fonts: $(FONTSDIR)/truetype
+	@echo "Setting up fonts..."
+	@echo "    Downloading Liberation Nerd Font..."
+	$(WGET) https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/LiberationMono.zip -O /tmp/LiberationMono.zip
+	@echo "    Installing Liberation Nerd Font..."
+	sudo $(MKDIR) $(FONTSDIR)/truetype/liberation
+	sudo unzip /tmp/LiberationMono.zip -d $(FONTSDIR)/truetype/liberation
+	@echo "    Updating the font cache..."
+	fc-cache -f -v
 	@echo $(TXTDONE)
 
