@@ -28,7 +28,8 @@ fi
 # Install of of the official packages needed.
 echo "Installing all of the packages we need from the official repositories..."
 sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
-	tree xscreensaver xterm rxvt-unicode-256color terminator neofetch
+	xinit tree xscreensaver xterm rxvt-unicode-256color terminator neofetch \
+	screen
 ret=$?
 if [ $ret -ne 0 ]; then
 	exit 1
