@@ -29,11 +29,18 @@ fi
 echo "Installing all of the packages we need from the official repositories..."
 sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
 	xinit tree xscreensaver xterm rxvt-unicode-256color terminator neofetch \
-	screen
+	screen nfs-common network-manager-pptp-gnome network-manager-l2tp-gnome \
+	htop tigervnc-standalone-server tigervnc-common tigervnc-scraping-server \
+	smbclient lxappearance papirus-icon-theme 
 ret=$?
 if [ $ret -ne 0 ]; then
 	exit 1
 fi
+echo "Done."
+
+# Creating some of our commonly-used directories.
+echo "Creating the ~/forks directory..."
+mkdir ~/forks
 echo "Done."
 
 # Download dotfiles.
