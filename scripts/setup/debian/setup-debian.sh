@@ -39,8 +39,13 @@ fi
 echo "Done."
 
 # Creating some of our commonly-used directories.
-echo "Creating the ~/forks directory..."
+echo "Creating commonly-used directories..."
+echo "Creating ~/downloads..."
+mkdir ~/downloads
+echo "Creating ~/forks..."
 mkdir ~/forks
+echo "Creating ~/src..."
+mkdir ~/src
 echo "Done."
 
 # Download dotfiles.
