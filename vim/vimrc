@@ -27,10 +27,8 @@ end
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
-if g:lightweight
-	Plugin 'tomasr/molokai'
-endif
-Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Git integration.
@@ -148,12 +146,8 @@ if !has('win32')
 end
 
 " Colorscheme
-set background=dark
-if !g:lightweight
-	colorscheme base16-tomorrow-night
-else
-	colorscheme molokai
-endif
+"set background=dark
+colorscheme nord
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
@@ -166,12 +160,6 @@ if has("gui_running")
 		" Linux font.
 		set guifont=LiterationMono\ Nerd\ Font\ Mono\ 10
 	endif
-else
-	" Fix the 256 color stuff with base16.
-	if filereadable(expand("~/.vimrc_background"))
-		let base16colorspace=256
-		source ~/.vimrc_background
-	endif
 endif
 
 " Show the 80 column line.
@@ -181,7 +169,6 @@ else
 	highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 	match OverLength /\%>80v.\+/
 endif
-
 
 ""
 ""  Usability
