@@ -13,6 +13,7 @@ MKDIR = mkdir -p
 GIT = git
 CURL = curl
 WGET = wget
+CD = cd
 
 # Text snippets.
 TXTDONE = 'Done.'
@@ -57,6 +58,8 @@ vim: $(DOTFILESDIR)/vim/vim/ $(DOTFILESDIR)/vim/vimrc
 # Emacs
 emacs: $(DOTFILESDIR)/emacs.d/
 	@echo "Setting up Emacs..."
+	@echo "    Making sure Emacs dotfiles are up-to-date..."
+	$(CD) $(DOTFILESDIR)/emacs.d/; $(GIT) pull
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/emacs.d/ $(HOME)/.emacs.d
 	@echo $(TXTDONE)

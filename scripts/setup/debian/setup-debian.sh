@@ -31,7 +31,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
 	xinit tree xscreensaver xterm rxvt-unicode-256color terminator neofetch \
 	screen nfs-common network-manager-pptp-gnome network-manager-l2tp-gnome \
 	htop tigervnc-standalone-server tigervnc-common tigervnc-scraping-server \
-	smbclient lxappearance papirus-icon-theme 
+	smbclient lxappearance picom feh cloc emacs
 ret=$?
 if [ $ret -ne 0 ]; then
 	exit 1
@@ -50,7 +50,7 @@ echo "Done."
 
 # Download dotfiles.
 echo "Download dotfiles..."
-git clone https://github.com/nathanpc/dotfiles.git ~/dotfiles
+git clone --recursive https://github.com/nathanpc/dotfiles.git ~/dotfiles
 echo "Done."
 
 # Setup Git.
