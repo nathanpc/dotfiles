@@ -20,7 +20,7 @@
   [[default]]
     audible_bell = True
     background_color = "#1d1f21"
-    background_darkness = 0.7
+    background_darkness = 0.85
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = LiterationMono Nerd Font Mono 10
