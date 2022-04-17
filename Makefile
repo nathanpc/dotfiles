@@ -18,7 +18,7 @@ CD = cd
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman
+.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman i3status
 all: xserver windowmanagers termemus consoleapps devenv editors shellconf fonts
 
 #
@@ -190,7 +190,7 @@ fonts: $(FONTSDIR)/truetype
 #
 # Window Managers
 #
-windowmanagers: i3winman
+windowmanagers: i3winman i3status
 
 # i3
 i3winman: $(DOTFILESDIR)/i3
@@ -201,3 +201,11 @@ i3winman: $(DOTFILESDIR)/i3
 	$(LN) $(DOTFILESDIR)/i3 $(HOME)/.config/i3/config
 	@echo $(TXTDONE)
 
+# i3status
+i3status: $(DOTFILESDIR)/i3status
+	@echo "Setting up i3status..."
+	@echo "    Creating directories..."
+	$(MKDIR) $(HOME)/.config/i3status
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/i3status $(HOME)/.config/i3status/config
+	@echo $(TXTDONE)
