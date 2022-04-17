@@ -32,7 +32,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
 	screen nfs-common network-manager-pptp-gnome network-manager-l2tp-gnome \
 	htop tigervnc-standalone-server tigervnc-common tigervnc-scraping-server \
 	smbclient lxappearance picom feh cloc emacs curl zip unzip dosfstools \
-	pcmanfm firefox-esr qutebrowser
+	pcmanfm firefox-esr gnome-themes-extra engrampa rar unrar p7zip-full
 ret=$?
 if [ $ret -ne 0 ]; then
 	exit 1
