@@ -18,8 +18,8 @@ CD = cd
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts
-all: xserver termemus consoleapps devenv editors shellconf fonts
+.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman
+all: xserver windowmanagers termemus consoleapps devenv editors shellconf fonts
 
 #
 # Shells
@@ -176,7 +176,6 @@ urxvt: $(DOTFILESDIR)/urxvt/ $(DOTFILESDIR)/urlview
 #
 # Fonts
 #
-
 fonts: $(FONTSDIR)/truetype
 	@echo "Setting up fonts..."
 	@echo "    Downloading Liberation Nerd Font..."
@@ -187,3 +186,18 @@ fonts: $(FONTSDIR)/truetype
 	@echo "    Updating the font cache..."
 	fc-cache -f -v
 	@echo $(TXTDONE)
+
+#
+# Window Managers
+#
+windowmanagers: i3winman
+
+# i3
+i3winman: $(DOTFILESDIR)/i3
+	@echo "Setting up i3..."
+	@echo "    Creating directories..."
+	$(MKDIR) $(HOME)/.config/i3
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/i3 $(HOME)/.config/i3/config
+	@echo $(TXTDONE)
+
