@@ -16,13 +16,40 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 8
+# Set a proper font.
+font pango:Literation Nerd Font 9
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# Nord theme.
+set_from_resource $base03   i3wm.color8     #002b36
+set_from_resource $base02   i3wm.color0     #073642
+set_from_resource $base01   i3wm.color10    #586e75
+set_from_resource $base00   i3wm.color11    #657b83
+set_from_resource $base0    i3wm.color12    #839496
+set_from_resource $base1    i3wm.color14    #93a1a1
+set_from_resource $base2    i3wm.color7     #eee8d5
+set_from_resource $base3    i3wm.color15    #fdf6e3
+
+set_from_resource $yellow   i3wm.color3     #b58900
+set_from_resource $orange   i3wm.color9     #cb4b16
+set_from_resource $red      i3wm.color1     #dc322f
+set_from_resource $magenta  i3wm.color5     #d33682
+set_from_resource $violet   i3wm.color13    #6c71c4
+set_from_resource $blue     i3wm.color4     #268bd2
+set_from_resource $cyan     i3wm.color6     #2aa198
+set_from_resource $green    i3wm.color2     #859900
+
+set_from_resource $background i3wm.background $base3
+set_from_resource $foreground i3wm.foreground $base00
+
+set_from_resource $lighterbg  i3wm.lighterbg  $base02
+set_from_resource $separator  i3wm.separator  $lighterbg
+
+#class                      border         backgr	  text         indicator
+client.focused		        #2C313D        #5e81ac    $background  $background
+client.focused_inactive	    #2C313D        #303743    $foreground  $background
+client.unfocused	        #2C313D        #303743    $foreground  $background
+client.urgent		        $background    #bf616a    $foreground  $background
+client.placeholder	        $background    #282D37    $foreground  $background
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -183,7 +210,27 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	status_command i3status
+
+	# Nord theme.
+	colors {
+		background $background
+		statusline $foreground
+
+		# colorclass       <border>    <background> <text>
+		focused_workspace  #88c0d0     #5e81ac      $background
+		active_workspace   #88c0d0     #5e81ac      $background
+		inactive_workspace #81a1c1     $background  $foreground
+		urgent_workspace   #ebcb8b     #d08770      $background
+
+##class                      border         backgr	  text         indicator
+#client.focused		        #2C313D        #2e3440    $foreground  $background
+#client.focused_inactive	    #2C313D        #303743    $foreground  $background
+#client.unfocused	        #2C313D        #303743    $foreground  $background
+#client.urgent		        $background    #282d37    $foreground  $background
+#client.placeholder	        $background    #282D37    $foreground  $background
+
+	}
 }
 
 # Auto start some things.
@@ -191,4 +238,3 @@ exec feh --bg-fill --randomize ~/wallpapers/momentum/*
 exec picom -c -C -b
 
 # vim:filetype=i3config
-
