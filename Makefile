@@ -59,7 +59,7 @@ vim: $(DOTFILESDIR)/vim/vim/ $(DOTFILESDIR)/vim/vimrc
 emacs: $(DOTFILESDIR)/emacs.d/
 	@echo "Setting up Emacs..."
 	@echo "    Making sure Emacs dotfiles are up-to-date..."
-	$(CD) $(DOTFILESDIR)/emacs.d/; $(GIT) pull
+	$(GIT) submodule update --recursive --remote
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/emacs.d/ $(HOME)/.emacs.d
 	@echo $(TXTDONE)
@@ -187,4 +187,3 @@ fonts: $(FONTSDIR)/truetype
 	@echo "    Updating the font cache..."
 	fc-cache -f -v
 	@echo $(TXTDONE)
-
