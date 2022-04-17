@@ -30,6 +30,9 @@ else
 	export PS1='[\u@\h \w]\$ '
 fi
 
+# Make sure our scripts and /sbin are in the system PATH.
+export PATH="/sbin:$HOME/dotfiles/scripts:$PATH"
+
 # Enable the handy tab completions.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion

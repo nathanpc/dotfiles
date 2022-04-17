@@ -31,7 +31,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r) git vim i3 \
 	xinit tree xscreensaver xterm rxvt-unicode-256color terminator neofetch \
 	screen nfs-common network-manager-pptp-gnome network-manager-l2tp-gnome \
 	htop tigervnc-standalone-server tigervnc-common tigervnc-scraping-server \
-	smbclient lxappearance picom feh cloc emacs
+	smbclient lxappearance picom feh cloc emacs curl zip unzip dosfstools
 ret=$?
 if [ $ret -ne 0 ]; then
 	exit 1
