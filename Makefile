@@ -34,10 +34,6 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_profile
 	$(LN) $(DOTFILESDIR)/bash/bash_aliases $(HOME)/.bash_aliases
 	@echo "    Sourcing the new configuration..."
 	bash $(HOME)/.bash_profile
-	@echo "    Downloading Base16 Shell..."
-	test -d $(HOME)/.config/base16-shell || $(GIT) clone https://github.com/chriskempson/base16-shell.git $(HOME)/.config/base16-shell
-	#@echo "    Setting up the shell colors..."
-	#bash -l -c base16_tomorrow-night
 	@echo $(TXTDONE)
 
 #
