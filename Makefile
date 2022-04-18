@@ -32,6 +32,7 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_profile
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/bash/bash_profile $(HOME)/.bash_profile
 	$(LN) $(DOTFILESDIR)/bash/bash_aliases $(HOME)/.bash_aliases
+	$(LN) $(DOTFILESDIR)/dircolors $(HOME)/.dircolors
 	@echo "    Sourcing the new configuration..."
 	bash $(HOME)/.bash_profile
 	@echo $(TXTDONE)
