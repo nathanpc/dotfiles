@@ -23,6 +23,7 @@ order += "battery 0"
 order += "disk /"
 order += "disk /mnt/sd/"
 order += "load"
+order += "memory"
 order += "volume master"
 order += "tztime local"
 
@@ -63,6 +64,11 @@ tztime local {
 
 load {
     format = " %1min"
+}
+
+memory {
+	format = " %available"
+	threshold_degraded = "500M"
 }
 
 disk "/" {
