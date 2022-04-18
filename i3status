@@ -21,7 +21,6 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
 order += "disk /"
-order += "disk /mnt/sd/"
 order += "load"
 order += "memory"
 order += "volume master"
@@ -72,10 +71,6 @@ memory {
 }
 
 disk "/" {
-    format = " %avail" # (%used/%total)"
-}
-
-disk "/mnt/sd/" {
     format = " %avail" # (%used/%total)"
 }
 
