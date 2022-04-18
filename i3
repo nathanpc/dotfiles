@@ -38,18 +38,18 @@ set_from_resource $blue     i3wm.color4     #268bd2
 set_from_resource $cyan     i3wm.color6     #2aa198
 set_from_resource $green    i3wm.color2     #859900
 
-set_from_resource $background i3wm.background $base3
+set_from_resource $background i3wm.background $base03
 set_from_resource $foreground i3wm.foreground $base00
 
 set_from_resource $lighterbg  i3wm.lighterbg  $base02
 set_from_resource $separator  i3wm.separator  $lighterbg
 
 #class                      border         backgr	  text         indicator
-client.focused		        #2C313D        #5e81ac    $background  $background
-client.focused_inactive	    #2C313D        #303743    $foreground  $background
-client.unfocused	        #2C313D        #303743    $foreground  $background
-client.urgent		        $background    #bf616a    $foreground  $background
-client.placeholder	        $background    #282D37    $foreground  $background
+client.focused		        #2C313D        #5e81ac    #303743      #303743
+client.focused_inactive	    #2C313D        #303743    $foreground  #303743
+client.unfocused	        #2C313D        #303743    $foreground  #303743
+client.urgent		        #303743        #bf616a    $foreground  #303743
+client.placeholder	        #303743        #282D37    $foreground  #303743
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -73,7 +73,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt -ls
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -214,22 +214,14 @@ bar {
 
 	# Nord theme.
 	colors {
-		background $background
+		background #303743
 		statusline $foreground
 
 		# colorclass       <border>    <background> <text>
-		focused_workspace  #88c0d0     #5e81ac      $background
-		active_workspace   #88c0d0     #5e81ac      $background
-		inactive_workspace #81a1c1     $background  $foreground
-		urgent_workspace   #ebcb8b     #d08770      $background
-
-##class                      border         backgr	  text         indicator
-#client.focused		        #2C313D        #2e3440    $foreground  $background
-#client.focused_inactive	    #2C313D        #303743    $foreground  $background
-#client.unfocused	        #2C313D        #303743    $foreground  $background
-#client.urgent		        $background    #282d37    $foreground  $background
-#client.placeholder	        $background    #282D37    $foreground  $background
-
+		focused_workspace  #88c0d0     #5e81ac      #303743
+		active_workspace   #88c0d0     #5e81ac      #303743
+		inactive_workspace #81a1c1     #303743      $foreground
+		urgent_workspace   #ebcb8b     #d08770      #303743
 	}
 }
 
