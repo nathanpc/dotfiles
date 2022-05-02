@@ -28,3 +28,6 @@ alias gc='git commit'
 alias gps='git push'
 alias gpl='git pull'
 
+# Pretty cat.
+alias cat='batcat'
+
