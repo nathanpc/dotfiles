@@ -5,6 +5,9 @@
 ###
 ### Author: Nathan Campos <nathan@innoveworkshop.com>
 
+# Get which system we are currently dealing with.
+OS_NAME=`(uname -s) 2>/dev/null`
+
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
@@ -15,19 +18,29 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=10000
 
+# Set some sane default applications.
+export EDITOR=vim
+export VISUAL=${EDITOR}
+export PAGER=less
+export LESS=FRX
+
 # Update the values of LINES and COLUMNS after each command if necessary.
 shopt -s checkwinsize
 
-# Sets the fancy color terminal variable if we can handle it.
+# Setup fancyness according to capabilities.
 case "$TERM" in
-	xterm-color|*-256color) color_prompt=yes;;
+	"dumb")
+		export PS1="$ "
+		;;
+	xterm*|rxvt*|eterm*|screen*)
+		export PS1='\[\033[00m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[00m\]]\$ '
+		;;
 esac
 
-# Setup a fancy prompt.
-if [ "$color_prompt" = yes ]; then
-	export PS1='\[\033[00m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[00m\]]\$ '
-else
-	export PS1='[\u@\h \w]\$ '
+# Add MacPorts to the system PATH.
+if [ "$OS_NAME" = "Darwin" ]; then
+	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+	export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
 # Make sure our scripts and /sbin are in the system PATH.
@@ -38,6 +51,8 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
 elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
+elif [ -r /opt/local/share/bash-completion/bash_completion ]; then
+	. /opt/local/share/bash-completion/bash_completion
 fi
 
 # Setup aliases.

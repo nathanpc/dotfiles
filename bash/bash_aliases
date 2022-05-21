@@ -5,12 +5,20 @@
 ###
 ### Author: Nathan Campos <nathan@innoveworkshop.com>
 
+# Get which system we are currently dealing with.
+OS_NAME=`(uname -s) 2>/dev/null`
+
 # Making things colorful.
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	alias dir='dir --color=auto'
-	alias vdir='vdir --color=auto'
+	if [ "$OS_NAME" = "Darwin" ]; then
+		alias ls='ls -G'
+		alias ll='ls -Gla'
+	else
+		alias ls='ls --color=auto'
+		alias dir='dir --color=auto'
+		alias vdir='vdir --color=auto'
+	fi
 
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
@@ -18,9 +26,15 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Handy ls aliases.
-alias ls='ls -F --color=auto'
-alias ll='ls -la --color=auto'
-alias la='ls -AF --color=auto'
+if [ "$OS_NAME" = "Darwin" ]; then
+	alias ls='ls -GF'
+	alias ll='ls -Gla'
+	alias la='ls -GAF'
+else
+	alias ls='ls -F --color=auto'
+	alias ll='ls -la --color=auto'
+	alias la='ls -AF --color=auto'
+fi
 
 # Handy git aliases.
 alias gs='git status'
