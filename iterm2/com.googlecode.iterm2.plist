@@ -4,12 +4,6 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Nord</key>
@@ -789,41 +783,10 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>D618AA7F-A0B6-4EB8-AE1C-4B991CAAEEC8</string>
-	<key>LoadPrefsFromCustomFolder</key>
+	<key>HapticFeedbackForEsc</key>
+	<false/>
+	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2</string>
-	<key>NSQuotedKeystrokeBinding</key>
-	<string></string>
-	<key>NSRepeatCountBinding</key>
-	<string></string>
-	<key>NSScrollAnimationEnabled</key>
-	<false/>
-	<key>NSScrollViewShouldScrollUnderTitlebar</key>
-	<false/>
-	<key>NSTableView Columns KeyBingingTable</key>
-	<array>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATCG
-		</data>
-		<string>198</string>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATGG
-		</data>
-		<string>322</string>
-	</array>
-	<key>NSTableView Hidden Columns KeyBingingTable</key>
-	<array/>
-	<key>NSTableView Sort Ordering KeyBingingTable</key>
-	<array/>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>888 367 796 473 0 0 1920 1178 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>34 422 570 452 0 0 1920 1178 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>247 132 570 452 0 0 1920 1178 </string>
 	<key>NeverWarnAboutShortLivedSessions_D618AA7F-A0B6-4EB8-AE1C-4B991CAAEEC8</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_D618AA7F-A0B6-4EB8-AE1C-4B991CAAEEC8_selection</key>
@@ -1694,14 +1657,6 @@
 			<string>/Users/nathan</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
-	<true/>
-	<key>NoSyncInstallationId</key>
-	<string>7CEE10D3-0F03-4049-AA31-90945B4F3519</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1735,21 +1690,11 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PrefsCustomFolder</key>
-	<string>/Users/nathan/dotfiles/iterm2</string>
-	<key>SUEnableAutomaticChecks</key>
+	<key>SoundForEsc</key>
 	<false/>
-	<key>SUFeedAlternateAppNameKey</key>
-	<string>iTerm</string>
-	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=14</string>
-	<key>SUHasLaunchedBefore</key>
-	<true/>
-	<key>SUSendProfileInfo</key>
+	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
-	<key>iTerm Version</key>
-	<string>3.0.15</string>
 </dict>
 </plist>
