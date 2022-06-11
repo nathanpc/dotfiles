@@ -37,6 +37,11 @@ case "$TERM" in
 		;;
 esac
 
+# Add iTerm 2 integration.
+if [ "$OS_NAME" = "Darwin" ]; then
+	test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+fi
+
 # Add MacPorts to the system PATH.
 if [ "$OS_NAME" = "Darwin" ]; then
 	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
