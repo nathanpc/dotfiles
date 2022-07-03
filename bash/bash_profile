@@ -48,8 +48,8 @@ if [ "$OS_NAME" = "Darwin" ]; then
 	export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
-# Make sure our scripts and /sbin are in the system PATH.
-export PATH="/sbin:$HOME/dotfiles/scripts:$PATH"
+# Make sure our scripts, /usr/local/bin, and /sbin are in the system PATH.
+export PATH="/sbin:/usr/local/bin:$HOME/dotfiles/scripts:$PATH"
 
 # Enable the handy tab completions.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
