@@ -27,11 +27,12 @@ all: xserver windowmanagers termemus consoleapps devenv editors shellconf fonts
 shellconf: bashconf
 
 # Bash
-bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_profile
+bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DOTFILESDIR)/bash/bashrc 
 	@echo "Setting up Bash..."
 	@echo "    Symlinking dotfiles..."
 	$(LN) $(DOTFILESDIR)/bash/bash_profile $(HOME)/.bash_profile
 	$(LN) $(DOTFILESDIR)/bash/bash_aliases $(HOME)/.bash_aliases
+	$(LN) $(DOTFILESDIR)/bash/bashrc $(HOME)/.bashrc
 	$(LN) $(DOTFILESDIR)/dircolors $(HOME)/.dircolors
 	@echo "    Sourcing the new configuration..."
 	bash $(HOME)/.bash_profile

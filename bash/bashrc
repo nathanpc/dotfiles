@@ -1,0 +1,12 @@
+#!/bin/bash
+
+### ~/.bashrc
+### Handle the loading of the profile when we are not in a login shell.
+###
+### Author: Nathan Campos <nathan@innoveworkshop.com>
+
+# Load the profile if we weren't spawned in a login shell.
+if [[ $(shopt login_shell) == *"off"* ]]; then
+	source ~/.bash_profile
+fi
+
