@@ -43,8 +43,8 @@ alias gps='git push'
 alias gpl='git pull'
 
 # Pretty cat.
-if [ "$OS_NAME" = "Darwin" ]; then
+if [ -x "$(command -v bat)" ]; then
 	alias cat='bat'
-else
+elif [ -x "$(command -v batcat)" ]; then
 	alias cat='batcat'
 fi
