@@ -41,6 +41,9 @@ if !g:lightweight
 	Plugin 'Xuyuanp/nerdtree-git-plugin'
 endif
 
+" Docker
+Plugin 'ekalinin/Dockerfile.vim'
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
