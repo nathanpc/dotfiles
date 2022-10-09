@@ -48,6 +48,9 @@ if [ "$OS_NAME" = "Darwin" ]; then
 	export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
+# Ensure Python packages are in our system PATH.
+export PATH="`python3 -m site --user-base`/bin:$PATH"
+
 # Make sure our scripts, /usr/local/bin, and /sbin are in the system PATH.
 export PATH="/sbin:/usr/local/bin:$HOME/dotfiles/scripts:$PATH"
 
