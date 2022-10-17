@@ -8,4 +8,7 @@
 [pull]
 	rebase = false
 [init]
-	defaultBranch = master
+	defaultBranch = main
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
