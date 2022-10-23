@@ -11,3 +11,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+
+# Disable the dumb verified developer thing.
+spctl --master-disable
+
+echo "Done."
+
