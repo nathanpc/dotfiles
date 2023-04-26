@@ -1,0 +1,19 @@
+# ELPA
+elpa/
+
+# Useless Emacs stuff.
+auto-save-list/
+backups/
+.cache/
+recentf
+smex-items
+*.data
+tramp
+
+# Compiled Emacs Lisp.
+*.elc
+
+# Misc.
+*.bkp
+.DS_Store
+*~

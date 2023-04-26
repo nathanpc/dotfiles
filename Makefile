@@ -54,12 +54,10 @@ vim: $(DOTFILESDIR)/vim/vim/ $(DOTFILESDIR)/vim/vimrc
 	@echo $(TXTDONE)
 
 # Emacs
-emacs: $(DOTFILESDIR)/emacs.d/
+emacs: $(DOTFILESDIR)/emacs/
 	@echo "Setting up Emacs..."
-	@echo "    Making sure Emacs dotfiles are up-to-date..."
-	$(GIT) submodule update --recursive --remote
 	@echo "    Symlinking dotfiles..."
-	$(LN) $(DOTFILESDIR)/emacs.d/ $(HOME)/.emacs.d
+	$(LN) $(DOTFILESDIR)/emacs/ $(HOME)/.emacs.d
 	@echo $(TXTDONE)
 
 # Nano
