@@ -39,12 +39,13 @@ fi
 # Handy git aliases.
 alias gs='git status'
 alias gc='git commit'
+alias ga='git add'
+alias gdf='git diff'
 alias gps='git push'
 alias gpl='git pull'
 
 # Pretty cat.
-if [ -x "$(command -v bat)" ]; then
-	alias cat='bat'
-elif [ -x "$(command -v batcat)" ]; then
-	alias cat='batcat'
+if [ -x "$(command -v batcat)" ]; then
+	alias bat='batcat'
 fi
+
