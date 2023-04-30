@@ -109,11 +109,76 @@
 ;; Auto-Completion and Snippets
 ;;
 
+; Which Key
+(use-package which-key
+  :init (which-key-mode)
+  :config
+  (which-key-setup-side-window-bottom))
+
 ; Company Mode
 (use-package company
-  :init (global-company-mode)
+  :bind ("M-/" . company-complete-common-or-cycle)
+  :init (add-hook 'after-init-hook 'global-company-mode)
   :config
-  (setq company-idle-delay 0))  ; Auto-complete instantly.
+  (setq company-show-quick-access       t
+		company-minimum-prefix-length   1
+		company-idle-delay              0.5
+		company-backends
+		'((company-files          ; files & directory
+		   company-keywords       ; keywords
+		   company-capf           ; what is this?
+		   company-yasnippet)
+		  (company-abbrev company-dabbrev))))
+
+; Company Box
+(use-package company-box
+  :after company
+  :hook (company-mode . company-box-mode))
+
+; Flycheck
+(use-package flycheck
+  :init (global-flycheck-mode)
+  :config
+  (setq flycheck-display-errors-function
+		#'flycheck-display-error-messages-unless-error-list)
+
+  (setq flycheck-indication-mode nil))
+
+; Flycheck Tooltips
+(use-package flycheck-pos-tip
+  :after flycheck
+  :config
+  (flycheck-pos-tip-mode))
+
+;;
+;; LSP
+;;
+
+(use-package lsp-mode
+  :hook ((c-mode . lsp)
+		 (c++-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp
+  :config
+  (setq lsp-keymap-prefix "C-c l")
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
+  (setq lsp-file-watch-threshold 15000))
+
+(use-package lsp-ui
+  :commands (lsp-ui-mode)
+  :config
+  (setq lsp-ui-doc-enable nil)
+  (setq lsp-ui-doc-delay 0.5)
+  (define-key lsp-ui-mode-map [remap xref-find-definitions]
+	#'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references]
+	#'lsp-ui-peek-find-references))
+
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol)
+
+(use-package lsp-treemacs
+  :commands lsp-treemacs-errors-list)
 
 ;;
 ;; Programming Languages

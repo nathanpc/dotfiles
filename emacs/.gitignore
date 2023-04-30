@@ -9,6 +9,7 @@ recentf
 smex-items
 *.data
 tramp
+.lsp-session-*
 
 # Compiled Emacs Lisp.
 *.elc
