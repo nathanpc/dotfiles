@@ -27,8 +27,19 @@
 ;;
 
 ; Nord theme (font face)
-(use-package nord-theme
-  :config (load-theme 'nord t))
+(use-package nord-theme)
+;  :config (load-theme 'nord t))
+
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-tomorrow-night t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-neotree-config)
+  (setq doom-themes-treemacs-theme "doom-tomorrow-night")
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
 
 ; All the Icons
 (use-package all-the-icons
