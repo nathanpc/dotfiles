@@ -1,0 +1,11 @@
+#!/bin/bash
+
+### list-todos.sh
+### Lists all of the references to TODO, FIXME, XXX, NOTE, OPTIMIZE, HACK
+### inside of files in a directory recursively.
+###
+### Author: Nathan Campos <nathan@innoveworkshop.com>
+
+grep -r --exclude-dir='.git' --exclude-dir='build' --color=always -Hn -E \
+	'(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK)' $1
+
