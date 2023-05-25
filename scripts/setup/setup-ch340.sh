@@ -7,7 +7,7 @@
 
 echo "Forking the patched CH340 drivers..."
 git clone https://github.com/juliagoda/CH341SER.git ~/forks/ch341ser
-pushd ~/forks/ch3401ser
+pushd ~/forks/ch341ser
 echo "Done."
 echo ""
 
