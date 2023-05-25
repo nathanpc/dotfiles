@@ -54,11 +54,6 @@ git clone --recursive git@github.com:nathanpc/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 echo "Done."
 
-# Populate the submodules in the dotfiles repository.
-echo "Downloading dotfiles submodules..."
-git submodule update --init --recursive
-echo "Done."
-
 # Setup the dotfiles.
 echo "Setting up the dotfiles..."
 make
