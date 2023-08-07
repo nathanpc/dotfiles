@@ -39,6 +39,7 @@ fi
 # Handy git aliases.
 alias gs='git status'
 alias gc='git commit'
+alias gcm='git commit -m'
 alias ga='git add'
 alias gdf='git diff'
 alias gps='git push'
@@ -48,4 +49,7 @@ alias gpl='git pull'
 if [ -x "$(command -v batcat)" ]; then
 	alias bat='batcat'
 fi
+
+# Handy clipboard copying.
+alias xclip='xclip -selection c'
 
