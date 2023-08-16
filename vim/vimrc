@@ -16,8 +16,8 @@ let g:lightweight=!empty($LIGHTWEIGHT_VIM)
 ""
 if has('win32')
 	set shellslash
-	set runtimepath=$HOME/dotfiles/vim/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/dotfiles/vim/vim/after,$HOME/dotfiles/vim/vim/bundle/Vundle.vim
-	call vundle#begin('~/dotfiles/vim/vim/bundle/Vundle.vim')
+	set runtimepath=$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after,$HOME/vimfiles/bundle/Vundle.vim
+	call vundle#begin('~/vimfiles/bundle/Vundle.vim')
 else
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()

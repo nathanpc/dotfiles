@@ -1,3 +1,6 @@
+# Private configuration.
+config/private-defs.el
+
 # ELPA
 elpa/
 

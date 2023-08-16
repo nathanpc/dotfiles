@@ -9,7 +9,7 @@
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("user42" .
-								 "https://download.tuxfamily.org/user42/elpa/packages/"))
+						"https://download.tuxfamily.org/user42/elpa/packages/"))
 (package-initialize)
 
 ; Setup use-package.
@@ -27,36 +27,12 @@
 ;;
 
 ; Nord theme (font face)
-(use-package nord-theme)
-;  :config (load-theme 'nord t))
-
-(use-package doom-themes
-  :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
-  (load-theme 'doom-tomorrow-night t)
-  (doom-themes-visual-bell-config)
-  (doom-themes-neotree-config)
-  (setq doom-themes-treemacs-theme "doom-tomorrow-night")
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config))
+(use-package nord-theme
+  :config (load-theme 'nord t))
 
 ; All the Icons
 (use-package all-the-icons
   :if (display-graphic-p))
-
-; DOOM Modeline
-(use-package doom-modeline
-  :init (doom-modeline-mode t)
-  :hook (text-mode-hook . show-word-count-doom-modeline)
-  :config
-  (setq doom-modeline-buffer-file-name-style
-		'relative-from-project)                  ; Show path relative to project.
-  (setq doom-modeline-indent-info t)             ; Show indentation information.
-  (setq doom-modeline-minor-modes
-		(featurep 'minions))                     ; Display minor modes.
-  (defun show-word-count-doom-modeline ()
-	(setq doom-modeline-enable-word-count t)))   ; Display word count text mode.
 
 ; Dashboard
 (use-package dashboard
@@ -117,81 +93,6 @@
   (global-set-key [f8] 'neotree-toggle))
 
 ;;
-;; Auto-Completion and Snippets
-;;
-
-; Which Key
-(use-package which-key
-  :init (which-key-mode)
-  :config
-  (which-key-setup-side-window-bottom))
-
-; Company Mode
-(use-package company
-  :bind ("M-/" . company-complete-common-or-cycle)
-  :init (add-hook 'after-init-hook 'global-company-mode)
-  :config
-  (setq company-show-quick-access       t
-		company-minimum-prefix-length   1
-		company-idle-delay              0.5
-		company-backends
-		'((company-files          ; files & directory
-		   company-keywords       ; keywords
-		   company-capf           ; what is this?
-		   company-yasnippet)
-		  (company-abbrev company-dabbrev))))
-
-; Company Box
-(use-package company-box
-  :after company
-  :hook (company-mode . company-box-mode))
-
-; Flycheck
-(use-package flycheck
-  :init (global-flycheck-mode)
-  :config
-  (setq flycheck-display-errors-function
-		#'flycheck-display-error-messages-unless-error-list)
-
-  (setq flycheck-indication-mode nil))
-
-; Flycheck Tooltips
-(use-package flycheck-pos-tip
-  :after flycheck
-  :config
-  (flycheck-pos-tip-mode))
-
-;;
-;; LSP
-;;
-
-(use-package lsp-mode
-  :hook ((c-mode . lsp)
-		 (c++-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp
-  :config
-  (setq lsp-keymap-prefix "C-c l")
-  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
-  (setq lsp-file-watch-threshold 15000))
-
-(use-package lsp-ui
-  :commands (lsp-ui-mode)
-  :config
-  (setq lsp-ui-doc-enable nil)
-  (setq lsp-ui-doc-delay 0.5)
-  (define-key lsp-ui-mode-map [remap xref-find-definitions]
-	#'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-references]
-	#'lsp-ui-peek-find-references))
-
-(use-package lsp-ivy
-  :commands lsp-ivy-workspace-symbol)
-
-(use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
-
-;;
 ;; Programming Languages
 ;;
 
@@ -217,28 +118,6 @@
   (add-hook 'perl-mode-hook 'perl-pod-gt-enable)
   (add-hook 'cperl-mode-hook 'perl-pod-gt-enable)
   (add-hook 'pod-mode-hook   'perl-pod-gt-enable))
-
-; Improved JavaScript Mode
-(use-package js2-mode
-  :mode "\\.js$"
-  :hook (js2-mode-hook . js2-imenu-extras-mode)
-  :config
-  (setq-default
-   js2-auto-indent-p t
-   js2-cleanup-whitespace t
-   js2-enter-indents-newline t
-   js2-indent-on-enter-key t
-   js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert"
-							"refute" "setTimeout" "clearTimeout" "setInterval"
-							"location" "clearInterval" "__dirname" "console"
-							"JSON" "jQuery" "$")))
-
-; Better JavaScript Code Jumps
-(use-package xref-js2
-  :init
-  (add-hook 'js2-mode-hook
-			(lambda () (add-hook 'xref-backend-functions
-								 #'xref-js2-xref-backend nil t))))
 
 ;;
 ;; Manually Installed Packages
