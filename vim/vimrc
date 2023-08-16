@@ -28,6 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes.
 Plugin 'tomasr/molokai'
+Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -142,7 +143,7 @@ set cul
 set guioptions-=T
 set splitbelow
 set splitright
-if !has('win32')
+if !has('win32') && (v:version >= 800)
 	set termguicolors
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -150,7 +151,11 @@ end
 
 " Colorscheme
 "set background=dark
-colorscheme nord
+if v:version >= 800
+	colorscheme nord
+else
+	colorscheme Tomorrow-Night
+endif
 
 " Fix for fonts and themes in terminal and GUI mode.
 if has("gui_running")
