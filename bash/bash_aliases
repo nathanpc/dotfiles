@@ -26,7 +26,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Handy ls aliases.
-if [ "$OS_NAME" = "Darwin" ]; then
+if [ "$OS_NAME" = "Darwin" ] || [ "$OS_NAME" = "FreeBSD" ]; then
 	alias ls='ls -GF'
 	alias ll='ls -Gla'
 	alias la='ls -GAF'

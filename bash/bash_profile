@@ -62,13 +62,15 @@ if [ "$OS_NAME" = "Darwin" ]; then
 fi
 
 # Ensure Python packages are in our system PATH.
-export PATH="`python3 -m site --user-base`/bin:$PATH"
+if [ command -v python3 >/dev/null 2>&1 ]; then
+	export PATH="`python3 -m site --user-base`/bin:$PATH"
+fi
 
 # Ensure Perl's packages are in our system PATH.
 export PATH="`perl -MConfig -e 'print $Config{installsitebin}'`:$PATH"
 
 # Make sure our scripts, /usr/local/bin, and /sbin are in the system PATH.
-export PATH="/sbin:/usr/local/bin:$HOME/dotfiles/scripts:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/sbin:/usr/local/bin:$HOME/dotfiles/scripts:$PATH"
 
 # Enable the handy tab completions.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -77,6 +79,8 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 elif [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
 	. /opt/local/etc/profile.d/bash_completion.sh
+elif [ -f /usr/local/share/bash-completion/bash_completion.sh ]; then
+	. /usr/local/share/bash-completion/bash_completion.sh
 elif [ -r /opt/local/share/bash-completion/bash_completion ]; then
 	. /opt/local/share/bash-completion/bash_completion
 fi
