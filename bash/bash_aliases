@@ -30,6 +30,10 @@ if [ "$OS_NAME" = "Darwin" ] || [ "$OS_NAME" = "FreeBSD" ]; then
 	alias ls='ls -GF'
 	alias ll='ls -Gla'
 	alias la='ls -GAF'
+elif [ "$OS_NAME" = "OpenBSD" ]; then
+	alias ls='ls -F'
+	alias ll='ls -la'
+	alias la='ls -AF'
 else
 	alias ls='ls -F --color=auto'
 	alias ll='ls -la --color=auto'
