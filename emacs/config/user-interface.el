@@ -37,13 +37,13 @@
 ;; Smooth scrolling.
 (setq scroll-step 1)                        ; Keyboard scroll one line at time.
 (setq scroll-conservatively 10000)          ; Move minimum when cursor exits view.
-(setq scroll-preserve-screen-position nil)  ; Cursor moves when scrolling.
 (setq mouse-wheel-scroll-amount '(3))       ; Mouse scroll moves 1 line at time.
 (setq mouse-wheel-progressive-speed nil)    ; Disable accelerated scrolling.
 (setq mouse-wheel-follow-mouse t)           ; Only scroll the window under mouse.
-(setq redisplay-dont-pause nil)             ; Prioritize events instead of redraw.
-(setq jit-lock-defer-time 0)                ; Should improve performance.
 (setq fast-but-imprecise-scrolling t)       ; Supposed to improve performance.
+(unless (eq system-type 'darwin)
+  (setq redisplay-dont-pause nil)             ; Prioritize events instead of redraw.
+  (setq jit-lock-defer-time 0))               ; Should improve performance.
 
 ;; Highlight when a line is greater than 80 characters.
 (setq-default
