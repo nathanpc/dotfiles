@@ -121,7 +121,9 @@ if !g:lightweight
 	Plugin 'vim-syntastic/syntastic'
 
 	" Bling.
-	Plugin 'inside/vim-search-pulse'
+	if v:version >= 820
+		Plugin 'inside/vim-search-pulse'
+	endif
 	Plugin 'RRethy/vim-illuminate'
 
 	" Last ones.
