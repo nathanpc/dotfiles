@@ -5,6 +5,14 @@
 ###
 ### Author: Nathan Campos <nathan@innoveworkshop.com>
 
+# Load our pre-profile source private customization.
+if [ -f ~/.bash_private_preload ]; then
+	source ~/.bash_private_preload
+else
+	# Deal with some defaults.
+	export PS1HOSTCOLOR="\[\033[01;33m\]"
+fi
+
 # Get which system we are currently dealing with.
 OS_NAME=`(uname -s) 2>/dev/null`
 
@@ -46,7 +54,7 @@ case "$TERM" in
 		export PS1="$ "
 		;;
 	xterm*|rxvt*|eterm*|screen*)
-		export PROMPT_COMMAND='__git_ps1 "\[\033[00m\][\[\033[01;33m\]\u@\h \[\033[01;34m\]\w\[\033[00m\]]" "\$ " " (%s)"'
+		export PROMPT_COMMAND='__git_ps1 "\[\033[00m\][$PS1HOSTCOLOR\u\[\033[00m\]@$PS1HOSTCOLOR\h \[\033[01;34m\]\w\[\033[00m\]]" "\$ " " (%s)"'
 		;;
 esac
 
