@@ -9,6 +9,7 @@ FONTSDIR = /usr/share/fonts
 
 # Important commands.
 LN = ln -sfn
+RM = rm -f
 MKDIR = mkdir -p
 GIT = git
 CURL = curl
@@ -42,7 +43,8 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DO
 fishconf: $(DOTFILESDIR)/fish
 	@echo "Setting up Fish..."
 	@echo "    Symlinking dotfiles..."
-	$(LN) $(DOTFILESDIR)/fish $(HOME)/.config/fish
+	$(RM) -f $(HOME)/.config/fish
+	$(LN) $(DOTFILESDIR)/fish/ $(HOME)/.config/fish
 	@echo $(TXTDONE)
 
 #
