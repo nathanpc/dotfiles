@@ -18,13 +18,13 @@ CD = cd
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman i3status
+.PHONY: all shellconf bashconf fishconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman i3status
 all: xserver windowmanagers termemus consoleapps devenv editors shellconf fonts
 
 #
 # Shells
 #
-shellconf: bashconf
+shellconf: bashconf fishconf
 
 # Bash
 bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DOTFILESDIR)/bash/bashrc 
@@ -36,6 +36,13 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DO
 	$(LN) $(DOTFILESDIR)/dircolors $(HOME)/.dircolors
 	@echo "    Sourcing the new configuration..."
 	bash $(HOME)/.bash_profile
+	@echo $(TXTDONE)
+
+# Fish
+fishconf: $(DOTFILESDIR)/fish
+	@echo "Setting up Fish..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/fish $(HOME)/.config/fish
 	@echo $(TXTDONE)
 
 #
