@@ -43,7 +43,7 @@ bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DO
 fishconf: $(DOTFILESDIR)/fish
 	@echo "Setting up Fish..."
 	@echo "    Symlinking dotfiles..."
-	$(RM) -f $(HOME)/.config/fish
+	$(RM) -r $(HOME)/.config/fish
 	$(LN) $(DOTFILESDIR)/fish/ $(HOME)/.config/fish
 	@echo $(TXTDONE)
 
