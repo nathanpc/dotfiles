@@ -8,3 +8,4 @@ abbr --add ga git add
 abbr --add gdf git diff
 abbr --add gps git push
 abbr --add gpl git pull
+abbr --add gl git log
