@@ -39,7 +39,7 @@ utils::rc.settings(ipck = TRUE)
 # Colored output when running a capable terminal.
 options(colorout.emacs = TRUE)
 options(colorout.dumb = TRUE)
-library("colorout")
+require("colorout")
 
 # Clean up.
 rm(rhome)
