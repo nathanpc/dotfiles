@@ -29,7 +29,9 @@ test -d ~/.config/fish/functions/(string lower $OSNAME); and set -gx fish_functi
 # Interactive session-only stuff.
 if status is-interactive
 	# Pretty startup.
-	if type -q neofetch
+	if type -q fastfetch
+		fastfetch
+	else if type -q neofetch
 		neofetch
 	end
 end

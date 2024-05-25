@@ -106,7 +106,9 @@ fi
 # Setup some pretty things if we aren't in a dumb terminal.
 if [ "$TERM" != "dumb" ]; then
 	# Show a pretty welcome message.
-	if [ -x "$(command -v neofetch)" ]; then
+	if [ -x "$(command -v fastfetch)" ]; then
+		fastfetch
+	elif [ -x "$(command -v neofetch)" ]; then
 		neofetch
 	fi
 fi
