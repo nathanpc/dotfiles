@@ -17,6 +17,11 @@ if type -q python3
 	fish_add_path -P (python3 -m site --user-base)/bin
 end
 
+# Ensure Perl packages are in our system PATH.
+if type -q perl
+	fish_add_path -P (perl -MConfig -e 'print $Config{installsitebin}')
+end
+
 # Make sure our scripts, /usr/local/bin, and /sbin are in the system PATH.
 fish_add_path /usr/local/sbin /usr/local/bin /sbin /usr/local/bin
 fish_add_path -P ~/dotfiles/scripts
