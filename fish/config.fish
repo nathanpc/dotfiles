@@ -8,6 +8,7 @@ if string match -q $OSNAME "Darwin"
 
 	# Add MacPorts to the system PATH.
 	fish_add_path -P /opt/local/bin /opt/local/sbin
+	fish_add_path --append -P /opt/local/libexec/gnubin
 	set -q MANPATH || set MANPATH ''
 	set -x MANPATH $MANPATH /opt/local/share/man
 end

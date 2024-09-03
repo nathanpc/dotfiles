@@ -65,7 +65,7 @@ fi
 
 # Add MacPorts to the system PATH.
 if [ "$OS_NAME" = "Darwin" ]; then
-	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+	export PATH="/opt/local/bin:/opt/local/sbin:$PATH:/opt/local/libexec/gnubin"
 	export MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
