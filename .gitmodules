@@ -1,0 +1,6 @@
+[submodule "emacs/slime"]
+	path = emacs/slime
+	url = https://github.com/slime/slime.git
+[submodule "emacs/company-mode"]
+	path = emacs/company-mode
+	url = https://github.com/company-mode/company-mode.git

@@ -75,4 +75,9 @@
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Use y or n instead of yes or no in prompts.
 (setq echo-keystrokes 0.1)         ; Show key combination hints faster.
 
+;; Setup company-mode.
+(add-to-list 'load-path (concat user-emacs-directory "company-mode"))
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
 (provide 'user-interface)

@@ -54,20 +54,5 @@
 (require 'user-interface)
 (require 'key-bindings)
 (require 'code-styling)
+(require 'lisp-config)
 (require 'mode-settings)
-
-;; Load our private configuration if there's one.
-(require 'private-defs nil 'noerror)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(git-gutter-fringe rainbow-delimiters rainbow-mode highlight-numbers highlight-escape-sequences nord-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
