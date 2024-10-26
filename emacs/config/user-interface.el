@@ -3,6 +3,13 @@
 ;;
 ;; Author: Nathan Campos <nathanpc@dreamintech.net>
 
+;; Load our color theme modules.
+(add-to-list 'load-path (concat user-emacs-directory "themes"))
+
+;; Select a pretty theme.
+(require 'tomorrow-night-theme)
+(color-theme-tomorrow-night)
+
 ;; GUI specific configuration.
 (if (display-graphic-p)
     (tool-bar-mode -1))          ; Hide that horrible toolbar.
@@ -37,7 +44,7 @@
 ;; Smooth scrolling.
 (setq scroll-step 1)                        ; Keyboard scroll one line at time.
 (setq scroll-conservatively 10000)          ; Move minimum when cursor exits view.
-(setq mouse-wheel-scroll-amount '(3))       ; Mouse scroll moves 1 line at time.
+(setq mouse-wheel-scroll-amount '(1))       ; Mouse scroll moves 1 line at time.
 (setq mouse-wheel-progressive-speed nil)    ; Disable accelerated scrolling.
 (setq mouse-wheel-follow-mouse t)           ; Only scroll the window under mouse.
 (setq fast-but-imprecise-scrolling t)       ; Supposed to improve performance.
