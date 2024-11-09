@@ -42,8 +42,10 @@ fi
 
 # Handy git aliases.
 alias gs='git status'
+alias gl='git log'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gca='git commit --amend'
 alias ga='git add'
 alias gdf='git diff'
 alias gps='git push'
