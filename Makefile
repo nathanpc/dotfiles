@@ -19,13 +19,13 @@ CD = cd
 # Text snippets.
 TXTDONE = 'Done.'
 
-.PHONY: all shellconf bashconf fishconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman i3status
+.PHONY: all shellconf bashconf fishconf tmuxconf editors vim emacs nano devenv gdbconf gitconf rconf octaveconf xserver xinit xresources xscreensaverconf consoleapps mutt screen termemus terminator urxvt fonts windowmanagers i3winman i3status
 all: xserver windowmanagers termemus consoleapps devenv editors shellconf fonts
 
 #
 # Shells
 #
-shellconf: bashconf fishconf
+shellconf: bashconf fishconf tmuxconf
 
 # Bash
 bashconf: $(DOTFILESDIR)/bash/bash_profile $(DOTFILESDIR)/bash/bash_aliases $(DOTFILESDIR)/bash/bashrc 
@@ -45,6 +45,13 @@ fishconf: $(DOTFILESDIR)/fish
 	@echo "    Symlinking dotfiles..."
 	$(RM) -r $(HOME)/.config/fish
 	$(LN) $(DOTFILESDIR)/fish/ $(HOME)/.config/fish
+	@echo $(TXTDONE)
+
+# tmux
+tmuxconf: $(DOTFILESDIR)/tmux.conf
+	@echo "Setting up tmux..."
+	@echo "    Symlinking dotfiles..."
+	$(LN) $(DOTFILESDIR)/tmux.conf $(HOME)/.tmux.conf
 	@echo $(TXTDONE)
 
 #
