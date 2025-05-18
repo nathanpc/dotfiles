@@ -22,7 +22,7 @@ alias __H=`echo "\001"`     # home = ^a = start of line
 alias __Y=`echo "\005"`     # end = ^e = end of line
 
 # Pretty prompt.
-export PS1="\e[33m`hostname`\e[00m:\e[31m\${PWD}\e[00m\$ "
+export PS1="[\e[33m`logname`\e[00m@\e[33m`hostname`\e[00m \e[31m\${PWD}\e[00m]\$ "
 #export PS1='$(print -n "`logname`@`hostname`:";if [[ "${PWD#$HOME}" != "$PWD" ]] then; print -n "~${PWD#$HOME}"; else; print -n "$PWD";fi;print "\n$ ")'
 
 # Setup our PATH.
