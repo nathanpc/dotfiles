@@ -35,7 +35,9 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " Git integration.
 Plugin 'tpope/vim-fugitive'
 if !g:lightweight
-	Plugin 'airblade/vim-gitgutter'
+	if v:version >= 820
+		Plugin 'airblade/vim-gitgutter'
+	endif
 
 	" NERDTree.
 	Plugin 'scrooloose/nerdtree'
@@ -118,7 +120,9 @@ if !g:lightweight
 	Plugin 'majutsushi/tagbar'
 
 	" Syntax checker.
-	Plugin 'vim-syntastic/syntastic'
+	if v:version >= 820
+		Plugin 'vim-syntastic/syntastic'
+	endif
 
 	" Bling.
 	if v:version >= 820
@@ -337,7 +341,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeRespectWildIgnore = 1
 
 " Syntastic
-if !g:lightweight
+if !g:lightweight && (v:version >= 820)
 	set statusline+=%#warningmsg#
 	set statusline+=%{SyntasticStatuslineFlag()}
 	set statusline+=%*
