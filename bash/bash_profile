@@ -63,6 +63,15 @@ if [ "$OS_NAME" = "Darwin" ]; then
 	test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 fi
 
+# Set a modern and secure remote shell program for CVS.
+if [ -f /opt/local/bin/ssh ]; then
+	export CVS_RSH=/opt/local/bin/ssh
+elif [ -f /usr/bin/ssh ]; then
+	export CVS_RSH=/usr/bin/ssh
+elif [ -f /bin/ssh ]; then
+	export CVS_RSH=/bin/ssh
+fi
+
 # Add MacPorts to the system PATH.
 if [ "$OS_NAME" = "Darwin" ]; then
 	export PATH="/opt/local/bin:/opt/local/sbin:$PATH:/opt/local/libexec/gnubin"
